@@ -8,5 +8,7 @@ col_names = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class']
 iris =  pd.read_csv(csv_ulr, names = col_names)
 
 # save the dataset as CSV FILE 
-iris.to_csv("iris.csv", index=False)
+iris.to_csv("iris_dataset.csv", index=False)
+
+
 
