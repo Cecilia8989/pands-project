@@ -1,3 +1,11 @@
+''' This script will import the iris dataset from the url 
+'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data' 
+and it convert it to a csv using pandas. Csv is save in the current directory
+'''
+
+# Author: Cecilia Pastore 
+# downloadiris.py 
+
 import pandas as pd 
 
 # Download the iris data set 
