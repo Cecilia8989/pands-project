@@ -5,7 +5,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pylab as pl
 import seaborn as sns
-sns.set_style("whitegrid")
 from scipy.stats import norm
 
 # import data from a csv file using pandas 
@@ -19,7 +18,6 @@ df.columns = columns
 df["Species"].replace(to_replace="Iris-setosa", value="Setosa", inplace=True)
 df["Species"].replace(to_replace="Iris-versicolor", value="Versicolor", inplace=True)
 df["Species"].replace(to_replace="Iris-virginica", value="Virginica", inplace=True)
-print(df)
 
 # create the tile and write on them 
 with open ('iris_analysis.txt', 'w') as f:
@@ -57,13 +55,13 @@ with open ('iris_analysis.txt', 'w') as f:
     # get quartile per species 
     f.write("==== Quartiles per species ==== \n \n")
     f.write(str(df.groupby('Species').quantile([0.25, 0.50, 0.75]))+'\n\n')
-'''    
-# get a first donuts pie  showing the donuts of the distribution - source [1], [2], [3]
-# define the value of the pie 
+
+# create a pie chart to show the distribution of species - source [1], [2], [3]
+# get the count of each species
 group_count= df['Species'].value_counts()
-# define the labels of the pie
+# define the labels of the pie chart
 labels= df['Species'].unique()
-# get the pie 
+# set the parameters of the pie chart
 plt.pie(group_count, labels=labels, radius=1.3, autopct='%1.0f%%', startangle=90, counterclock=False,
         textprops={'fontsize': 14, 'fontweight': 'bold'},
         wedgeprops={'linewidth': 2, 'edgecolor': 'white', 'alpha':0.7})
@@ -74,39 +72,24 @@ fig.gca().add_artist(centre_circle)
 plt.axis('equal')
 plt.title('Distribution of Species', color='Red', fontweight='bold', fontsize=20)
 plt.savefig("Plot1_PieOfDistribution.png")
-plt.show()'''
 
-# create an histangram showing the averages of each categories per species 
+# Create a bar plot with the average of each categories per species [4]
 
-#x_hist= df.data
-#y_hist= df.target
+# Compute the average of each feature for each class
+class_averages = df.groupby('Species').mean()
 
-#print(x_hist)
+# select a seaborn style 
+sns.set_style("dark")
 
-X_iris = np.arange(len(columns)-1)
-average = df.groupby('Species')[X_iris].agg(['mean'])
-print(X_iris)
-print(average)
-
-data=df.values
-X = data[:,0:4]
-#print(X)
-Y = data[:,4]
-#print(Y)
-Y_Data = np.array([np.average(X[:, i][Y==j].astype('float32')) for i in range (X.shape[1])
- for j in (np.unique(Y))])
-#print(Y_Data)
-Y_Data = np.array([np.average(X[:, i][Y==j].astype('float32')) for i in range (X.shape[1])
- for j in (np.unique(Y))])
-Y_Data_reshaped = Y_Data.reshape(4, 3)
-Y_Data_reshaped = np.swapaxes(Y_Data_reshaped, 0, 1)
-X_axis = np.arange(len(columns)-1)
-width = 0.25
-print(X_axis)
-print(Y_Data_reshaped)
-
-
-
+# Create the bar chart
+class_averages.plot(kind='bar', alpha=0.7)
+plt. title('Iris Feature Averages by Species', fontweight = 'bold', fontsize = 20)
+plt. xlabel('Species', fontweight = 'bold', fontsize = 14)
+plt. ylabel('Average', fontweight = 'bold', fontsize = 14)
+# rotate the x values [5]
+plt.xticks(rotation=0)
+plt.savefig('Plot1_AverageBar')
+plt.show()
 
 #plt.bar(df.feature_names, average)
 #plt.title("Bar Chart Setosa Averages")
