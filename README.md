@@ -39,7 +39,7 @@ but rather to present your code and its output to them.
 </p>
 </details>
 
-## Iris Flower Datases - introduction 
+### Iris Flower Datases - introduction 
 The iris flower dataset is a well-known dataset in the field of data science, and it is often used to illustrate basic data analysis, visualization techniques and machine learning .  The Iris Dataset is considered as the "Hello World" for data science [[Fig.1]](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/).
 
 <p align="center">
@@ -47,10 +47,6 @@ The iris flower dataset is a well-known dataset in the field of data science, an
 </p>
 
 The dataset contains measurements of the sepal length, sepal width, petal length, and petal width for 150 iris flowers belonging to three different species: Iris setosa, Iris versicolor, and Iris virginica. Fifty samples are collected for each species [[Fig.2]](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_features_extraction.php).
-
-<p align="center">
-  <img src=https://www.bogotobogo.com/python/scikit-learn/images/features/iris-data-set.png>
-</p>
 
 The iris flower dataset was originally collected by the botanist Edgar Anderson in the 1930s and later popularized by the statistician Ronald Fisher in his seminal paper on discriminant analysis. The dataset is sometimes referred to as Anderson's Iris dataset, as Anderson collected it to quantify the morphological variations among three closely related Iris species. Anderson ensured that all of the samples were collected from the same pasture on the Gaspé Peninsula, on the same day, and measured at the same time by the same person using the same apparatus [[1]](https://rpubs.com/AjinkyaUC/Iris_DataSet).
 
