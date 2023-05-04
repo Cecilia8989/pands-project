@@ -58,12 +58,15 @@ The dataset is widely available and can be accessed freely on the [UCI website [
   <img src=https://www.bogotobogo.com/python/scikit-learn/images/features/iris-data-set.png>
 </p>
 
-### Import dataset
+
+<h3> Import dataset </h3>
+
+#### Import data set from an online location to a csv 
 
 As a first task, The dataset need to be imported and transformed in a CSV [[3]](https://www.angela1c.com/projects/iris_project/downloading-iris/).
 I have:
 - imported the iris dataset from the [UCI Machine learning repository](http://archive.ics.uci.edu/ml/machine-learning-databases/iris/) in data format
-- changed the column names to correspond with the attribute information
+- changed the column names to correspond with the attribute information in a nice format
 - and saved the dataset as a CSV 
 
 To avoid having Python download the dataset every time the main script is executed, I created a separate script called **downloadiris.py**.
@@ -72,7 +75,9 @@ To avoid having Python download the dataset every time the main script is execut
 <details>
     <summary> Code Explanation </summary>
            <p>
-Import the Pandas library. Pandas [[4]](https://www.w3schools.com/python/pandas/default.asp) is a powerful library with many functions for analyzing data, and in this case, it will be used to read the file as a CSV.
+            
+Import the Pandas library. 
+Pandas [[4]](https://www.w3schools.com/python/pandas/default.asp) is a powerful library with many functions for analyzing data, and in this case, it will be used to read the file as a CSV.
 
 ```python
 import pandas as pd 
@@ -84,7 +89,7 @@ csv_ulr =  'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.
 The dataset downloaded from csv_url does not contain any column names that match the attribute information. Therefore, we manually define column names.
 
 ```python
-col_names = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class']
+col_names = ['SepalLenght(cm)', 'SepalWidth(cm)', 'PetalLenght(cm)', 'PetalWidth(cm)', 'Species']
 ```
 Using Panda library to download the dataset as a CSV and set the colums name.
 
@@ -100,6 +105,69 @@ print("iris_dataset.csv created")
 </p>
 </details>
 
+#### Import  the dataset from the CSV to the main script and adjust his foramt.
+
+After saving the dataset from an online location as a CSV file in the same repository, we need to import it into our main script and adjust its format for further analysis. 
+
+To do this, we can begin by importing the necessary libraries at the start of our script. 
+We then import and define the dataset in the scrip and adjust the column/species names to a more readable format.  
+
+##### *Import the libraries*
+
+For this script we will use the the following libraries:
+
+- pandas: a library for data manipulation and analysis
+- NumPy: a library for numerical operations on arrays and matrices
+- Matplotlib.pyplot: a plotting library for creating plot
+- PyLab: a library that combines Matplotlib with NumPy functionality
+- Seaborn: a library for creating informative and attractive statistical graphics
+
+<details>
+    <summary> Code </summary>
+
+```python
+# import needed libraries 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import pylab as pl
+import seaborn as sns 
+```  
+</p>
+</details>
+
+##### *Import the dataset from the CSV file*
+
+The first part of the script is to define and import the dataset from the CSV file. 
+This has been done using pandas library's read_csv() function [[5]](https://realpython.com/python-csv/#reading-csv-files-with-pandas). The dataset is stored in the DataFrame called 'df'.
+
+<details>
+    <summary> Code </summary>
+           <p>
+```python
+# import data from a csv file using pandas 
+df = pd.read_csv('iris_dataset.csv')
+</p>
+</details>
+
+##### *Change the series name*
+
+The code then replaces the names of the three species with more friendly names using the replace() method of the Series object representing the "Species" column[[6]](https://datagy.io/pandas-replace-values/).
+The 'to_replace' parameter specifies the value to be replaced, while the 'value' parameter specifies the new value.
+
+<details>
+    <summary> Code </summary>
+           <p>
+
+```python
+# replace the 3 spieces with a more friendly name 
+df["Species"].replace(to_replace="Iris-setosa", value="Setosa", inplace=True)
+df["Species"].replace(to_replace="Iris-versicolor", value="Versicolor", inplace=True)
+df["Species"].replace(to_replace="Iris-virginica", value="Virginica", inplace=True)
+```
+</p>
+</details>
+
 
 
 <details>
@@ -110,7 +178,11 @@ print("iris_dataset.csv created")
  - [2] [UCI Machine Learning repository](https://archive.ics.uci.edu/ml/datasets/iris)
  - [3] [Importing and viewing the Iris dataset using pandas](https://www.angela1c.com/projects/iris_project/downloading-iris/) 
  - [4] [Pandas Tutorial](https://www.w3schools.com/python/pandas/default.asp)
-            
+ - [5] [Reading and Writing CSV Files in Python](https://realpython.com/python-csv/#reading-csv-files-with-pandas)
+ - [6] [Pandas replace() – Replace Values in Pandas Dataframe](https://datagy.io/pandas-replace-values/)
+ - [7] [](https://datagy.io/pandas-replace-values/)         
+ - [6] []()
+ - [7] []()               
  - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
  - [Fig.2] [Machine Learning 101](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_features_extraction.php)
 
