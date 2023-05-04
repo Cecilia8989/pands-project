@@ -144,9 +144,11 @@ This has been done using pandas library's read_csv() function [[5]](https://real
 <details>
     <summary> Code </summary>
            <p>
+            
 ```python
 # import data from a csv file using pandas 
 df = pd.read_csv('iris_dataset.csv')
+```
 </p>
 </details>
 
