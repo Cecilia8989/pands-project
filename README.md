@@ -329,6 +329,8 @@ Finally, the *value_counts()* [[9]](https://www.geeksforgeeks.org/exploratory-da
 
 </p>
 </details
+ 
+ <details>
 
  <h4> Data Type </h4>
  
@@ -362,8 +364,102 @@ The code use the *dtypes* function to get the type of each columns [[13]](https:
 
 </p>
 </details
- 
 
+ <details>
+ <h4>Statistics</h4>
+
+Some descriptive statistics for each column of the dataset are provided. It includes the count, mean, standard deviation, minimum, maximum, and quartile values for numeric columns. This is done through the *describe()* function [[14]](https://www.w3resource.com/pandas/dataframe/dataframe-describe.php).
+
+```
+==== Statistics ==== 
+ 
+       SepalLenght(cm)  SepalWidth(cm)  PetalLenght(cm)  PetalWidth(cm)
+count       150.000000      150.000000       150.000000      150.000000
+mean          5.843333        3.054000         3.758667        1.198667
+std           0.828066        0.433594         1.764420        0.763161
+min           4.300000        2.000000         1.000000        0.100000
+25%           5.100000        2.800000         1.600000        0.300000
+50%           5.800000        3.000000         4.350000        1.300000
+75%           6.400000        3.300000         5.100000        1.800000
+max           7.900000        4.400000         6.900000        2.500000
+```
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+The *describe()* function is used to calculate the count, mean, standard deviation, minimum, maximum, and quartile values for the numeric columns of the dataset. 
+
+```python
+    # get statistics 
+    f.write("==== Statistics ==== \n \n")
+    f.write(str(df.describe())+'\n\n')  
+```
+
+</p>
+</details
+ 
+<details>
+ 
+ <h4> Stetistics grouped by species</h4>
+
+Next I want to check the statistics (mean, mediam, std, min and max) for each species.
+
+```
+==== SepalLenght(cm) Statistics ====
+
+             mean  median       std  min  max
+Species                                      
+Setosa      5.006     5.0  0.352490  4.3  5.8
+Versicolor  5.936     5.9  0.516171  4.9  7.0
+Virginica   6.588     6.5  0.635880  4.9  7.9
+
+==== SepalWidth(cm) Statistics ====
+
+             mean  median       std  min  max
+Species                                      
+Setosa      3.418     3.4  0.381024  2.3  4.4
+Versicolor  2.770     2.8  0.313798  2.0  3.4
+Virginica   2.974     3.0  0.322497  2.2  3.8
+
+==== PetalLenght(cm) Statistics ====
+
+             mean  median       std  min  max
+Species                                      
+Setosa      1.464    1.50  0.173511  1.0  1.9
+Versicolor  4.260    4.35  0.469911  3.0  5.1
+Virginica   5.552    5.55  0.551895  4.5  6.9
+
+==== PetalWidth(cm) Statistics ====
+
+             mean  median       std  min  max
+Species                                      
+Setosa      0.244     0.2  0.107210  0.1  0.6
+Versicolor  1.326     1.3  0.197753  1.0  1.8
+Virginica   2.026     2.0  0.274650  1.4  2.5
+
+```
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+This script loops through all columns except for the last one (the species , and for each column, it calculates the mean, median, standard deviation, minimum, and maximum value for each species in the dataset. It does this by using the *groupby()* [[15]](https://learnpython.com/blog/how-to-summarize-data-in-python/) function to group the data by species, and then using the *agg()* function to apply the statistical functions to each group. 
+
+```python
+    # get an user more friendly view of the statistics 
+    # for loop to print for each species the varaible mean, median, std, min, max 
+    for column in df.columns[:-1]:
+        f.write(f"==== {column} Statistics ====\n\n")
+        f.write(f"{df.groupby('Species')[column].agg(['mean', 'median', 'std', 'min', 'max'])}\n\n")
+    # get quartile per species   
+```
+
+</p>
+</details
+ 
+ 
+ <details>
  <h4> </h4>
 
 
@@ -373,7 +469,7 @@ The code use the *dtypes* function to get the type of each columns [[13]](https:
 ```
 
 <details>
-    <summary> Code Explanation </summary>
+    <summary>  </summary>
            <p>
 
 
@@ -402,8 +498,8 @@ The code use the *dtypes* function to get the type of each columns [[13]](https:
  - [11] [How to use .format in python to print out the data shape](https://stackoverflow.com/questions/58008120/how-to-use-format-in-python-to-print-out-the-data-shape) 
  - [12] [Pandas Join DataFrames on Columns](https://sparkbyexamples.com/pandas/pandas-join-dataframes-on-columns/) 
  - [13] [pandas.DataFrame.dtypes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html)
- - [] []()
- - [] []()
+ - [14] [Pandas DataFrame: describe() function](https://www.w3resource.com/pandas/dataframe/dataframe-describe.php)
+ - [15] [How to Generate a Data Summary in Python](https://learnpython.com/blog/how-to-summarize-data-in-python/)
  - [] []()
  - [] []()
  - [] []()
