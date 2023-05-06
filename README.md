@@ -241,7 +241,7 @@ Virginica
     <summary> Code Explanation </summary>
            <p>
 
-The script defines a variable *unique_species* that contains the unique values in the *Species* column of the dataset, using the unique() function [10]. Then, it writes these values in the text file using a for loop to display the values in a more readable format. The output is a list of unique species names, with each species name on a separate line, and the text "Species" written at the beginning to clarify the content of the list.
+The script defines a variable *unique_species* that contains the unique values in the *Species* column of the dataset, using the unique() function [[10]](https://www.projectpro.io/recipes/list-unique-values-in-pandas-dataframe). Then, it writes these values in the text file using a for loop to display the values in a more readable format. The output is a list of unique species names, with each species name on a separate line, and the text "Species" written at the beginning to clarify the content of the list.
 
 ```python
     # print unique value on the the species colume to check no duplicate and that the replace has been done correctly 
