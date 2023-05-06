@@ -170,7 +170,46 @@ df["Species"].replace(to_replace="Iris-virginica", value="Virginica", inplace=Tr
 </p>
 </details>
 
+<h3> Getting information about the Dataset </h3>
 
+Once the dataset have been imported and formatted in the needed way, we will need to explore it and prepare it for analysis. This analysis of the information contained in the dataset, as requested, will be printed in a text file called **iris_analysis.txt** [[7]](https://datagy.io/python-write-text-file/).
+
+<h4> Check how appear the data in the Dataset </h4>
+
+First, we can take a look on how the Data-Set look like printing the first 5 lines of it. 
+
+```
+Project for the Subject Programming and Scripting 
+ 
+Author: Cecilia Pastore 
+ iris_analysis.txt 
+ 
+==== First 5 line of the dataset ==== 
+ 
+   SepalLenght(cm)  SepalWidth(cm)  PetalLenght(cm)  PetalWidth(cm) Species
+0              5.1             3.5              1.4             0.2  Setosa
+1              4.9             3.0              1.4             0.2  Setosa
+2              4.7             3.2              1.3             0.2  Setosa
+3              4.6             3.1              1.5             0.2  Setosa
+4              5.0             3.6              1.4             0.2  Setosa
+```
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+First I have added a little introduction to be print in the text file. 
+After, the 'df.head()' [[8]]https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/) function have been used to display the first 5 rows of the df dataset, and then converts the output to a string using str(). The resulting string is then written to the file using the f.write() function.
+
+
+```python
+  # check the first 5 line of the dataset to see if the format fit
+    f.write("==== First 5 line of the dataset ==== \n \n")
+    f.write(str(df.head())+'\n \n')
+```
+
+</p>
+</details>
+ 
 
 <details>
     <summary>Sources</summary>
@@ -182,9 +221,12 @@ df["Species"].replace(to_replace="Iris-virginica", value="Virginica", inplace=Tr
  - [4] [Pandas Tutorial](https://www.w3schools.com/python/pandas/default.asp)
  - [5] [Reading and Writing CSV Files in Python](https://realpython.com/python-csv/#reading-csv-files-with-pandas)
  - [6] [Pandas replace() – Replace Values in Pandas Dataframe](https://datagy.io/pandas-replace-values/)
- - [7] [](https://datagy.io/pandas-replace-values/)         
- - [6] []()
- - [7] []()               
+ - [7] [How to Use Python to Write a Text File (.txt)](https://datagy.io/python-write-text-file/)         
+ - [8] [](https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/)
+ - [9] []()         
+ - [10] []() 
+ - [11] []() 
+ - [12] []() 
  - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
  - [Fig.2] [Machine Learning 101](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_features_extraction.php)
 
