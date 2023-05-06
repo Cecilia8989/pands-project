@@ -45,6 +45,7 @@ but rather to present your code and its output to them.
   - [Import data set from an online location to a csv](https://github.com/Cecilia8989/pands-project/blob/main/README.md#import-data-set-from-an-online-location-to-a-csv)
   - [Import  the dataset from the CSV to the main script and adjust his format](https://github.com/Cecilia8989/pands-project/blob/main/README.md#import--the-dataset-from-the-csv-to-the-main-script-and-adjust-his-format)
 * [Getting information about the Dataset](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-getting-information-about-the-dataset-)
+  - [Creation and introduction]()
   - [Check how appear the data in the Dataset](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-check-how-appear-the-data-in-the-dataset-)
   - [Check Unique value](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-check-unique-value-)
   - [Checking missing values](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-checking-missing-values-)
@@ -191,11 +192,42 @@ df["Species"].replace(to_replace="Iris-virginica", value="Virginica", inplace=Tr
 
 <h3> Getting information about the Dataset </h3>
 
-Once the dataset have been imported and formatted in the needed way, we will need to explore it and prepare it for analysis. This analysis of the information contained in the dataset, as requested, will be printed in a text file called **iris_analysis.txt** [[7]](https://datagy.io/python-write-text-file/).
+Once the dataset have been imported and formatted in the needed way, we will need to explore it and prepare it for analysis. This analysis of the information contained in the dataset, as requested, will be printed in a text file called **iris_analysis.txt** .
+
+ <h4> Creation and introduction </h4>
+
+This code opens a  file (and create it if is not already created) named iris_analysis.txt in write mode. The subsequent lines of code write an introduction to the file, including the author's name and the title of the project.
+
+```
+Project for the Subject Programming and Scripting 
+ 
+Author: Cecilia Pastore 
+ iris_analysis.txt 
+```
+</p>
+</details>
+
+<details>
+    <summary> Code explanation </summary>
+           <p>
+
+The code is creating a new file named "iris_analysis.txt" and opening it in write mode using the open() function, with the file object being assigned to the variable f. The code then writes some introductory information about the text file, including the project title, author name, and the name of the text file itself [[7]](https://datagy.io/python-write-text-file/).
+
+```python
+# create the text file and write on them 
+with open ('iris_analysis.txt', 'w') as f:
+    # print an introduction of the text file 
+    f.write("Project for the Subject Programming and Scripting \n \n")
+    f.write("Author: Cecilia Pastore \n ")
+    f.write("iris_analysis.txt \n \n")   
+```
+
+</p>
+</details
 
 <h4> Check how appear the data in the Dataset </h4>
 
-First, we can take a look on how the Data-Set look like printing the first 5 lines of it. 
+Now, We can take a look on how the Data-Set look like printing the first 5 lines of it. 
 
 ```
 Project for the Subject Programming and Scripting 
