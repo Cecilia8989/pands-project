@@ -3,7 +3,7 @@ Project for the Subject Programming and Scripting
 Author: Cecilia Pastore 
  iris_analysis.txt 
  
-==== First 5 line of the dataset ==== 
+==== First 5 lines of the dataset ==== 
  
    SepalLenght(cm)  SepalWidth(cm)  PetalLenght(cm)  PetalWidth(cm) Species
 0              5.1             3.5              1.4             0.2  Setosa
@@ -14,10 +14,20 @@ Author: Cecilia Pastore
  
 ==== Print unique value of species ==== 
  
-     SepalLenght(cm)  SepalWidth(cm)  PetalLenght(cm)  PetalWidth(cm)     Species
-0                5.1             3.5              1.4             0.2      Setosa
-50               7.0             3.2              4.7             1.4  Versicolor
-100              6.3             3.3              6.0             2.5   Virginica
+Species
+ 
+Setosa
+Versicolor
+Virginica
+
+==== Checking missing value ==== 
+ 
+SepalLenght(cm)    0
+SepalWidth(cm)     0
+PetalLenght(cm)    0
+PetalWidth(cm)     0
+Species            0
+dtype: int64
  
 ==== Shape of the dataset ==== 
  
@@ -25,6 +35,12 @@ Number of rows: 150
 Number of columns: 5
 Size: 750
 Columns: SepalLenght(cm), SepalWidth(cm), PetalLenght(cm), PetalWidth(cm), Species
+
+Species
+Setosa        50
+Versicolor    50
+Virginica     50
+dtype: int64
 
 ==== Data type ==== 
  
@@ -36,14 +52,6 @@ PetalLenght(cm)    float64
 PetalWidth(cm)     float64
 Species             object
 dtype: object
-
-==== Value Counts ==== 
- 
-Species 	 	 Count 
-Setosa        50
-Versicolor    50
-Virginica     50
-Name: Species, dtype: int64
 
 ==== Statistics ==== 
  

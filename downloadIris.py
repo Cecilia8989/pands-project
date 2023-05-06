@@ -13,7 +13,8 @@ import pandas as pd
 csv_ulr =  'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 
 # Set the column names of the dataset to correspond with the attribute information 
-col_names = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class']
+col_names = ['SepalLenght(cm)', 'SepalWidth(cm)', 'PetalLenght(cm)', 'PetalWidth(cm)', 'Species']
+
 # download the dataset and change the colums 
 iris =  pd.read_csv(csv_ulr, names = col_names)
 

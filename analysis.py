@@ -5,45 +5,46 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pylab as pl
 import seaborn as sns
-from scipy.stats import norm
 
 # import data from a csv file using pandas 
 df = pd.read_csv('iris_dataset.csv')
-
-# change the colums name in a nicer format 
-columns = ['SepalLenght(cm)', 'SepalWidth(cm)', 'PetalLenght(cm)', 'PetalWidth(cm)', 'Species']
-df.columns = columns
 
 # replace the 3 spieces with a more friendly name 
 df["Species"].replace(to_replace="Iris-setosa", value="Setosa", inplace=True)
 df["Species"].replace(to_replace="Iris-versicolor", value="Versicolor", inplace=True)
 df["Species"].replace(to_replace="Iris-virginica", value="Virginica", inplace=True)
 
-# create the tile and write on them 
+# create the text file and write on them 
 with open ('iris_analysis.txt', 'w') as f:
+    # print an introduction of the text file 
     f.write("Project for the Subject Programming and Scripting \n \n")
     f.write("Author: Cecilia Pastore \n ")
     f.write("iris_analysis.txt \n \n")
-    # check the first 5 line of the dataset to see if the format fit
-    f.write("==== First 5 line of the dataset ==== \n \n")
+    # checking the first 5 line of the dataset to see if the format fit
+    f.write("==== First 5 lines of the dataset ==== \n \n")
     f.write(str(df.head())+'\n \n')
     # print unique value on the the species colume to check no duplicate and that the replace has been done correctly 
     f.write("==== Print unique value of species ==== \n \n")
-    f.write(str(df.drop_duplicates(subset ="Species"))+ '\n \n')
+    unique_species = pd.unique(df['Species'])
+    f.write("Species\n \n")
+    for species in unique_species:
+        f.write(species)
+        f.write("\n")
+    f.write("\n")
+    # checking missing value
+    f.write("==== Checking missing value ==== \n \n")
+    f.write(str(df.isnull().sum())+'\n \n')
     # shape of the datased
     f.write("==== Shape of the dataset ==== \n \n")
     f.write("Number of rows: {}\n".format(df.shape[0]))
     f.write("Number of columns: {}\n".format(df.shape[1]))
     f.write("Size: {}\n".format(df.size))
     f.write("Columns: {}\n\n".format(", ".join(df.columns)))
+    f.write(str(df.value_counts("Species"))+'\n\n')
     # get the data type 
     f.write("==== Data type ==== \n \n")
     f.write("Attribute \t \t \t \t Type \n \n")
     f.write(str(df.dtypes)+'\n\n')
-    # get counts 
-    f.write("==== Value Counts ==== \n \n")
-    f.write("Species \t \t Count \n")
-    f.write(str(df["Species"].value_counts())+'\n\n')
     # get statistics 
     f.write("==== Statistics ==== \n \n")
     f.write(str(df.describe())+'\n\n')
@@ -56,13 +57,14 @@ with open ('iris_analysis.txt', 'w') as f:
     f.write("==== Quartiles per species ==== \n \n")
     f.write(str(df.groupby('Species').quantile([0.25, 0.50, 0.75]))+'\n\n')
 
+
 # create a pie chart to show the distribution of species - source [1], [2], [3]
 # get the count of each species
 group_count= df['Species'].value_counts()
 # define the labels of the pie chart
 labels= df['Species'].unique()
 # set the parameters of the pie chart
-plt.pie(group_count, labels=labels, radius=1.3, autopct='%1.0f%%', startangle=90, counterclock=False,
+plt.pie(group_count, labels=labels, autopct='%1.0f%%', 
         textprops={'fontsize': 14, 'fontweight': 'bold'},
         wedgeprops={'linewidth': 2, 'edgecolor': 'white', 'alpha':0.7})
 # create a white cirle to have the donut effect 
@@ -70,17 +72,16 @@ centre_circle= plt.Circle((0,0),0.65,color='white', fc='white',linewidth=1.00)
 fig = plt.gcf()
 fig.gca().add_artist(centre_circle)
 plt.axis('equal')
+# print a title
 plt.title('Distribution of Species', color='Red', fontweight='bold', fontsize=20)
+# save the plot as immage 
 plt.savefig("Plot1_PieOfDistribution.png")
 
 # Create a bar plot with the average of each categories per species [4]
-
 # Compute the average of each feature for each class
 class_averages = df.groupby('Species').mean()
-
 # select a seaborn style 
 sns.set_style("dark")
-
 # Create the bar chart
 class_averages.plot(kind='bar', alpha=0.7)
 plt. title('Iris Feature Averages by Species', fontweight = 'bold', fontsize = 20)
@@ -99,7 +100,7 @@ plt.show()
 
             
 
-'''# Create a barplot of 
+# Create a barplot of 
 
 fig, axs= plt.subplots(nrows=1, ncols=2, figsize=(12,6))
 
