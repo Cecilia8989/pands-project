@@ -518,7 +518,7 @@ Virginica  0.25            6.225           2.800            5.100             1.
 ```
 
 <details>
-    <summary>  </summary>
+    <summary> Code Explanation </summary>
            <p>
 
 This code calculates the quartiles for each species in the dataset using the *groupby* function. The *groupby* function groups the data by the Species column, and then the quantile function is applied to each group. The quantile function is given a list of values [0.25, 0.50, 0.75] which represent the quartiles that we want to calculate for each group [[16]](https://stackoverflow.com/questions/55009203/how-does-pandas-calculate-quartiles). 
@@ -532,8 +532,66 @@ This code calculates the quartiles for each species in the dataset using the *gr
 </p>
 </details
  
- 
  <details>
+ 
+ <h3> Distribution Pie </h3>
+
+As a first plot I would like to start with a pie chart to visualize the distribution of the different species in the dataset. This cake graphic show that each species has 50 entries in a donut format.
+
+![pie Chart](https://github.com/Cecilia8989/pands-project/blob/main/Plot1_PieOfDistribution.png)
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+This code will plot a pie chart and inside will plot a white circle to give the design of a donut[[17]](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea).
+
+First, it uses the *value_counts()* function to count the number of occurrences of each species in the Species column of the DataFrame- df. The resulting counts are stored in the *group_count* variable.
+Next, it uses the unique() [[18]](https://sparkbyexamples.com/pandas/pandas-find-unique-values-from-columns/) function to get an array of the unique species in the Species column of the DataFrame df. The resulting array is stored in the labels variable.
+
+```python
+# create a pie chart to show the distribution of species 
+# get the count of each species
+group_count= df['Species'].value_counts()
+# define the labels of the pie chart
+labels= df['Species'].unique()
+```
+It uses the *pie()* function from the matplotlib library to create the pie chart. The function takes several arguments to set the parameters of the pie chart, including the group_count and labels variable. The other arguments include the size and position of the pie chart, the format of the percentage labels, and the appearance of the wedges [[19]]( https://pythonguides.com/matplotlib-title-font-size/#:~:text=The%20syntax%20to%20assign%20a%20title%20to%20the,%28%29%20%23%20To%20change%20size%20matplotlib.pyplot.title%20%28label%2C%20fontsize%3DNone%29). 
+
+```python
+# set the parameters of the pie chart
+plt.pie(group_count, labels=labels, autopct='%1.0f%%', 
+        textprops={'fontsize': 14, 'fontweight': 'bold'},
+        wedgeprops={'linewidth': 2, 'edgecolor': 'white', 'alpha':0.7})
+```
+A white circle is created in the middle of the pie chart to give the design of a donut [[17]](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea):
+
+- plt.Circle(() creates a white which is added to the center of the pie chart.
+
+- fig = plt.gcf() gets the current figure.
+
+- fig.gca().add_artist(centre_circle) adds the white circle to the figure.
+
+- plt.axis('equal') makes sure that the x and y axes have the same scale, so the pie chart appears circular.
+
+```python
+# create a white cirle to have the donut effect 
+centre_circle= plt.Circle((0,0),0.65,color='white', fc='white',linewidth=1.00)
+fig = plt.gcf()
+fig.gca().add_artist(centre_circle)
+plt.axis('equal')
+```
+Finally a title is defined and the plot is saved as a figure.
+
+```python
+# print a title
+plt.title('Distribution of Species', color='Red', fontweight='bold', fontsize=20)
+# save the plot as immage 
+plt.savefig("Plot1_PieOfDistribution.png")
+```
+
+</p>
+</details
  <h4> </h4>
 
 
@@ -543,7 +601,7 @@ This code calculates the quartiles for each species in the dataset using the *gr
 ```
 
 <details>
-    <summary>  </summary>
+    <summary> Code Explanation </summary>
            <p>
 
 
@@ -575,13 +633,19 @@ This code calculates the quartiles for each species in the dataset using the *gr
  - [14] [Pandas DataFrame: describe() function](https://www.w3resource.com/pandas/dataframe/dataframe-describe.php)
  - [15] [How to Generate a Data Summary in Python](https://learnpython.com/blog/how-to-summarize-data-in-python/)
  - [16] [How does pandas calculate quartiles?](https://stackoverflow.com/questions/55009203/how-does-pandas-calculate-quartiles)
+ - [17] [How to Make a Beautiful Donut Chart and Nested Donut Chart in Matplotlib](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea)
+ - [18][Pandas Get Unique Values in Column](https://sparkbyexamples.com/pandas/pandas-find-unique-values-from-columns/)
+ - [19][Matplotlib Pie Chart Tutorial]( https://pythonguides.com/matplotlib-title-font-size/#:~:text=The%20syntax%20to%20assign%20a%20title%20to%20the,%28%29%20%23%20To%20change%20size%20matplotlib.pyplot.title%20%28label%2C%20fontsize%3DNone%29)
  - [] []()
  - [] []()
  - [] []()
- - [] []()
+ 
  - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
  - [Fig.2] [Machine Learning 101](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_features_extraction.php)
-
+ 
+ -[How to add images to README.md on GitHub?](https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github)
+ -[How to customize Matplotlib plot titles color, position and fonts?]{ https://www.dataforeverybody.com/matplotlib-title-size-position-color/)
+ -[Adding a main title to subplots in Matplotlib](https://www.skytowner.com/explore/adding_a_main_title_to_subplots_in_matplotlib)
 </p>
 </details>
  
