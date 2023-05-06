@@ -458,6 +458,42 @@ This script loops through all columns except for the last one (the species , and
 </p>
 </details
  
+<details>
+ <h4> Quartiles per species </h4>
+
+On the same path of the previous part of the script, I wanted check the quartiles focusing on each species.
+
+```
+==== Quartiles per species ==== 
+ 
+                 SepalLenght(cm)  SepalWidth(cm)  PetalLenght(cm)  PetalWidth(cm)
+Species                                                                          
+Setosa     0.25            4.800           3.125            1.400             0.2
+           0.50            5.000           3.400            1.500             0.2
+           0.75            5.200           3.675            1.575             0.3
+Versicolor 0.25            5.600           2.525            4.000             1.2
+           0.50            5.900           2.800            4.350             1.3
+           0.75            6.300           3.000            4.600             1.5
+Virginica  0.25            6.225           2.800            5.100             1.8
+           0.50            6.500           3.000            5.550             2.0
+           0.75            6.900           3.175            5.875             2.3
+```
+
+<details>
+    <summary>  </summary>
+           <p>
+
+This code calculates the quartiles for each species in the dataset using the *groupby* function. The *groupby* function groups the data by the Species column, and then the quantile function is applied to each group. The quantile function is given a list of values [0.25, 0.50, 0.75] which represent the quartiles that we want to calculate for each group [[16]](https://stackoverflow.com/questions/55009203/how-does-pandas-calculate-quartiles). 
+
+```python
+    # get quartile per species 
+    f.write("==== Quartiles per species ==== \n \n")
+    f.write(str(df.groupby('Species').quantile([0.25, 0.50, 0.75]))+'\n\n')   
+```
+
+</p>
+</details
+ 
  
  <details>
  <h4> </h4>
@@ -500,7 +536,7 @@ This script loops through all columns except for the last one (the species , and
  - [13] [pandas.DataFrame.dtypes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html)
  - [14] [Pandas DataFrame: describe() function](https://www.w3resource.com/pandas/dataframe/dataframe-describe.php)
  - [15] [How to Generate a Data Summary in Python](https://learnpython.com/blog/how-to-summarize-data-in-python/)
- - [] []()
+ - [16] [How does pandas calculate quartiles?](https://stackoverflow.com/questions/55009203/how-does-pandas-calculate-quartiles)
  - [] []()
  - [] []()
  - [] []()
