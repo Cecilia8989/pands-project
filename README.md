@@ -225,7 +225,7 @@ After, the 'df.head()' [[8]](https://www.geeksforgeeks.org/python-pandas-datafra
 
 <h4> Check Unique value </h4>
 
-We can now print the unique values of the column 'Species'. This has the double function to check no duplicates of 'Species' have been entered and the replace of the Species names have been done correctly. I can do it through the use of 'drop.duplicate()' function [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/) or through the 'unique()' function. I chose to unique function to give a more tidy looking on the text file. 
+We can now print the unique values of the column *Species*. This has the double function to check no duplicates of *Species* have been entered and the replace of the Species names have been done correctly. I can do it through the use of *drop.duplicate()* function [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/) or through the *unique()* function. I chose to unique function to give a more tidy looking on the text file. As we can see from the output, there are no other value apart of the three wanted *Species* and the rename of them have beene executed correctly.
 
 ```
 ==== Print unique value of species ==== 
