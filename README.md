@@ -41,7 +41,7 @@ but rather to present your code and its output to them.
 
 ### Table of content
 * [Iris Flower Datases - introduction](https://github.com/Cecilia8989/pands-project/blob/main/README.md#iris-flower-datases---introduction)
-* [Import dataset](https://github.com/Cecilia8989/pands-project/edit/main/README.md#-import-dataset-)
+* [Import dataset](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-import-dataset-)
   - [Import data set from an online location to a csv](https://github.com/Cecilia8989/pands-project/edit/main/README.md#import-data-set-from-an-online-location-to-a-csv)
   - [Import  the dataset from the CSV to the main script and adjust his format](https://github.com/Cecilia8989/pands-project/edit/main/README.md#import--the-dataset-from-the-csv-to-the-main-script-and-adjust-his-foramt)
 * [Getting information about the Dataset](https://github.com/Cecilia8989/pands-project/edit/main/README.md#-getting-information-about-the-dataset-)
