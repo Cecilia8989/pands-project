@@ -225,7 +225,8 @@ After, the 'df.head()' [[8]](https://www.geeksforgeeks.org/python-pandas-datafra
 
 <h4> Check Unique value </h4>
 
-We can now print the unique values of the column *Species*. This has the double function to check no duplicates of *Species* have been entered and the replace of the Species names have been done correctly. I can do it through the use of *drop.duplicate()* function [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/) or through the *unique()* function. I chose to unique function to give a more tidy looking on the text file. As we can see from the output, there are no other value apart of the three wanted *Species* and the rename of them have beene executed correctly.
+We can now print the unique values of the column *Species*. This has the double function to check no duplicates of *Species* have been entered and the replace of the Species names have been done correctly. 
+As we can see from the output, there are no other value apart of the three wanted *Species* and the rename of them have beene executed correctly.
 
 ```
 ==== Print unique value of species ==== 
@@ -241,7 +242,8 @@ Virginica
     <summary> Code Explanation </summary>
            <p>
 
-The script defines a variable *unique_species* that contains the unique values in the *Species* column of the dataset, using the unique() function [[10]](https://www.projectpro.io/recipes/list-unique-values-in-pandas-dataframe). Then, it writes these values in the text file using a for loop to display the values in a more readable format. The output is a list of unique species names, with each species name on a separate line, and the text "Species" written at the beginning to clarify the content of the list.
+The script defines a variable *unique_species* that contains the unique values in the *Species* column of the dataset. I would have been to do it through the use of *drop.duplicate()* function [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/) or through the *unique()* function [[10]](https://www.projectpro.io/recipes/list-unique-values-in-pandas-dataframe). I chose to unique function to give a more tidy looking on the text file. 
+Then, it writes these values in the text file using a for loop to display the values in a more readable format. The output is a list of unique species names, with each species name on a separate line, and the text "Species" written at the beginning to clarify the content of the list.
 
 ```python
     # print unique value on the the species colume to check no duplicate and that the replace has been done correctly 
@@ -256,6 +258,132 @@ The script defines a variable *unique_species* that contains the unique values i
 
 </p>
 </details>
+
+<h4> Checking missing values </h4>
+
+The script will check if there are missing value or not. Missing values refer to the absence of data or information for one or more items or a whole unit. It can happen when the data is not provided, is lost or simply does not exist. We can see from the output that no column as any missing value. This was expected ad the iris dataset is know for not having missing values.
+
+```
+==== Checking missing value ==== 
+ 
+SepalLenght(cm)    0
+SepalWidth(cm)     0
+PetalLenght(cm)    0
+PetalWidth(cm)     0
+Species            0
+dtype: int64
+```
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+The script check missing value using the *isnull()* function [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/).
+
+```python
+    # checking missing value
+    f.write("==== Checking missing value ==== \n \n")
+    f.write(str(df.isnull().sum())+'\n \n')   
+```
+
+</p>
+</details>
+
+ <h4> Shape of the dataset </h4>
+
+The script prints the shape of the dataset, which is the number of rows and columns in the dataset. It also prints the size of the dataset, which is the product of the number of rows and columns, a list of all the column names in the dataset. 
+Finally it show the number on entries for each species.
+As we can see we have 150 lines, 5 columns for a total size of 750 entries. Each species has 50 entries .
+
+```
+==== Shape of the dataset ==== 
+ 
+Number of rows: 150
+Number of columns: 5
+Size: 750
+Columns: SepalLenght(cm), SepalWidth(cm), PetalLenght(cm), PetalWidth(cm), Species
+
+Species
+Setosa        50
+Versicolor    50
+Virginica     50
+dtype: int64
+```
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+The script is used to retrieve various information about a dataset. It first uses the *shape()* [[11]](https://stackoverflow.com/questions/58008120/how-to-use-format-in-python-to-print-out-the-data-shape) function to print the number of rows and columns in the dataset. Then, it uses the *size()* function to print the total number of entries in the dataset. The *join()* [[12]](https://sparkbyexamples.com/pandas/pandas-join-dataframes-on-columns/) function is used to concatenate the names of all columns in the dataset and print them. 
+Finally, the *value_counts()* [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/) function is used to count the number of entries for each species in the dataset and print them.
+
+```python
+   # shape of the datased
+    f.write("==== Shape of the dataset ==== \n \n")
+    f.write("Number of rows: {}\n".format(df.shape[0]))
+    f.write("Number of columns: {}\n".format(df.shape[1]))
+    f.write("Size: {}\n".format(df.size))
+    f.write("Columns: {}\n\n".format(", ".join(df.columns)))
+    f.write(str(df.value_counts("Species"))+'\n\n')
+```
+
+</p>
+</details
+
+ <h4> Data Type </h4>
+ 
+Next, the script checks the data type of each column in the dataset. It outputs this information in the text file, with each column name followed by its corresponding data type. As we can see, the data type of all columns is float except for the *Species* column, which is an object datatype that contains the species referred to in the measurements.
+
+```
+==== Data type ==== 
+ 
+Attribute 	 	 	 	 Type 
+ 
+SepalLenght(cm)    float64
+SepalWidth(cm)     float64
+PetalLenght(cm)    float64
+PetalWidth(cm)     float64
+Species             object
+dtype: object
+```
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+The code use the *dtypes* function to get the type of each columns [[13]](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html).
+
+```python
+    # get the data type 
+    f.write("==== Data type ==== \n \n")
+    f.write("Attribute \t \t \t \t Type \n \n")
+    f.write(str(df.dtypes)+'\n\n')  
+```
+
+</p>
+</details
+ 
+
+ <h4> </h4>
+
+
+
+```
+
+```
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+
+```python
+   
+```
+
+</p>
+</details
+ 
  
 <details>
     <summary>Sources</summary>
@@ -271,8 +399,16 @@ The script defines a variable *unique_species* that contains the unique values i
  - [8] [Python | Pandas Dataframe/Series.head() method](https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/)
  - [9] [Exploratory Data Analysis on Iris Dataset](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/)         
  - [10] [How to list unique values in a Pandas DataFrame?](https://www.projectpro.io/recipes/list-unique-values-in-pandas-dataframe) 
- - [11] []() 
- - [12] []() 
+ - [11] [How to use .format in python to print out the data shape](https://stackoverflow.com/questions/58008120/how-to-use-format-in-python-to-print-out-the-data-shape) 
+ - [12] [Pandas Join DataFrames on Columns](https://sparkbyexamples.com/pandas/pandas-join-dataframes-on-columns/) 
+ - [13] [pandas.DataFrame.dtypes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html)
+ - [] []()
+ - [] []()
+ - [] []()
+ - [] []()
+ - [] []()
+ - [] []()
+ - [] []()
  - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
  - [Fig.2] [Machine Learning 101](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_features_extraction.php)
 
