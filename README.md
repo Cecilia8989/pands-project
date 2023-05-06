@@ -39,6 +39,19 @@ but rather to present your code and its output to them.
 </p>
 </details>
 
+### Table of content
+* [Iris Flower Datases - introduction](https://github.com/Cecilia8989/pands-project/edit/main/README.md#iris-flower-datases---introduction)
+* [Import dataset](https://github.com/Cecilia8989/pands-project/edit/main/README.md#-import-dataset-)
+  - [Import data set from an online location to a csv](https://github.com/Cecilia8989/pands-project/edit/main/README.md#import-data-set-from-an-online-location-to-a-csv)
+  - [Import  the dataset from the CSV to the main script and adjust his format](https://github.com/Cecilia8989/pands-project/edit/main/README.md#import--the-dataset-from-the-csv-to-the-main-script-and-adjust-his-foramt)
+* [Getting information about the Dataset](https://github.com/Cecilia8989/pands-project/edit/main/README.md#-getting-information-about-the-dataset-)
+  - [Check how appear the data in the Dataset](https://github.com/Cecilia8989/pands-project/edit/main/README.md#-check-how-appear-the-data-in-the-dataset-)
+  - []()
+* []()
+* []()
+* []()
+
+
 ### Iris Flower Datases - introduction 
 The iris flower dataset is a well-known dataset in the field of data science, and it is often used to illustrate basic data analysis, visualization techniques and machine learning .  The Iris Dataset is considered as the "Hello World" for data science [[Fig.1]](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/).
 
@@ -105,7 +118,7 @@ print("iris_dataset.csv created")
 </p>
 </details>
 
-#### Import  the dataset from the CSV to the main script and adjust his foramt.
+#### Import  the dataset from the CSV to the main script and adjust his format.
 
 After saving the dataset from an online location as a CSV file in the same repository, we need to import it into our main script and adjust its format for further analysis. 
 
@@ -184,7 +197,7 @@ Project for the Subject Programming and Scripting
 Author: Cecilia Pastore 
  iris_analysis.txt 
  
-==== First 5 line of the dataset ==== 
+==== First 5 lines of the dataset ==== 
  
    SepalLenght(cm)  SepalWidth(cm)  PetalLenght(cm)  PetalWidth(cm) Species
 0              5.1             3.5              1.4             0.2  Setosa
@@ -198,19 +211,52 @@ Author: Cecilia Pastore
     <summary> Code Explanation </summary>
            <p>
 First I have added a little introduction to be print in the text file. 
-After, the 'df.head()' [[8]]https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/) function have been used to display the first 5 rows of the df dataset, and then converts the output to a string using str(). The resulting string is then written to the file using the f.write() function.
+After, the 'df.head()' [[8]](https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/) function have been used to display the first 5 rows of the df dataset, and then converts the output to a string using str(). The resulting string is then written to the file using the f.write() function.
 
 
 ```python
-  # check the first 5 line of the dataset to see if the format fit
+    # checking the first 5 line of the dataset to see if the format fit
     f.write("==== First 5 line of the dataset ==== \n \n")
     f.write(str(df.head())+'\n \n')
 ```
 
 </p>
 </details>
- 
 
+<h4> Check Unique value </h4>
+
+We can now print the unique values of the column 'Species'. This has the double function to check no duplicates of 'Species' have been entered and the replace of the Species names have been done correctly. I can do it through the use of 'drop.duplicate()' function [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/) or through the 'unique()' function. I chose to unique function to give a more tidy looking on the text file. 
+
+```
+==== Print unique value of species ==== 
+ 
+Species
+ 
+Setosa
+Versicolor
+Virginica
+```
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+The script defines a variable *unique_species* that contains the unique values in the *Species* column of the dataset, using the unique() function [10]. Then, it writes these values in the text file using a for loop to display the values in a more readable format. The output is a list of unique species names, with each species name on a separate line, and the text "Species" written at the beginning to clarify the content of the list.
+
+```python
+    # print unique value on the the species colume to check no duplicate and that the replace has been done correctly 
+    f.write("==== Print unique value of species ==== \n \n")
+    unique_species = pd.unique(df['Species'])
+    f.write("Species\n \n")
+    for species in unique_species:
+        f.write(species)
+        f.write("\n")
+    f.write("\n")
+```
+
+</p>
+</details>
+ 
 <details>
     <summary>Sources</summary>
            <p>
@@ -222,9 +268,9 @@ After, the 'df.head()' [[8]]https://www.geeksforgeeks.org/python-pandas-datafram
  - [5] [Reading and Writing CSV Files in Python](https://realpython.com/python-csv/#reading-csv-files-with-pandas)
  - [6] [Pandas replace() – Replace Values in Pandas Dataframe](https://datagy.io/pandas-replace-values/)
  - [7] [How to Use Python to Write a Text File (.txt)](https://datagy.io/python-write-text-file/)         
- - [8] [](https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/)
- - [9] []()         
- - [10] []() 
+ - [8] [Python | Pandas Dataframe/Series.head() method](https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/)
+ - [9] [Exploratory Data Analysis on Iris Dataset](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/)         
+ - [10] [How to list unique values in a Pandas DataFrame?](https://www.projectpro.io/recipes/list-unique-values-in-pandas-dataframe) 
  - [11] []() 
  - [12] []() 
  - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
