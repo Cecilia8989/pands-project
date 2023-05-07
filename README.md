@@ -636,6 +636,54 @@ plt.savefig('Plot2_AverageBar')
 
 </p>
 </details
+ 
+Next, the code plots histograms for each variable in the Iris dataset to show the distribution of values for each species. Instead of plotting four separate graphs, the code uses subplots to combine them into one figure. The subplot for each variable is created using seaborn's [*histplot()* method [23]](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris), which includes a KDE curve (kernel density estimation) and shows the distribution of values for each species using a different color. 
+
+![Sub_1]()
+
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+This line converts the *Species* column in the DataFrame *df* to a categorical variable. This is useful for setting the order of the categories in plots.
+```python
+# make the 'species' column categorical to fix the order
+df['Species'] = pd.Categorical(df['Species'])
+```
+This line creates a figure with a 2x2 grid of subplots, stored in the fig and axs variables.
+```python
+fig, axs = plt.subplots(2, 2, figsize=(12, 6))
+# initialize a counter for the subplot index
+```
+Here the subplot is created. A loop interact with the  first 4 columns of the dataframe [:4], using the *zip()* funtion to pair each column with its corresponding subplot. For each column and subplot, a histogram with a KDE curve is created using the *sns.histplot()* function. The *Species* column is used for the hue, which means that the histogram is plotted separately for each species. 
+The title  of each plot and y label have been also added through [*ax.set* [24]].(https://www.geeksforgeeks.org/matplotlib-axes-axes-set_xlabel-in-python/)
+
+```python
+i = 0
+# loop through the first 4 columns of the DataFrame and corresponding subplots
+for col, ax in zip(df.columns[:4], axs.flat):
+    # create a histogram with a KDE curve for the current column, using the 'Species' column for the hue
+    sns.histplot(data=df, x=col, y=None, kde=True, hue='Species', common_norm=False, legend=ax==axs[0,0], ax=ax)
+    # set the title and the labels name
+    ax.set_title(f'Plot {i+1} - {col}')
+    ax.set_xlabel(None)
+    ax.set_ylabel('Count')
+    i = i+1
+```
+Finally a title of the subplot have been added using the *subtitle()* method. As the title of the subplot and single plot were overlapping the [position of the first have been adjusted [25]](https://www.statology.org/matplotlib-subplot-spacing/).
+The figure have been then saved as *Plot3_Subplot_Feature*.
+
+```python
+# adjust the spacing between the subplots and set the figure title
+plt.tight_layout()
+fig.subplots_adjust(hspace=0.4, top=0.85)
+fig.suptitle('Distribution of Iris Flower Features', fontsize=16, color='red', fontweight='bold')
+# Save the figure 
+plt.savefig("Plot3_Subplot_Feature.png")
+```
+</p>
+</details
 
    <details>
  <h4> </h4>
@@ -684,10 +732,10 @@ plt.savefig('Plot2_AverageBar')
  - [19][Matplotlib Pie Chart Tutorial]( https://pythonguides.com/matplotlib-title-font-size/#:~:text=The%20syntax%20to%20assign%20a%20title%20to%20the,%28%29%20%23%20To%20change%20size%20matplotlib.pyplot.title%20%28label%2C%20fontsize%3DNone%29)
  - [20] [Seaborn Styles](https://www.educba.com/seaborn-styles/)
  - [21] [Make Better Bar Charts in Python using Pandas Plot](https://www.shanelynn.ie/bar-plots-in-python-using-pandas-dataframes/)
- - [22][Rotate Axis Labels in Matplotlib]( https://stackabuse.com/rotate-axis-labels-in-matplotlib/)
- - [] []()
- - [] []()
- - [] []()
+ - [22] [Rotate Axis Labels in Matplotlib]( https://stackabuse.com/rotate-axis-labels-in-matplotlib/)
+ - [23] [Best fit to a histogramplot Iris](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris)
+ - [24] [Matplotlib.axes.Axes.set_xlabel() in Python](https://www.geeksforgeeks.org/matplotlib-axes-axes-set_xlabel-in-python/)
+ - [25] [How to Adjust Spacing Between Matplotlib Subplots](https://www.statology.org/matplotlib-subplot-spacing/)
  - [] []() 
  - [] []()
  - [] []()
