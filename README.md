@@ -601,7 +601,8 @@ plt.savefig("Plot1_PieOfDistribution.png")
 
 ![Hist-1](https://github.com/Cecilia8989/pands-project/blob/main/Plot1_AverageBar.png)
 
-**Oservation:**As we can see, The species Virginica had higher mean values for Sepal length, Petal length, and Petal width compared to the other two species (Setosa and Versicolor). On the other hand, Setosa had the highest mean value for Sepal width.
+**Observation:**
+As we can see, The species Virginica had higher mean values for Sepal length, Petal length, and Petal width compared to the other two species (Setosa and Versicolor). On the other hand, Setosa had the highest mean value for Sepal width.
 
 <details>
     <summary> Code Explanation </summary>
@@ -649,6 +650,7 @@ Plot 3 reveals a clearer distinction between the different species of iris. Whil
 Plot 4 shows a clearer distinction between the different species than Plot 3. The overlap between Versicolor and Virginica is further reduced in Plot 4, and Setosa is again well separated from the other two species.
 
 To summarize, we can use Petal Length and Petal Width as the classification feature.
+Focusing on Petal lenght, as the KVE curve of Setosa ends roughly at 2.1,if Petal Length is less than 2.1, the species is most likely Iris Setosa. The point of intersection between the KVE curves of Virginica and Versicolor is roughly at 4.8. This mean that if Petal Length is between 2.1 and 4.8, the species is most likely Iris Versicolor. When the Petal Lenght is more than 4.8 then the specie is probably Virginica.
  
 <details>
     <summary> Code Explanation </summary>
