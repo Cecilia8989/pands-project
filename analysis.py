@@ -77,7 +77,7 @@ plt.title('Distribution of Species', color='Red', fontweight='bold', fontsize=20
 # save the plot as immage 
 plt.savefig("Plot1_PieOfDistribution.png")
 
-# Create a bar plot with the average of each categories per species [4]
+# Create a bar plot with the mean of each categories per species [4]
 # Compute the average of each feature for each class
 class_averages = df.groupby('Species').mean()
 # select a seaborn style 
@@ -89,22 +89,15 @@ plt. xlabel('Species', fontweight = 'bold', fontsize = 14)
 plt. ylabel('Average', fontweight = 'bold', fontsize = 14)
 # rotate the x values [5]
 plt.xticks(rotation=0)
-plt.savefig('Plot1_AverageBar')
-plt.show()
+plt.savefig('Plot2_AverageBar')
 
-#plt.bar(df.feature_names, average)
-#plt.title("Bar Chart Setosa Averages")
-#plt.ylabel("Average (in cm)")
-#plt.show()
+          
 
-
-            
-
-# Create a barplot of 
+'''# Create a barplot of 
 
 fig, axs= plt.subplots(nrows=1, ncols=2, figsize=(12,6))
 
-plt.show()
+plt.show()'''
 
 # Create a subplots of histograms with each speciel in different color and a KDE curve 
 
@@ -121,8 +114,8 @@ fig.subplots_adjust(hspace=0.4, top=0.85)
 fig.suptitle('Distribution of Iris Flower Features', fontsize=16, color='red', fontweight='bold')
 
 plt.tight_layout()
-plt.savefig("Subplot.png")
-#plt.show()
+plt.savefig("Subplot_feature_distribution.png")
+
 
 ## Plot Boxplots 
 
