@@ -592,6 +592,52 @@ plt.savefig("Plot1_PieOfDistribution.png")
 
 </p>
 </details
+ 
+  <details>
+
+ <h4>Histograms</h4>
+
+ First I would like to start with an histogram showing the mean of each categories for each species  
+
+![Hist-1](https://github.com/Cecilia8989/pands-project/blob/main/Plot1_AverageBar.png)
+
+As we can see, The species Virginica had higher mean values for Sepal length, Petal length, and Petal width compared to the other two species (Setosa and Versicolor). On the other hand, Setosa had the highest mean value for Sepal width.
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+The code computes the mean values for each species using the groupby() method and stores them in a variable called 'class_averages'. This variable is then used as the input for the plot() method to create a bar chart.
+It also set up the dark style from the [seaborn library [20]](https://www.educba.com/seaborn-styles/). 
+
+
+```python
+# Create a bar plot with the mean of each categories per species [4]
+# Compute the average of each feature for each class
+class_averages = df.groupby('Species').mean()
+# select a seaborn style 
+sns.set_style("dark")  
+```
+The code then creates a bar chart using the [plot() function [21]](https://www.shanelynn.ie/bar-plots-in-python-using-pandas-dataframes/)of the 'class_averages' dataset. The 'kind' parameter is set to 'bar' to specify that a bar chart should be created. The 'alpha' parameter is set to 0.7 to adjust the transparency of the bars.
+Finally, title and label name is defined.
+```python
+# Create the bar chart
+class_averages.plot(kind='bar', alpha=0.7)
+plt. title('Iris Feature Averages by Species', fontweight = 'bold', fontsize = 20)
+plt. xlabel('Species', fontweight = 'bold', fontsize = 14)
+plt. ylabel('Average', fontweight = 'bold', fontsize = 14)   
+```
+The code rotate the X labels using the [*xticks()* function [22]]( https://stackabuse.com/rotate-axis-labels-in-matplotlib/) and save the plot as the figure *Plot2_AverageBar*.
+```python
+# rotate the x values [5]
+plt.xticks(rotation=0)
+plt.savefig('Plot2_AverageBar')   
+```
+
+</p>
+</details
+
+   <details>
  <h4> </h4>
 
 
@@ -636,10 +682,17 @@ plt.savefig("Plot1_PieOfDistribution.png")
  - [17] [How to Make a Beautiful Donut Chart and Nested Donut Chart in Matplotlib](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea)
  - [18][Pandas Get Unique Values in Column](https://sparkbyexamples.com/pandas/pandas-find-unique-values-from-columns/)
  - [19][Matplotlib Pie Chart Tutorial]( https://pythonguides.com/matplotlib-title-font-size/#:~:text=The%20syntax%20to%20assign%20a%20title%20to%20the,%28%29%20%23%20To%20change%20size%20matplotlib.pyplot.title%20%28label%2C%20fontsize%3DNone%29)
+ - [20] [Seaborn Styles](https://www.educba.com/seaborn-styles/)
+ - [21] [Make Better Bar Charts in Python using Pandas Plot](https://www.shanelynn.ie/bar-plots-in-python-using-pandas-dataframes/)
+ - [22][Rotate Axis Labels in Matplotlib]( https://stackabuse.com/rotate-axis-labels-in-matplotlib/)
  - [] []()
  - [] []()
  - [] []()
- 
+ - [] []() 
+ - [] []()
+ - [] []()
+ - [] []()
+ - [] []()            
  - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
  - [Fig.2] [Machine Learning 101](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_features_extraction.php)
  
