@@ -99,23 +99,54 @@ fig, axs= plt.subplots(nrows=1, ncols=2, figsize=(12,6))
 
 plt.show()'''
 
-# Create a subplots of histograms with each speciel in different color and a KDE curve 
+'''# Create a subplots of histograms with each speciel in different color and a KDE curve 
 
-df['Species'] = pd.Categorical(df['Species'], categories=['Setosa', 'Versicolor', 'Virginica'])
-
+# make the 'species' column categorical to fix the order
+df['Species'] = pd.Categorical(df['Species'])
+# create a 2x2 subplot
 fig, axs = plt.subplots(2, 2, figsize=(12, 6))
+# initialize a counter for the subplot index
+i = 0
+# loop through the first 4 columns of the DataFrame and corresponding subplots
 for col, ax in zip(df.columns[:4], axs.flat):
-     sns.histplot(data=df, x=col, kde=True, hue='Species', common_norm=False, legend=ax==axs[0,0], ax=ax)
-     ax.set_title(col.capitalize())
-     ax.set_xlabel(None)
-     ax.set_ylabel('Count')
-
+    # create a histogram with a KDE curve for the current column, using the 'Species' column for the hue
+    sns.histplot(y=None, x=col, data=df, kde=True, hue='Species', common_norm=False, legend=ax==axs[0,0], ax=ax)
+    # set the title and the labels name
+    ax.set_title(f'Plot {i+1} - {col}')
+    ax.set_xlabel(None)
+    ax.set_ylabel('Count')
+    i = i+1
+# adjust the spacing between the subplots and set the figure title
+plt.tight_layout()
 fig.subplots_adjust(hspace=0.4, top=0.85)
 fig.suptitle('Distribution of Iris Flower Features', fontsize=16, color='red', fontweight='bold')
+# Save the figure 
+plt.savefig("Plot3_Subplot_Feature.png")''' 
 
+# ignore the warning message due to keyword on seaborn 
+import warnings
+warnings.filterwarnings("ignore", message="Pass the following variables as keyword args: x, y.")
+
+df['Species'] = pd.Categorical(df['Species'])
+# create a 2x2 subplot
+fig, axs = plt.subplots(2, 2, figsize=(12, 6))
+# initialize a counter for the subplot index
+i = 0
+# loop through the first 4 columns of the DataFrame and corresponding subplots
+for col, ax in zip(df.columns[:4], axs.flat):
+    # create a histogram with a KDE curve for the current column, using the 'Species' column for the hue
+    sns.histplot(data=df, x=col, y=None, kde=True, hue='Species', common_norm=False, legend=ax==axs[0,0], ax=ax)
+    # set the title and the labels name
+    ax.set_title(f'Plot {i+1} - {col}')
+    ax.set_xlabel(None)
+    ax.set_ylabel('Count')
+    i = i+1
+# adjust the spacing between the subplots and set the figure title
 plt.tight_layout()
-plt.savefig("Plot3_Subplot_Feature_Distribution.png")
-
+fig.subplots_adjust(hspace=0.4, top=0.85)
+fig.suptitle('Distribution of Iris Flower Features', fontsize=16, color='red', fontweight='bold')
+# Save the figure 
+plt.savefig("Plot3_Subplot_Feature.png")
 
 ## Plot Boxplots 
 
