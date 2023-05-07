@@ -114,7 +114,7 @@ fig.subplots_adjust(hspace=0.4, top=0.85)
 fig.suptitle('Distribution of Iris Flower Features', fontsize=16, color='red', fontweight='bold')
 
 plt.tight_layout()
-plt.savefig("Subplot_feature_distribution.png")
+plt.savefig("Plot3_Subplot_Feature_Distribution.png")
 
 
 ## Plot Boxplots 
