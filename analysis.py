@@ -91,42 +91,7 @@ plt. ylabel('Average', fontweight = 'bold', fontsize = 14)
 plt.xticks(rotation=0)
 plt.savefig('Plot2_AverageBar')
 
-          
-
-'''# Create a barplot of 
-
-fig, axs= plt.subplots(nrows=1, ncols=2, figsize=(12,6))
-
-plt.show()'''
-
-'''# Create a subplots of histograms with each speciel in different color and a KDE curve 
-
 # make the 'species' column categorical to fix the order
-df['Species'] = pd.Categorical(df['Species'])
-# create a 2x2 subplot
-fig, axs = plt.subplots(2, 2, figsize=(12, 6))
-# initialize a counter for the subplot index
-i = 0
-# loop through the first 4 columns of the DataFrame and corresponding subplots
-for col, ax in zip(df.columns[:4], axs.flat):
-    # create a histogram with a KDE curve for the current column, using the 'Species' column for the hue
-    sns.histplot(y=None, x=col, data=df, kde=True, hue='Species', common_norm=False, legend=ax==axs[0,0], ax=ax)
-    # set the title and the labels name
-    ax.set_title(f'Plot {i+1} - {col}')
-    ax.set_xlabel(None)
-    ax.set_ylabel('Count')
-    i = i+1
-# adjust the spacing between the subplots and set the figure title
-plt.tight_layout()
-fig.subplots_adjust(hspace=0.4, top=0.85)
-fig.suptitle('Distribution of Iris Flower Features', fontsize=16, color='red', fontweight='bold')
-# Save the figure 
-plt.savefig("Plot3_Subplot_Feature.png")''' 
-
-# ignore the warning message due to keyword on seaborn 
-import warnings
-warnings.filterwarnings("ignore", message="Pass the following variables as keyword args: x, y.")
-
 df['Species'] = pd.Categorical(df['Species'])
 # create a 2x2 subplot
 fig, axs = plt.subplots(2, 2, figsize=(12, 6))
@@ -142,25 +107,51 @@ for col, ax in zip(df.columns[:4], axs.flat):
     ax.set_ylabel('Count')
     i = i+1
 # adjust the spacing between the subplots and set the figure title
-plt.tight_layout()
-fig.subplots_adjust(hspace=0.4, top=0.85)
+fig.subplots_adjust(hspace=0.4, top=0.85, right=0.8)
 fig.suptitle('Distribution of Iris Flower Features', fontsize=16, color='red', fontweight='bold')
-# Save the figure 
+# adjust the layout and save the figure  
+plt.tight_layout()
 plt.savefig("Plot3_Subplot_Feature.png")
 
-## Plot Boxplots 
+# Create a supbplot with 4 scatterpoint comparing 2 features each 
+fig = plt.figure(figsize=(14,7))
+# Set the style of the plot to "darkgrid"
+sns.set_style("darkgrid")
+# Adjust the space between subplots and the top margin of the figure
+fig.subplots_adjust(hspace=0.4, top=0.85)
+# Add a  title to the entire figure
+plt.suptitle("Comparison between various Species", fontsize=18, color='red', fontweight='bold')
 
-plt.figure(figsize=(10,8))
-sns.set_style("whitegrid")
-plt.title('Comparing different species based on their sepal length and width', fontsize=16, color='red')
-plt.xlabel('Sepal Length (cm)', fontsize=14, color='blue')
-plt.ylabel('Sepal Width (cm)', fontsize=14, color='blue')
-sns.scatterplot(df['SepalLenght(cm)'], df['SepalWidth(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2")
-plt.legend(loc='upper right', fontsize=12)
-plt.savefig("Plot.png")
-#plt.show()'''
+# Create the first scatter plot comparing Sepal Length and Sepal Width
+plt.subplot(221)
+plt.title("Sepal Length and Width", fontsize=16, fontweight='bold')
+sns.scatterplot(x=df['SepalLenght(cm)'], y=df['SepalWidth(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2")
 
-'''plt.figure(figsize=(8,6))
-plt.title('Comparing different species based on their sepal length and width')    
-sns.scatterplot(df['SepalLenght(cm)'],df['SepalWidth(cm)'],hue =df['Species'],s=50)
-plt.show()'''   
+# Create the second scatter plot comparing Petal Length and Petal Width
+plt.subplot(222)
+plt.title("Petal Length and Width", fontsize=16, fontweight='bold')
+sns.scatterplot(x=df['PetalLenght(cm)'], y=df['PetalWidth(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)
+
+# Create the second scatter plot comparing Petal Length and Sepal Width
+plt.subplot(223)
+plt.title("Petal Length and Sepal Width", fontsize=16, fontweight='bold')
+sns.scatterplot(x=df['PetalLenght(cm)'], y=df['SepalLenght(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)
+
+# Create the second scatter plot comparing comparing Petal Width and Sepal Length
+plt.subplot(224)
+plt.title("Petal Widht and Sepal Lenght", fontsize=16, fontweight='bold')
+sns.scatterplot(x=df['PetalWidth(cm)'], y=df['SepalLenght(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)
+
+# Adjust the layout and save the figure 
+plt.tight_layout()
+plt.savefig("Plot4_Subplot_scatterpoint.png")
+
+# Set the context for the plot, adjusting the size of the labels and fonts
+sns.set_context("paper", rc={"axes.labelsize":20})
+sns.set_context("talk", font_scale=1.4)
+# Create a pairplot of the dataset
+sns.pairplot(df,hue='Species', height=4, palette = 'colorblind')
+# Add a title to the entire figure, adjust the top margin and save the figure 
+plt.suptitle("Scatterplots of all-paired attributes", fontsize=20, fontweight='bold', color = 'red')
+plt.subplots_adjust(top=0.95)
+plt.savefig("Plot5_pairplot.png")
