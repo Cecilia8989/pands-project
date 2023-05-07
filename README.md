@@ -601,7 +601,7 @@ plt.savefig("Plot1_PieOfDistribution.png")
 
 ![Hist-1](https://github.com/Cecilia8989/pands-project/blob/main/Plot1_AverageBar.png)
 
-As we can see, The species Virginica had higher mean values for Sepal length, Petal length, and Petal width compared to the other two species (Setosa and Versicolor). On the other hand, Setosa had the highest mean value for Sepal width.
+**Oservation:**As we can see, The species Virginica had higher mean values for Sepal length, Petal length, and Petal width compared to the other two species (Setosa and Versicolor). On the other hand, Setosa had the highest mean value for Sepal width.
 
 <details>
     <summary> Code Explanation </summary>
@@ -641,12 +641,21 @@ Next, the code plots histograms for each variable in the Iris dataset to show th
 
 ![Sub_1]()
 
+**Observation:** 
+Plot 1 and 2 show that there is a significant amount of overlap between the species on sepal length and sepal width. Both of this feature are not an effective Classification feature.
 
+Plot 3 reveals a clearer distinction between the different species of iris. While there is some partial overlap between the Versicolor and Virginica species, Setosa is distinctly separated from the other two. 
+
+Plot 4 shows a clearer distinction between the different species than Plot 3. The overlap between Versicolor and Virginica is further reduced in Plot 4, and Setosa is again well separated from the other two species.
+
+To summarize, we can use Petal Length and Petal Width as the classification feature.
+ 
 <details>
     <summary> Code Explanation </summary>
            <p>
 
 This line converts the *Species* column in the DataFrame *df* to a categorical variable. This is useful for setting the order of the categories in plots.
+ 
 ```python
 # make the 'species' column categorical to fix the order
 df['Species'] = pd.Categorical(df['Species'])
