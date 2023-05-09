@@ -172,12 +172,41 @@ ax = sns.heatmap(df. corr(),
             cmap ='inferno',
             annot_kws={'fontsize': 14, 'fontweight':'bold'},
             alpha=0.9)
-# Set the parameters for the y-axis tick labels
+# Set the parameters for the y-axis labels
 ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=14, fontweight='bold')
-# Set the parameters for the x-axis tick labels
+# Set the parameters for the x-axis labels
 ax.set_xticklabels(ax.get_xticklabels(), rotation=45, fontsize=14, fontweight='bold', rotation_mode='anchor', ha='right')
 # Set the title for the plot
 ax.set_title("Correlation Matrix Heatmap", fontsize=24, fontweight='bold', color = 'red' , pad=40)
 # Adjust the layout and save the plot 
 fig.tight_layout()
 fig.savefig('Plot6_heatmap.png')
+
+
+# Create a subplots with 4 Violin plots and 4 box plots
+# Create a figure with two subplots, one for each type of plot
+fig, axs = plt.subplots(2, len(df.columns)-1, figsize=(20,10)) 
+# For loop to create a violin plot for each variable in the first row of subplots
+for i in range (0, len(df.columns)-1):
+    sns.violinplot(x='Species', y=df.columns[i], data=df, ax=axs[0,i])
+    # Define the format of the labels
+    axs[0,i].set_ylabel(f'{df.columns[i]}', fontweight='bold')
+    axs[0,i].set_xlabel(None)
+# Create a box plot for each variable in the second row of subplots
+for i in range (0, len(df.columns)-1):
+    sns.boxplot(x='Species', y=df.columns[i], data=df, ax=axs[1,i])
+     # Define the format of the labels
+    axs[1,i].set_ylabel(f'{df.columns[i]}', fontweight='bold')
+    axs[1,i].set_xlabel('Species', fontweight='bold')
+
+# Add a title of the plot      
+plt.suptitle("Box and Violin plots for all the 4 variables", fontsize=20, fontweight='bold', color = 'red')
+# Adding space on the top for the title
+plt.subplots_adjust(top=0.95)  
+# adjsut the layout and save the figure
+plt.tight_layout() 
+plt.savefig('Plot7_BoxAndViolinPlot.png')
+
+
+
+
