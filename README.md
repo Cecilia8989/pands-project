@@ -804,6 +804,61 @@ plt.savefig("Plot5_all_paired attributes.png")
 </p>
 </details
 
+    <details>
+ <h3> Heat map </h3>
+
+
+A heatmap is a visual representation of data that uses color to show the relationships between numerical variables in a dataset. It's a useful technique for analyzing correlations between variables. It's a simple way to plot and understand correlations within variables [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/). 
+
+![HeatMap]()
+
+**Observation:** From the plot above we can see that petal width and petal length have high correlations. A good correlations result from:
+- Petal length and pepal width 
+- Petal Width and Sepal length 
+
+On the other hand Sepal width/Petal Length are the less correlated variables. 
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+The code creates a figure with a specified size using *plt.subplots*, and then uses *sns.heatmap* to create a heatmap of the given data [[29]](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels). Several arguments are used, such as *annot_kws* [[30]](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap)to specify the format of the annotations, *alpha* to define the transparency, and *cmap* [[31]](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/) to define the color map. *yticklabels* and *xticklabels* are also defined to allow for modification of the labels on the x and y axes. 
+```python
+# Create an heatmap
+
+# Create a figure with a specified size
+fig, ax = plt.subplots(figsize=(11, 10))
+# Create the heatmap with specified parameters
+ax = sns.heatmap(df. corr(), 
+            xticklabels=True,
+            yticklabels=True,
+            annot=True,
+            cmap ='inferno',
+            annot_kws={'fontsize': 14, 'fontweight':'bold'},
+            alpha=0.9)  
+```
+The code format first the X-axis and Y-axis. For both the axes the size, the weight and rotation are defined. For the X-axis a 45 grade rotation has been defined.
+Finally, A title of the graph is defined with the corresponding format. The *pad*  [[32]](https://stackoverflow.com/questions/66226320/how-do-you-add-padding-between-the-x-axis-tick-marks-not-tick-labels-and-the-x) argument is used to add some space between the title and the graph.
+
+```python
+# Set the parameters for the y-axis labels
+ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=14, fontweight='bold')
+# Set the parameters for the x-axis labels
+ax.set_xticklabels(ax.get_xticklabels(), rotation=45, fontsize=14, fontweight='bold', rotation_mode='anchor', ha='right')
+# Set the title for the plot
+ax.set_title("Correlation Matrix Heatmap", fontsize=24, fontweight='bold', color = 'red' , pad=40)
+```
+Finally the layout is adjusted and the figure saved.
+
+```python
+# Adjust the layout and save the plot 
+fig.tight_layout()
+fig.savefig('Plot6_heatmap.png')   
+```
+
+</p>
+</details
+ 
    <details>
  <h4> </h4>
 
@@ -858,14 +913,28 @@ plt.savefig("Plot5_all_paired attributes.png")
  - [26] [Tutorial - Python SUBPLOTS](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) 
  - [27] [Exploratory Data Analysis : Iris Dataset](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda)
  - [28] [How to change size of axis labels and values in seaborn pairsplot](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot)
+ - [29] [matplotlib and seaborn heatmap renders differently in Jupyter to savefig (labels cut off)](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels)
+ - [30] [Auto adjust font size in seaborn heatmap](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap)    
+ - [31] [Get Started With Colormaps (Cmap) in Python for Data Visualization Using Matplotlib (Updated 2023)](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/)
+ - [32] [How do you add padding between the x-axis tick marks (not tick labels) and the x-axis in Matplotlib and Seaborn](https://stackoverflow.com/questions/66226320/how-do-you-add-padding-between-the-x-axis-tick-marks-not-tick-labels-and-the-x)
  - [] []()
- - [] []()            
+ - [] []()    
+ - [] []()
+ - [] []()
  - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
  - [Fig.2] [Machine Learning 101](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_features_extraction.php)
  
  -[How to add images to README.md on GitHub?](https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github)
  -[How to customize Matplotlib plot titles color, position and fonts?]{ https://www.dataforeverybody.com/matplotlib-title-size-position-color/)
  -[Adding a main title to subplots in Matplotlib](https://www.skytowner.com/explore/adding_a_main_title_to_subplots_in_matplotlib)
+ -[Plt.show shows full graph but savefig is cropping the image](https://stackoverflow.com/questions/37427362/plt-show-shows-full-graph-but-savefig-is-cropping-the-image)
+ -[Seaborn Tutorial ](https://www.kaggle.com/code/saurav9786/seaborn-tutorial)
+ -[How to Change Font Size in Seaborn Plots (With Examples)](https://www.statology.org/seaborn-font-size/)
+ -[Matplotlib.pyplot.tight_layout() in Python](https://www.geeksforgeeks.org/matplotlib-pyplot-tight_layout-in-python/)
+ -[List of named colors](https://matplotlib.org/stable/gallery/color/named_colors.html) 
+ -[Choosing color palettes](https://seaborn.pydata.org/tutorial/color_palettes.html)  
+ -[]() 
+ -[]()             
 </p>
 </details>
  
