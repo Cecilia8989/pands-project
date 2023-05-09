@@ -79,7 +79,7 @@ The dataset is widely available and can be accessed freely on the [UCI website [
 </p>
 
 
-<h3> Import dataset </h3>
+### Import dataset 
 
 #### Import data set from an online location to a csv 
 
@@ -595,7 +595,7 @@ plt.savefig("Plot1_PieOfDistribution.png")
  
   <details>
 
- <h4>Histograms</h4>
+ <h3>Histograms</h3>
 
  First I would like to start with an histogram showing the mean of each categories for each species  
 
@@ -687,11 +687,119 @@ The figure have been then saved as *Plot3_Subplot_Feature*.
 
 ```python
 # adjust the spacing between the subplots and set the figure title
-plt.tight_layout()
-fig.subplots_adjust(hspace=0.4, top=0.85)
+fig.subplots_adjust(hspace=0.4, top=0.85, right=0.8)
 fig.suptitle('Distribution of Iris Flower Features', fontsize=16, color='red', fontweight='bold')
-# Save the figure 
+# adjust the layout and save the figure  
+plt.tight_layout()
 plt.savefig("Plot3_Subplot_Feature.png")
+```
+</p>
+</details
+ 
+  <details>
+ <h3> Scatter Plot </h3>
+
+We can now check relationship between features using the scatter plots. 
+In this case also, rather than plot different scatter points, I prefer group them in a subplot.
+
+The output is a subplot with 4 scatter plots each exploring the relationship between 2 variables:
+- Sepal Length and Width  
+- Petal Length and Width 
+- Sepal Length and Petal Width 
+- Petal Length and Sepal Width
+
+![Scatter]()
+
+Looking at the graphs the one showing the relationship between Petal Length and Width does indeed appear to show the most distinct differences between the three species. The Setosa species has the smallest petal lengths and widths, while the Virginica species has the largest, with the Versicolor species in between.
+
+Based on this relationship between features, there is very little overlap between the species. This means that petal length and width can be useful features for distinguishing between the three species.
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+
+The code creates a [subplot with four scatter plots [26]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) , comparing two features of the dataset for each subplot. It also sets the style of and the the size of the figure.
+
+```python
+# Create a supbplot with 4 scatterpoint comparing 2 features each 
+fig = plt.figure(figsize=(14,7))
+# Set the style of the plot to "darkgrid"
+sns.set_style("darkgrid")  
+```
+Space in the subplot are adjusted to make space for titles and it is defined the title of the entire figure.
+
+```python
+# Adjust the space between subplots and the top margin of the figure
+fig.subplots_adjust(hspace=0.4, top=0.85)
+# Add a  title to the entire figure
+plt.suptitle("Comparison between various Species", fontsize=18, color='red', fontweight='bold')   
+```
+The code creates four scatter plots, each comparing two different features (Sepal Length and Sepal Width, Petal Length and Petal Width, Petal Length and Sepal Width, and Petal Width and Sepal Length). The  subplot is created with *plt.subplot()*[[26]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) and the scatter plots are created using the *Seaborn scatterplot()* function, and the hue argument is set to the *"Species"*
+ [[27]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda). 
+```python
+# Create the first scatter plot comparing Sepal Length and Sepal Width
+plt.subplot(221)
+plt.title("Sepal Length and Width", fontsize=16, fontweight='bold')
+sns.scatterplot(x=df['SepalLenght(cm)'], y=df['SepalWidth(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2")
+
+# Create the second scatter plot comparing Petal Length and Petal Width
+plt.subplot(222)
+plt.title("Petal Length and Width", fontsize=16, fontweight='bold')
+sns.scatterplot(x=df['PetalLenght(cm)'], y=df['PetalWidth(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)
+
+# Create the second scatter plot comparing Petal Length and Sepal Width
+plt.subplot(223)
+plt.title("Petal Length and Sepal Width", fontsize=16, fontweight='bold')
+sns.scatterplot(x=df['PetalLenght(cm)'], y=df['SepalLenght(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)
+
+# Create the second scatter plot comparing comparing Petal Width and Sepal Length
+plt.subplot(224)
+plt.title("Petal Widht and Sepal Lenght", fontsize=16, fontweight='bold')
+sns.scatterplot(x=df['PetalWidth(cm)'], y=df['SepalLenght(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)  
+```
+Finally, the layout is adjusted and the plot saved as a figure.
+
+```python
+# Adjust the layout and save the figure 
+plt.tight_layout()
+plt.savefig("Plot4_Subplot_scatterpoint.png")  
+```
+
+</p>
+</details
+ 
+We can also make a scatter point of all-paired attributes by using *seaborn's pairplot* funcion. 
+
+![PairPlot]()
+
+**Observation:** The analysis suggests that there is a strong positive correlation between petal length and width columns, meaning that as one variable increases, the other variable tends to increase as well. Furthermore, the results indicate that Setosa has relatively low values for both petal length and width, while Versicolor has average values for both, and Virginica has high values for both. When it comes to sepal dimensions, the findings show that Setosa has high sepal width but low sepal length, Versicolor has average values for both sepal width and length, and Virginica has small width but large sepal length.
+ 
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+First, the code is adjusting the size of the labels and font, to have a plot more readable. This is done using the [sns.set_context() function [28]](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot).
+
+```python
+# Create a scatterplot of Scatterplots of all-paired attributes
+# Set the context for the plot, adjusting the size of the labels and fonts
+sns.set_context("paper", rc={"axes.labelsize":20})
+sns.set_context("talk", font_scale=1.4)  
+```
+The Plot is created using the [*seaborn's parirplot* [27]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda) functions. The *height* argument set the heigh of each plot and the *palette* argument sets the color palette to be used in the plot. In this case, it is set to *colorblind*.
+
+```python
+# Create a pairplot of the dataset
+sns.pairplot(df,hue='Species', height=4, palette = 'colorblind')  
+```
+This code adds a title to a figure and adjusts the top margin. It also saves the figure with the name *Plot5_all_paired attributes*.
+
+```python
+# Add a title to the entire figure, adjust the top margin and save the figure 
+plt.suptitle("Scatterplots of all-paired attributes", fontsize=20, fontweight='bold', color = 'red')
+plt.subplots_adjust(top=0.95)
+plt.savefig("Plot5_all_paired attributes.png")  
 ```
 </p>
 </details
@@ -747,9 +855,9 @@ plt.savefig("Plot3_Subplot_Feature.png")
  - [23] [Best fit to a histogramplot Iris](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris)
  - [24] [Matplotlib.axes.Axes.set_xlabel() in Python](https://www.geeksforgeeks.org/matplotlib-axes-axes-set_xlabel-in-python/)
  - [25] [How to Adjust Spacing Between Matplotlib Subplots](https://www.statology.org/matplotlib-subplot-spacing/)
- - [] []() 
- - [] []()
- - [] []()
+ - [26] [Tutorial - Python SUBPLOTS](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) 
+ - [27] [Exploratory Data Analysis : Iris Dataset](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda)
+ - [28] [How to change size of axis labels and values in seaborn pairsplot](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot)
  - [] []()
  - [] []()            
  - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
