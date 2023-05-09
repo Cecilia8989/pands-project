@@ -39,7 +39,7 @@ but rather to present your code and its output to them.
 </p>
 </details>
 
-### Table of content
+## Table of content
 * [Iris Flower Datases - introduction](https://github.com/Cecilia8989/pands-project/blob/main/README.md#iris-flower-datases---introduction)
 * [Import dataset](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-import-dataset-)
   - [Import data set from an online location to a csv](https://github.com/Cecilia8989/pands-project/blob/main/README.md#import-data-set-from-an-online-location-to-a-csv)
@@ -59,7 +59,7 @@ but rather to present your code and its output to them.
 * []()
 
 
-### Iris Flower Datases - introduction 
+## 1. Iris Flower Datases - introduction 
 The iris flower dataset is a well-known dataset in the field of data science, and it is often used to illustrate basic data analysis, visualization techniques and machine learning .  The Iris Dataset is considered as the "Hello World" for data science [[Fig.1]](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/).
 
 <p align="center">
@@ -79,9 +79,9 @@ The dataset is widely available and can be accessed freely on the [UCI website [
 </p>
 
 
-### Import dataset 
+## 2. Import dataset 
 
-#### Import data set from an online location to a csv 
+### Import data set from an online location to a csv 
 
 As a first task, The dataset need to be imported and transformed in a CSV [[3]](https://www.angela1c.com/projects/iris_project/downloading-iris/).
 I have:
@@ -125,14 +125,14 @@ print("iris_dataset.csv created")
 </p>
 </details>
 
-#### Import  the dataset from the CSV to the main script and adjust his format.
+### Import the dataset from the CSV to the main script and adjust his format.
 
 After saving the dataset from an online location as a CSV file in the same repository, we need to import it into our main script and adjust its format for further analysis. 
 
 To do this, we can begin by importing the necessary libraries at the start of our script. 
 We then import and define the dataset in the scrip and adjust the column/species names to a more readable format.  
 
-##### *Import the libraries*
+#### *Import the libraries*
 
 For this script we will use the the following libraries:
 
@@ -156,7 +156,7 @@ import seaborn as sns
 </p>
 </details>
 
-##### *Import the dataset from the CSV file*
+#### *Import the dataset from the CSV file*
 
 The first part of the script is to define and import the dataset from the CSV file. 
 This has been done using pandas library's read_csv() function [[5]](https://realpython.com/python-csv/#reading-csv-files-with-pandas). The dataset is stored in the DataFrame called 'df'.
@@ -172,7 +172,7 @@ df = pd.read_csv('iris_dataset.csv')
 </p>
 </details>
 
-##### *Change the series name*
+#### *Change the series name*
 
 The code then replaces the names of the three species with more friendly names using the replace() method of the Series object representing the "Species" column[[6]](https://datagy.io/pandas-replace-values/).
 The 'to_replace' parameter specifies the value to be replaced, while the 'value' parameter specifies the new value.
@@ -190,11 +190,11 @@ df["Species"].replace(to_replace="Iris-virginica", value="Virginica", inplace=Tr
 </p>
 </details>
 
-<h3> Getting information about the Dataset </h3>
+## Exploring the Dataset
 
 Once the dataset have been imported and formatted in the needed way, we will need to explore it and prepare it for analysis. This analysis of the information contained in the dataset, as requested, will be printed in a text file called **iris_analysis.txt** .
 
- <h4> Creation and introduction </h4>
+### Creation and introduction 
 
 This code opens a  file (and create it if is not already created) named iris_analysis.txt in write mode. The subsequent lines of code write an introduction to the file, including the author's name and the title of the project.
 
@@ -223,9 +223,9 @@ with open ('iris_analysis.txt', 'w') as f:
 ```
 
 </p>
-</details
-
-<h4> Check how appear the data in the Dataset </h4>
+</details>
+ 
+### Checking how appear the data in the Dataset 
 
 Now, We can take a look on how the Data-Set look like printing the first 5 lines of it. 
 
@@ -261,7 +261,7 @@ After, the 'df.head()' [[8]](https://www.geeksforgeeks.org/python-pandas-datafra
 </p>
 </details>
 
-<h4> Check Unique value </h4>
+### Unique values
 
 We can now print the unique values of the column *Species*. This has the double function to check no duplicates of *Species* have been entered and the replace of the Species names have been done correctly. 
 As we can see from the output, there are no other value apart of the three wanted *Species* and the rename of them have beene executed correctly.
@@ -297,7 +297,7 @@ Then, it writes these values in the text file using a for loop to display the va
 </p>
 </details>
 
-<h4> Checking missing values </h4>
+#### Missing values 
 
 The script will check if there are missing value or not. Missing values refer to the absence of data or information for one or more items or a whole unit. It can happen when the data is not provided, is lost or simply does not exist. We can see from the output that no column as any missing value. This was expected ad the iris dataset is know for not having missing values.
 
@@ -327,7 +327,7 @@ The script check missing value using the *isnull()* function [[9]](https://www.g
 </p>
 </details>
 
- <h4> Shape of the dataset </h4>
+### Shape of the dataset 
 
 The script prints the shape of the dataset, which is the number of rows and columns in the dataset. It also prints the size of the dataset, which is the product of the number of rows and columns, a list of all the column names in the dataset. 
 Finally it show the number on entries for each species.
@@ -366,11 +366,9 @@ Finally, the *value_counts()* [[9]](https://www.geeksforgeeks.org/exploratory-da
 ```
 
 </p>
-</details
+</details>
  
- <details>
-
- <h4> Data Type </h4>
+### Data Type 
  
 Next, the script checks the data type of each column in the dataset. It outputs this information in the text file, with each column name followed by its corresponding data type. As we can see, the data type of all columns is float except for the *Species* column, which is an object datatype that contains the species referred to in the measurements.
 
@@ -401,10 +399,9 @@ The code use the *dtypes* function to get the type of each columns [[13]](https:
 ```
 
 </p>
-</details
+</details>
 
- <details>
- <h4>Statistics</h4>
+### Statistics
 
 Some descriptive statistics for each column of the dataset are provided. It includes the count, mean, standard deviation, minimum, maximum, and quartile values for numeric columns. This is done through the *describe()* function [[14]](https://www.w3resource.com/pandas/dataframe/dataframe-describe.php).
 
@@ -435,11 +432,9 @@ The *describe()* function is used to calculate the count, mean, standard deviati
 ```
 
 </p>
-</details
- 
-<details>
- 
- <h4> Stetistics grouped by species</h4>
+</details>
+
+### Statistics grouped by species
 
 Next I want to check the statistics (mean, mediam, std, min and max) for each species.
 
@@ -494,10 +489,9 @@ This script loops through all columns except for the last one (the species , and
 ```
 
 </p>
-</details
+</details>
  
-<details>
- <h4> Quartiles per species </h4>
+### Quartiles per species 
 
 On the same path of the previous part of the script, I wanted check the quartiles focusing on each species.
 
@@ -530,11 +524,9 @@ This code calculates the quartiles for each species in the dataset using the *gr
 ```
 
 </p>
-</details
+</details>
  
- <details>
- 
- <h3> Distribution Pie </h3>
+## 3. Distribution Pie 
 
 As a first plot I would like to start with a pie chart to visualize the distribution of the different species in the dataset. This cake graphic show that each species has 50 entries in a donut format.
 
@@ -591,11 +583,9 @@ plt.savefig("Plot1_PieOfDistribution.png")
 ```
 
 </p>
-</details
- 
-  <details>
+</details>
 
- <h3>Histograms</h3>
+## 4. Histograms
 
  First I would like to start with an histogram showing the mean of each categories for each species  
 
@@ -694,10 +684,71 @@ plt.tight_layout()
 plt.savefig("Plot3_Subplot_Feature.png")
 ```
 </p>
-</details
+</details>
  
-  <details>
- <h3> Scatter Plot </h3>
+## 5. Violin and Box Plots 
+
+Other data visualization technique used to summarize and display the distribution of a dataset are the box pot and the violin pot.
+
+A box plot is a plot that shows the distribution of a dataset based on 5 keys values the minimum, the maximum value, the median (middle value), the first quartile (25%) and the third quartile (75%) value [[26]](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d). 
+
+A violin [[27]](https://mode.com/blog/violin-plot-examples/) is similar to a Box Plot but give more information about the the density estimated. It combines the feature of a box plot and a kernel density plot (which displays the density of the data). With a violin plot, you can quickly see where most of the data is concentrated and how spread out it is, as well as any peaks or unusual patterns in the distribution [[Fig.3]](http://www.sci.utah.edu/~kpotter/Library/Papers/hintze:1998:VPDT/index.html). 
+
+![box_plot](http://www.sci.utah.edu/~kpotter/Library/Papers/hintze:1998:VPDT/hintze_1998_VPDT_00.png)
+
+As both the visualization technique give similar information I have plot them together, one above the other:
+
+![BoxPlotVioninPlot()
+
+The most significant variables based on the graph above are petal length and petal width. For these variables, Setosa has a smaller range of values and less density compared to the other two species, while Versicolor has a moderate range and density. On the other hand, for sepal length and width, Virginica has a wider range of values and higher density compared to the other two species [[28]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda) .
+
+<details>
+    <summary> Code Explanation </summary>
+           <p>
+
+The code creates a figure with [two subplots, one for violin plots and one for box plots [29]](https://deepnote.com/@econdesousa/ViolinPlotvsBoxPlot-aadf0c53-53b4-4221-89b9-4388c54c68bd). The number of plot for each line of the subplot are based on the number of columns of the dataset less 1.
+
+```python
+# Create a subplots with 4 Violin plots and 4 box plots
+# Create a figure with two subplots, one for each type of plot
+fig, axs = plt.subplots(2, len(df.columns)-1, figsize=(20,10)) 
+```
+The first subplot is created. Through a for loop 4 Violin plots are created, with *sns.violinplot()* function, one for each variables and is grouped by *Species*.
+Additionally, the code also set up the y label and remove the x label. 
+
+```python
+# For loop to create a violin plot for each variable in the first row of subplots
+for i in range (0, len(df.columns)-1):
+    sns.violinplot(x='Species', y=df.columns[i], data=df, ax=axs[0,i])
+    # Define the format of the labels
+    axs[0,i].set_ylabel(f'{df.columns[i]}', fontweight='bold')
+    axs[0,i].set_xlabel(None)
+```
+The second subplot showing 4 Box plots, one for each variables grouped by *Species*, is created on a similar way using the *sns.boxplot()* function. Labels are also defined and in this case, the X label has been left to be shown.
+
+```python
+# Create a box plot for each variable in the second row of subplots
+for i in range (0, len(df.columns)-1):
+    sns.boxplot(x='Species', y=df.columns[i], data=df, ax=axs[1,i])
+     # Define the format of the labels
+    axs[1,i].set_ylabel(f'{df.columns[i]}', fontweight='bold')
+    axs[1,i].set_xlabel('Species', fontweight='bold')
+```
+Finally, the title have been added, the layout adjusted and the graph saved as a picture.
+ 
+```python
+# Add a title of the plot      
+plt.suptitle("Box and Violin plots for all the 4 variables", fontsize=20, fontweight='bold', color = 'red')
+# Adding space on the top for the title
+plt.subplots_adjust(top=0.95)  
+# adjsut the layout and save the figure
+plt.tight_layout() 
+plt.savefig('Plot7_BoxAndViolinPlot.png')
+```
+</p>
+ </details>
+  
+## 6. Scatter Plot 
 
 We can now check relationship between features using the scatter plots. 
 In this case also, rather than plot different scatter points, I prefer group them in a subplot.
@@ -719,7 +770,7 @@ Based on this relationship between features, there is very little overlap betwee
            <p>
 
 
-The code creates a [subplot with four scatter plots [26]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) , comparing two features of the dataset for each subplot. It also sets the style of and the the size of the figure.
+The code creates a [subplot with four scatter plots [30]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) , comparing two features of the dataset for each subplot. It also sets the style of and the the size of the figure.
 
 ```python
 # Create a supbplot with 4 scatterpoint comparing 2 features each 
@@ -735,8 +786,8 @@ fig.subplots_adjust(hspace=0.4, top=0.85)
 # Add a  title to the entire figure
 plt.suptitle("Comparison between various Species", fontsize=18, color='red', fontweight='bold')   
 ```
-The code creates four scatter plots, each comparing two different features (Sepal Length and Sepal Width, Petal Length and Petal Width, Petal Length and Sepal Width, and Petal Width and Sepal Length). The  subplot is created with *plt.subplot()*[[26]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) and the scatter plots are created using the *Seaborn scatterplot()* function, and the hue argument is set to the *"Species"*
- [[27]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda). 
+The code creates four scatter plots, each comparing two different features (Sepal Length and Sepal Width, Petal Length and Petal Width, Petal Length and Sepal Width, and Petal Width and Sepal Length). The  subplot is created with *plt.subplot()*[[30]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) and the scatter plots are created using the *Seaborn scatterplot()* function, and the hue argument is set to the *"Species"*
+ [[31]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda). 
 ```python
 # Create the first scatter plot comparing Sepal Length and Sepal Width
 plt.subplot(221)
@@ -767,7 +818,7 @@ plt.savefig("Plot4_Subplot_scatterpoint.png")
 ```
 
 </p>
-</details
+ </details>
  
 We can also make a scatter point of all-paired attributes by using *seaborn's pairplot* funcion. 
 
@@ -779,7 +830,7 @@ We can also make a scatter point of all-paired attributes by using *seaborn's pa
     <summary> Code Explanation </summary>
            <p>
 
-First, the code is adjusting the size of the labels and font, to have a plot more readable. This is done using the [sns.set_context() function [28]](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot).
+First, the code is adjusting the size of the labels and font, to have a plot more readable. This is done using the [sns.set_context() function [32]](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot).
 
 ```python
 # Create a scatterplot of Scatterplots of all-paired attributes
@@ -787,7 +838,7 @@ First, the code is adjusting the size of the labels and font, to have a plot mor
 sns.set_context("paper", rc={"axes.labelsize":20})
 sns.set_context("talk", font_scale=1.4)  
 ```
-The Plot is created using the [*seaborn's parirplot* [27]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda) functions. The *height* argument set the heigh of each plot and the *palette* argument sets the color palette to be used in the plot. In this case, it is set to *colorblind*.
+The Plot is created using the [*seaborn's parirplot* [28]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda) functions. The *height* argument set the heigh of each plot and the *palette* argument sets the color palette to be used in the plot. In this case, it is set to *colorblind*.
 
 ```python
 # Create a pairplot of the dataset
@@ -807,6 +858,7 @@ plt.savefig("Plot5_all_paired attributes.png")
     <details>
  <h3> Heat map </h3>
 
+The relationship between the variables can be explored using an heat map.
 
 A heatmap is a visual representation of data that uses color to show the relationships between numerical variables in a dataset. It's a useful technique for analyzing correlations between variables. It's a simple way to plot and understand correlations within variables [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/). 
 
@@ -822,7 +874,7 @@ On the other hand Sepal width/Petal Length are the less correlated variables.
     <summary> Code Explanation </summary>
            <p>
 
-The code creates a figure with a specified size using *plt.subplots*, and then uses *sns.heatmap* to create a heatmap of the given data [[29]](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels). Several arguments are used, such as *annot_kws* [[30]](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap)to specify the format of the annotations, *alpha* to define the transparency, and *cmap* [[31]](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/) to define the color map. *yticklabels* and *xticklabels* are also defined to allow for modification of the labels on the x and y axes. 
+The code creates a figure with a specified size using *plt.subplots*, and then uses *sns.heatmap* to create a heatmap of the given data [[32]](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels). Several arguments are used, such as *annot_kws* [[33]](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap)to specify the format of the annotations, *alpha* to define the transparency, and *cmap* [[34]](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/) to define the color map. *yticklabels* and *xticklabels* are also defined to allow for modification of the labels on the x and y axes. 
 ```python
 # Create an heatmap
 
@@ -838,7 +890,7 @@ ax = sns.heatmap(df. corr(),
             alpha=0.9)  
 ```
 The code format first the X-axis and Y-axis. For both the axes the size, the weight and rotation are defined. For the X-axis a 45 grade rotation has been defined.
-Finally, A title of the graph is defined with the corresponding format. The *pad*  [[32]](https://stackoverflow.com/questions/66226320/how-do-you-add-padding-between-the-x-axis-tick-marks-not-tick-labels-and-the-x) argument is used to add some space between the title and the graph.
+Finally, A title of the graph is defined with the corresponding format. The *pad*  [[35]](https://stackoverflow.com/questions/66226320/how-do-you-add-padding-between-the-x-axis-tick-marks-not-tick-labels-and-the-x) argument is used to add some space between the title and the graph.
 
 ```python
 # Set the parameters for the y-axis labels
@@ -910,19 +962,22 @@ fig.savefig('Plot6_heatmap.png')
  - [23] [Best fit to a histogramplot Iris](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris)
  - [24] [Matplotlib.axes.Axes.set_xlabel() in Python](https://www.geeksforgeeks.org/matplotlib-axes-axes-set_xlabel-in-python/)
  - [25] [How to Adjust Spacing Between Matplotlib Subplots](https://www.statology.org/matplotlib-subplot-spacing/)
- - [26] [Tutorial - Python SUBPLOTS](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) 
- - [27] [Exploratory Data Analysis : Iris Dataset](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda)
- - [28] [How to change size of axis labels and values in seaborn pairsplot](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot)
- - [29] [matplotlib and seaborn heatmap renders differently in Jupyter to savefig (labels cut off)](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels)
- - [30] [Auto adjust font size in seaborn heatmap](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap)    
- - [31] [Get Started With Colormaps (Cmap) in Python for Data Visualization Using Matplotlib (Updated 2023)](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/)
- - [32] [How do you add padding between the x-axis tick marks (not tick labels) and the x-axis in Matplotlib and Seaborn](https://stackoverflow.com/questions/66226320/how-do-you-add-padding-between-the-x-axis-tick-marks-not-tick-labels-and-the-x)
- - [] []()
- - [] []()    
+ - [26] [Exploratory Data Analysis of IRIS Data Set Using Python](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d)
+ - [27] [Violin Plots 101: Visualizing Distribution and Probability Density](https://mode.com/blog/violin-plot-examples/)
+ - [28] [Exploratory Data Analysis : Iris Dataset](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda)
+ - [29] [Data Visualization](https://deepnote.com/@econdesousa/ViolinPlotvsBoxPlot-aadf0c53-53b4-4221-89b9-4388c54c68bd)    
+ - [30] [Tutorial - Python SUBPLOTS](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) 
+ - [31] [How to change size of axis labels and values in seaborn pairsplot](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot)
+ - [32] [matplotlib and seaborn heatmap renders differently in Jupyter to savefig (labels cut off)](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels)
+ - [33] [Auto adjust font size in seaborn heatmap](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap)    
+ - [34] [Get Started With Colormaps (Cmap) in Python for Data Visualization Using Matplotlib (Updated 2023)](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/)
+ - [35] [How do you add padding between the x-axis tick marks (not tick labels) and the x-axis in Matplotlib and Seaborn](https://stackoverflow.com/questions/66226320/how-do-you-add-padding-between-the-x-axis-tick-marks-not-tick-labels-and-the-x)
+ 
  - [] []()
  - [] []()
  - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
  - [Fig.2] [Machine Learning 101](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_features_extraction.php)
+ - [Fig.3] [Violin Plots: A Box Plot-Density Trace Synergism.](http://www.sci.utah.edu/~kpotter/Library/Papers/hintze:1998:VPDT/index.html)
  
  -[How to add images to README.md on GitHub?](https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github)
  -[How to customize Matplotlib plot titles color, position and fonts?]{ https://www.dataforeverybody.com/matplotlib-title-size-position-color/)
@@ -934,7 +989,8 @@ fig.savefig('Plot6_heatmap.png')
  -[List of named colors](https://matplotlib.org/stable/gallery/color/named_colors.html) 
  -[Choosing color palettes](https://seaborn.pydata.org/tutorial/color_palettes.html)  
  -[]() 
- -[]()             
+ -[]()
+            
 </p>
 </details>
  
