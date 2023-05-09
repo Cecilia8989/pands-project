@@ -58,7 +58,8 @@ with open ('iris_analysis.txt', 'w') as f:
     f.write(str(df.groupby('Species').quantile([0.25, 0.50, 0.75]))+'\n\n')
 
 
-# create a pie chart to show the distribution of species - source [1], [2], [3]
+# create a pie chart to show the distribution of species
+
 # get the count of each species
 group_count= df['Species'].value_counts()
 # define the labels of the pie chart
@@ -77,7 +78,8 @@ plt.title('Distribution of Species', color='Red', fontweight='bold', fontsize=20
 # save the plot as immage 
 plt.savefig("Plot1_PieOfDistribution.png")
 
-# Create a bar plot with the mean of each categories per species [4]
+# Create a bar plot with the mean of each categories per species
+
 # Compute the average of each feature for each class
 class_averages = df.groupby('Species').mean()
 # select a seaborn style 
@@ -87,7 +89,7 @@ class_averages.plot(kind='bar', alpha=0.7)
 plt. title('Iris Feature Averages by Species', fontweight = 'bold', fontsize = 20)
 plt. xlabel('Species', fontweight = 'bold', fontsize = 14)
 plt. ylabel('Average', fontweight = 'bold', fontsize = 14)
-# rotate the x values [5]
+# rotate the x values
 plt.xticks(rotation=0)
 plt.savefig('Plot2_AverageBar')
 
@@ -146,6 +148,7 @@ sns.scatterplot(x=df['PetalWidth(cm)'], y=df['SepalLenght(cm)'], hue=df['Species
 plt.tight_layout()
 plt.savefig("Plot4_Subplot_scatterpoint.png")
 
+# Create a scatterplot of Scatterplots of all-paired attributes
 # Set the context for the plot, adjusting the size of the labels and fonts
 sns.set_context("paper", rc={"axes.labelsize":20})
 sns.set_context("talk", font_scale=1.4)
@@ -154,4 +157,27 @@ sns.pairplot(df,hue='Species', height=4, palette = 'colorblind')
 # Add a title to the entire figure, adjust the top margin and save the figure 
 plt.suptitle("Scatterplots of all-paired attributes", fontsize=20, fontweight='bold', color = 'red')
 plt.subplots_adjust(top=0.95)
-plt.savefig("Plot5_pairplot.png")
+plt.savefig("Plot5_all_paired attributes.png")
+
+
+# Create an heatmap
+
+# Create a figure with a specified size
+fig, ax = plt.subplots(figsize=(11, 10))
+# Create the heatmap with specified parameters
+ax = sns.heatmap(df. corr(), 
+            xticklabels=True,
+            yticklabels=True,
+            annot=True,
+            cmap ='inferno',
+            annot_kws={'fontsize': 14, 'fontweight':'bold'},
+            alpha=0.9)
+# Set the parameters for the y-axis tick labels
+ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=14, fontweight='bold')
+# Set the parameters for the x-axis tick labels
+ax.set_xticklabels(ax.get_xticklabels(), rotation=45, fontsize=14, fontweight='bold', rotation_mode='anchor', ha='right')
+# Set the title for the plot
+ax.set_title("Correlation Matrix Heatmap", fontsize=24, fontweight='bold', color = 'red' , pad=40)
+# Adjust the layout and save the plot 
+fig.tight_layout()
+fig.savefig('Plot6_heatmap.png')
