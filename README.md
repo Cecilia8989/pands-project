@@ -231,7 +231,7 @@ Author: Cecilia Pastore
     <summary> Code explanation </summary>
            <p>
 
-The code is creating a new file named "iris_analysis.txt" and opening it in write mode using the [*open()* function [8]](https://datagy.io/python-write-text-file/), with the file being assigned to the variable f. The code then writes some introductory information about the text file, including the project title, author name, and the name of the text file itself.
+The code is creating a new file named "iris_analysis.txt" and opening it in write mode using the [*open()* function [8]](https://datagy.io/python-write-text-file/), with the file being assigned to the variable *f*. The code then writes some introductory information about the text file, including the project title, author name, and the name of the text file itself.
 
 ```python
 # create the text file and write on them 
@@ -247,7 +247,7 @@ with open ('iris_analysis.txt', 'w') as f:
  
 ### Checking how appear the data in the Dataset 
 
-Now, We can take a look on how the Data-Set look like printing the first 5 lines of it. 
+Now, we can take a look on how the Data-Set look like printing the first 5 lines of it. 
 
 ```
 Project for the Subject Programming and Scripting 
@@ -268,6 +268,7 @@ Author: Cecilia Pastore
 <details>
     <summary> Code Explanation </summary>
            <p>
+            
 The [*df.head()* [9]](https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/) function have been used to display the first 5 rows of the df dataset, and then converts the output to a string using *str()*. The resulting string is then written to the file using the *f.write()* function.
 
 
@@ -282,8 +283,9 @@ The [*df.head()* [9]](https://www.geeksforgeeks.org/python-pandas-dataframe-seri
 
 ### Unique values
 
-We can now print the unique values of the column *Species*. This has the double function to check no duplicates of *Species* have been entered and the replace of the Species names have been done correctly. 
-As we can see from the output, there are no other value apart of the three wanted *Species* and the rename of them have beene executed correctly.
+We can now print the unique values of the column *Species*. This has the double function to check no duplicates of *Species* have been entered and the replace of the * *
+*Species* names have been done correctly. 
+As we can see from the output, there are no other values apart of the three wanted *Species* and the rename of them have beene executed correctly.
 
 ```
 ==== Print unique value of species ==== 
@@ -299,7 +301,7 @@ Virginica
     <summary> Code Explanation </summary>
            <p>
 
-The script defines a variable *unique_species* that contains the unique values in the *Species* column of the dataset. I would have been to do it through the use of *drop.duplicate()* function [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/) or through the *unique()* function [[10]](https://www.projectpro.io/recipes/list-unique-values-in-pandas-dataframe). I chose to unique function to give a more tidy looking on the text file. 
+The script defines a variable *unique_species* that contains the unique values in the *Species* column of the dataset. I would have been to do it through the use of [*drop.duplicate()* function [10]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/) or through the [*unique()* function [11]](https://www.projectpro.io/recipes/list-unique-values-in-pandas-dataframe). I chose to unique function to give a more tidy looking on the text file. 
 Then, it writes these values in the text file using a for loop to display the values in a more readable format. The output is a list of unique species names, with each species name on a separate line, and the text "Species" written at the beginning to clarify the content of the list.
 
 ```python
@@ -318,7 +320,7 @@ Then, it writes these values in the text file using a for loop to display the va
 
 #### Missing values 
 
-The script will check if there are missing value or not. Missing values refer to the absence of data or information for one or more items or a whole unit. It can happen when the data is not provided, is lost or simply does not exist. We can see from the output that no column as any missing value. This was expected ad the iris dataset is know for not having missing values.
+The script will check if there are [missing value or not [10]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/). Missing values refer to the absence of data or information for one or more items or a whole unit. It can happen when the data is not provided, is lost or simply does not exist. We can see from the output that no column as any missing value. This was expected ad the iris dataset is know to not have them.
 
 ```
 ==== Checking missing value ==== 
@@ -335,7 +337,7 @@ dtype: int64
     <summary> Code Explanation </summary>
            <p>
 
-The script check missing value using the *isnull()* function [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/).
+The script check missing value using the [*isnull()* function [10]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/).
 
 ```python
     # checking missing value
@@ -348,9 +350,9 @@ The script check missing value using the *isnull()* function [[9]](https://www.g
 
 ### Shape of the dataset 
 
-The script prints the shape of the dataset, which is the number of rows and columns in the dataset. It also prints the size of the dataset, which is the product of the number of rows and columns, a list of all the column names in the dataset. 
+The script prints the shape of the dataset, which is the number of rows and columns in the dataset. It also prints the size of the dataset, which is the product of the number of rows and columns and a list of all the column names in the dataset. 
 Finally it show the number on entries for each species.
-As we can see we have 150 lines, 5 columns for a total size of 750 entries. Each species has 50 entries .
+As we can see we have 150 lines, 5 columns for a total size of 750 entries. Each specie has 50 entries.
 
 ```
 ==== Shape of the dataset ==== 
