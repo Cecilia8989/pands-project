@@ -566,7 +566,7 @@ group_count= df['Species'].value_counts()
 # define the labels of the pie chart
 labels= df['Species'].unique()
 ```
-The script utilizes the *pie()* function from the Matplotlib library to generate a pie chart. The *group_count* and *labels* variables are defined to plot the chart and passed as arguments in the pie() function. The script also defines the size and position of the chart, as well as the formatting of the percentage labels and the appearance of the wedges. 
+The script utilizes the *pie()* function from the Matplotlib library to generate a pie chart. The *group_count* and *labels* variables are defined to plot the chart and passed as arguments in the *pie()* function. The script also defines the size and position of the chart, as well as the formatting of the percentage labels and the appearance of the wedges. 
 
 ```python
 # set the parameters of the pie chart
@@ -591,7 +591,7 @@ fig = plt.gcf()
 fig.gca().add_artist(centre_circle)
 plt.axis('equal')
 ```
-Finally a title is defined and the plot is saved as a figure.
+Finally a title, and is format, is defined and the plot is saved as a figure.
 
 ```python
 # print a title
