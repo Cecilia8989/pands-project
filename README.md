@@ -84,7 +84,7 @@ The programs will create in the same repository a CSV file, a text file and seve
 
 
 
-## 1. Iris Flower Datases - introduction 
+## 2. Iris Flower Datases 
 The iris flower dataset is a well-known dataset in the field of data science, and it is often used to illustrate basic data analysis, visualization techniques and machine learning .  The Iris Dataset is considered as the "Hello World" for data science [[Fig.1]](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/).
 
 <p align="center">
@@ -93,16 +93,15 @@ The iris flower dataset is a well-known dataset in the field of data science, an
 
 The dataset contains measurements of the sepal length, sepal width, petal length, and petal width for 150 iris flowers belonging to three different species: Iris setosa, Iris versicolor, and Iris virginica. Fifty samples are collected for each species [[Fig.2]](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_features_extraction.php).
 
+<p align="center">
+  <img src=https://www.bogotobogo.com/python/scikit-learn/images/features/iris-data-set.png>
+</p>
+
 The iris flower dataset was originally collected by the botanist Edgar Anderson in the 1930s and later popularized by the statistician Ronald Fisher in his seminal paper on discriminant analysis. The dataset is sometimes referred to as Anderson's Iris dataset, as Anderson collected it to quantify the morphological variations among three closely related Iris species. Anderson ensured that all of the samples were collected from the same pasture on the Gaspé Peninsula, on the same day, and measured at the same time by the same person using the same apparatus [[1]](https://rpubs.com/AjinkyaUC/Iris_DataSet).
 
 Since then, the dataset has become a classic example in the field of data science, and it is frequently used in introductory courses and textbooks. It is a simple and well-understood dataset, making it a popular choice for teaching and research purposes, providing an excellent opportunity to explore different aspects of data analysis and visualization.
 
 The dataset is widely available and can be accessed freely on the [UCI website [2]](https://archive.ics.uci.edu/ml/datasets/iris).
-
-<p align="center">
-  <img src=https://www.bogotobogo.com/python/scikit-learn/images/features/iris-data-set.png>
-</p>
-
 
 ## 2. Import dataset 
 
