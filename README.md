@@ -665,7 +665,7 @@ plt.savefig('Plot2_AverageBar')
  
 Next, I want the code plot an histogram for each variable separately to show the distribution of values for each species. Instead of creating four separate graphs, the code combine them into one figure using subplots. The histogram for each variable is created using seaborn's [*histplot()* method [26]](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris), which includes a KDE curve (kernel density estimation) and shows the distribution of values for each species using a different color. 
 
-![Sub_1]()
+![Sub_1](https://github.com/Cecilia8989/pands-project/blob/main/Plot3_Subplot_FeaturesBar.png)
 
 **Observation:** 
 Plot 1 and 2 show that there is a significant amount of overlap between the species on sepal length and sepal width. Both of this feature are not an effective Classification feature.
@@ -733,7 +733,7 @@ A [violin [30]](https://mode.com/blog/violin-plot-examples/) is similar to a Box
 
 As both the visualization technique give similar information I have plot them together, one above the other:
 
-![BoxPlotVioninPlot()
+![BoxPlotVioninPlot(https://github.com/Cecilia8989/pands-project/blob/main/Plot4_BoxAndViolinPlot.png)
 
 **Observation:** The most significant variables, based on the graph above are petal length and petal width. For these variables, Setosa has a smaller range of values and less density compared to the other two species, while Versicolor has a moderate range and density. On the other hand, for sepal length and width, Virginica has a wider range of values and higher density compared to the other two species [[31]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda).
  
@@ -802,7 +802,7 @@ The output is a subplot with 4 scatter plots each exploring the relationship bet
 - Sepal Length and Petal Width 
 - Petal Length and Sepal Width
 
-![Scatter]()
+![Scatter](https://github.com/Cecilia8989/pands-project/blob/main/Plot5_Subplot_scatterpoint.png)
 
 Looking at the above figure, the scatter plot showing the relationship between Petal Length and Petal Width is the most useful in distinguishing between the three species of iris as they show distinct differences between petal sizes. Setosa species has the smallest petal lengths and widths, while the Virginica species has the largest, and the Versicolor species falls in between.
 
@@ -866,7 +866,7 @@ plt.savefig("Plot5_Subplot_scatterpoint.png")
  
 A Pair plot is a useful tool for visualizing the relationships between variables. It produce a matrix of scatter plots that show the relationship between each pair of variables in a dataset. It is create through the *sns.pairplot()* method.
  
-![PairPlot]()
+![PairPlot](https://github.com/Cecilia8989/pands-project/blob/main/Plot6_all_paired%20attributes.png)
 
 **Observation:** The analysis suggests that there is a strong positive correlation between petal length and Petal width, meaning that as one variable increases, the other variable tends to increase as well. Furthermore, the results indicate that Setosa has relatively low values for both petal length and width, while Versicolor has average values for both, and Virginica has high values for both. When it comes to sepal dimensions, the findings show that Setosa has high sepal width but low sepal length, Versicolor has average values for both sepal width and length, and Virginica has small width but large sepal length.
  
@@ -907,7 +907,7 @@ Finally, the correlation between the variables can be explored using an heat map
 
 An heat map is a visual representation of data that uses color to show the relationships between numerical variables in a dataset. It's a simple way to plot and understand [correlations within variables [10]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/). 
 
-![HeatMap]()
+![HeatMap](https://github.com/Cecilia8989/pands-project/blob/main/Plot7_heatmap.png)
 
 **Observation:** 
  From the plot above we can see that petal width and petal length have an high correlations. 
