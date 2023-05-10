@@ -57,38 +57,16 @@ but rather to present your code and its output to them.
    * [Statistics]()
    * [Statistics grouped by species]()
    * [Quartiles per species]()
-3. []()
-   * []()
-   * []()
-   * []()
-   * []()
-4. []()
-   * []()
-   * []()
-   * []()
-   * []()
-3. []()
-   * []()
-   * []()
-   * []()
-   * []()
-* [Iris Flower Datases - introduction](https://github.com/Cecilia8989/pands-project/blob/main/README.md#iris-flower-datases---introduction)
-* [Import dataset](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-import-dataset-)
-  - [Import data set from an online location to a csv](https://github.com/Cecilia8989/pands-project/blob/main/README.md#import-data-set-from-an-online-location-to-a-csv)
-  - [Import  the dataset from the CSV to the main script and adjust his format](https://github.com/Cecilia8989/pands-project/blob/main/README.md#import--the-dataset-from-the-csv-to-the-main-script-and-adjust-his-format)
-* [Getting information about the Dataset](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-getting-information-about-the-dataset-)
-  - [Creation and introduction]()
-  - [Check how appear the data in the Dataset](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-check-how-appear-the-data-in-the-dataset-)
-  - [Check Unique value](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-check-unique-value-)
-  - [Checking missing values](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-checking-missing-values-)
-  - [Shape of the dataset](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-shape-of-the-dataset-)
-  - [Data Type](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-data-type-)
-  - [Statistics](https://github.com/Cecilia8989/pands-project/blob/main/README.md#statistics)
-  - [Statistics grouped by species](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-stetistics-grouped-by-species)
-  - [Quartiles per species](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-quartiles-per-species-)
-* []()
-* []()
-* []()
+5. [Univariate analysis]()
+   * [Distribution Pie]()
+   * [Histograms]()
+   * [Violin and Box Plots]()
+6. [Bivariate analysis]()
+   * [Scatter Plot]()
+   * [Pair Plot]()
+   * [Heat map]()
+7. [Source]()
+
 
 ## 1. Introduction 
 
@@ -808,7 +786,7 @@ plt.savefig('Plot4_BoxAndViolinPlot.png')
 </p> 
  </details>
 
-## 6. Bi-variate analysis
+## 6. Bivariate analysis
 
 Bivariate analysis involve the study of two variables simultaneously to establish a relationship or correlation between them. The main objective of bivariate analysis is to determine whether there is any association between the two variables and the strength and direction of that association.   
 
@@ -982,7 +960,7 @@ fig.savefig('Plot6_heatmap.png')
 </p>
 </details>
  
- ## Sources
+ ## 7. Sources
  <details>
     <summary>References</summary>
            <p>
