@@ -343,7 +343,7 @@ Then, it writes these values in the text file using a for loop to display the va
 </p>
 </details>
 
-#### Missing values 
+### Missing values 
 
 The script will check if there are [missing value or not [10]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/). Missing values refer to the absence of data or information for one or more items or a whole unit. It can happen when the data is not provided, is lost or simply does not exist. We can see from the output that no column as any missing value. This was expected ad the iris dataset is know to not have them.
 
