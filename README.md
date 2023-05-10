@@ -725,7 +725,9 @@ As both the visualization technique give similar information I have plot them to
 
 ![BoxPlotVioninPlot()
 
-**Observation:** The most significant variables based on the graph above are petal length and petal width. For these variables, Setosa has a smaller range of values and less density compared to the other two species, while Versicolor has a moderate range and density. On the other hand, for sepal length and width, Virginica has a wider range of values and higher density compared to the other two species [[31]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda).
+**Observation:** The most significant variables, based on the graph above are petal length and petal width. For these variables, Setosa has a smaller range of values and less density compared to the other two species, while Versicolor has a moderate range and density. On the other hand, for sepal length and width, Virginica has a wider range of values and higher density compared to the other two species [[31]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda).
+ 
+he new set of plots supports the previous conclusion that Petal Length and Petal Width are the most significant variables for distinguishing between the three species of iris.
 
 <details>
     <summary> Code Explanation </summary>
@@ -850,19 +852,21 @@ plt.savefig("Plot5_Subplot_scatterpoint.png")
 </p>
  </details>
 
-### PairPlot
+### Pair Plot
  
-We can also make a scatter point of all-paired attributes by using *seaborn's pairplot* funcion. 
-
+A Pair plot is a useful tool for visualizing the relationships between variables. It produce a matrix of scatter plots that show the relationship between each pair of variables in a dataset. It is create through the *sns.pairplot()* method.
+ 
 ![PairPlot]()
 
-**Observation:** The analysis suggests that there is a strong positive correlation between petal length and width columns, meaning that as one variable increases, the other variable tends to increase as well. Furthermore, the results indicate that Setosa has relatively low values for both petal length and width, while Versicolor has average values for both, and Virginica has high values for both. When it comes to sepal dimensions, the findings show that Setosa has high sepal width but low sepal length, Versicolor has average values for both sepal width and length, and Virginica has small width but large sepal length.
+**Observation:** The analysis suggests that there is a strong positive correlation between petal length and Petal width, meaning that as one variable increases, the other variable tends to increase as well. Furthermore, the results indicate that Setosa has relatively low values for both petal length and width, while Versicolor has average values for both, and Virginica has high values for both. When it comes to sepal dimensions, the findings show that Setosa has high sepal width but low sepal length, Versicolor has average values for both sepal width and length, and Virginica has small width but large sepal length.
+ 
+In summary, even when considering the relationship between all variables, the conclusion of the previous set of graphs is confirmed. Petal length and petal width are the most useful features for distinguishing between the three species.
  
 <details>
     <summary> Code Explanation </summary>
            <p>
 
-First, the code is adjusting the size of the labels and font, to have a plot more readable. This is done using the [sns.set_context() function [32]](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot).
+First, the code is adjusting font and the size of the labels, to have a plot more readable. This is done using the [sns.set_context() function [35]](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot).
 
 ```python
 # Create a scatterplot of Scatterplots of all-paired attributes
@@ -870,7 +874,7 @@ First, the code is adjusting the size of the labels and font, to have a plot mor
 sns.set_context("paper", rc={"axes.labelsize":20})
 sns.set_context("talk", font_scale=1.4)  
 ```
-The Plot is created using the [*seaborn's parirplot* [28]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda) functions. The *height* argument set the heigh of each plot and the *palette* argument sets the color palette to be used in the plot. In this case, it is set to *colorblind*.
+The Plot is created using the [*sns.parirplot* [28]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda) function. The *height* argument set the heigh of each plot and the *palette* argument sets the color palette to be used in the plot. In this case, it is set to *colorblind*.
 
 ```python
 # Create a pairplot of the dataset
