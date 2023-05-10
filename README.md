@@ -41,6 +41,8 @@ but rather to present your code and its output to them.
 
 ## Table of content
 1. [Introduction](https://github.com/Cecilia8989/pands-project/blob/main/README.md#1-introduction)
+   * [Technologies](https://github.com/Cecilia8989/pands-project/blob/main/README.md#technologies)
+   * [Running the Script](https://github.com/Cecilia8989/pands-project/blob/main/README.md#running-the-script)
 * [Iris Flower Datases - introduction](https://github.com/Cecilia8989/pands-project/blob/main/README.md#iris-flower-datases---introduction)
 * [Import dataset](https://github.com/Cecilia8989/pands-project/blob/main/README.md#-import-dataset-)
   - [Import data set from an online location to a csv](https://github.com/Cecilia8989/pands-project/blob/main/README.md#import-data-set-from-an-online-location-to-a-csv)
