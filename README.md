@@ -154,17 +154,15 @@ print("iris_dataset.csv created")
 After saving the dataset from an online location as a CSV file in the same repository, we need to import it into our main script and adjust its format for further analysis. 
 
 To do this, we can begin by importing the necessary libraries at the start of our script. 
-We then import and define the dataset in the scrip and adjust the column/species names to a more readable format.  
+We then import and define the dataset in the scrip and adjust the species names to a more readable format.  
 
 #### *Import the libraries*
 
 For this script we will use the the following libraries:
 
-- pandas: a library for data manipulation and analysis
-- NumPy: a library for numerical operations on arrays and matrices
-- Matplotlib.pyplot: a plotting library for creating plot
-- PyLab: a library that combines Matplotlib with NumPy functionality
-- Seaborn: a library for creating informative and attractive statistical graphics
+- Pandas: a library for data manipulation and analysis
+- Matplotlib.pyplot: a library for creating plot
+- [Seaborn [5]]( https://seaborn.pydata.org/tutorial/introduction): a library for creating informative and attractive statistical graphics
 
 <details>
     <summary> Code </summary>
@@ -172,10 +170,8 @@ For this script we will use the the following libraries:
 ```python
 # import needed libraries 
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
-import pylab as pl
-import seaborn as sns 
+import seaborn as sns
 ```  
 </p>
 </details>
@@ -183,7 +179,7 @@ import seaborn as sns
 #### *Import the dataset from the CSV file*
 
 The first part of the script is to define and import the dataset from the CSV file. 
-This has been done using pandas library's read_csv() function [[5]](https://realpython.com/python-csv/#reading-csv-files-with-pandas). The dataset is stored in the DataFrame called 'df'.
+This has been done using pandas library's [*read_csv() function* [6]](https://realpython.com/python-csv/#reading-csv-files-with-pandas). The dataset is stored in the DataFrame called *df*.
 
 <details>
     <summary> Code </summary>
@@ -198,8 +194,8 @@ df = pd.read_csv('iris_dataset.csv')
 
 #### *Change the series name*
 
-The code then replaces the names of the three species with more friendly names using the replace() method of the Series object representing the "Species" column[[6]](https://datagy.io/pandas-replace-values/).
-The 'to_replace' parameter specifies the value to be replaced, while the 'value' parameter specifies the new value.
+The code then replaces the names of the three species with more friendly names using the [*replace() method* [7]](https://datagy.io/pandas-replace-values/) of the Series object representing the "Species" column.
+The *to_replace* parameter specifies the value to be replaced, while the *value* parameter specifies the new value.
 
 <details>
     <summary> Code </summary>
