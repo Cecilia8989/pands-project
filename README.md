@@ -889,28 +889,29 @@ plt.subplots_adjust(top=0.95)
 plt.savefig("Plot5_all_paired attributes.png")  
 ```
 </p>
-</details
+ </details>
+  
+### Heat map 
 
-    <details>
- <h3> Heat map </h3>
+Finally, the correlation between the variables can be explored using an heat map.
 
-The relationship between the variables can be explored using an heat map.
-
-A heatmap is a visual representation of data that uses color to show the relationships between numerical variables in a dataset. It's a useful technique for analyzing correlations between variables. It's a simple way to plot and understand correlations within variables [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/). 
+An heat map is a visual representation of data that uses color to show the relationships between numerical variables in a dataset. It's a simple way to plot and understand [correlations within variables [10]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/). 
 
 ![HeatMap]()
 
-**Observation:** From the plot above we can see that petal width and petal length have high correlations. A good correlations result from:
+**Observation:** 
+ From the plot above we can see that petal width and petal length have an high correlations. 
+ A good correlations result from:
 - Petal length and pepal width 
 - Petal Width and Sepal length 
 
-On the other hand Sepal width/Petal Length are the less correlated variables. 
+On the other hand, Sepal width/Petal Length are the less correlated variables. 
 
 <details>
     <summary> Code Explanation </summary>
            <p>
 
-The code creates a figure with a specified size using *plt.subplots*, and then uses *sns.heatmap* to create a heatmap of the given data [[32]](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels). Several arguments are used, such as *annot_kws* [[33]](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap)to specify the format of the annotations, *alpha* to define the transparency, and *cmap* [[34]](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/) to define the color map. *yticklabels* and *xticklabels* are also defined to allow for modification of the labels on the x and y axes. 
+The code creates a figure with a specified size using *plt.subplots*, and then uses [*sns.heatmap* [36]](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels)to create a heatmap of the given data . Several arguments are used, such as [*annot_kws* [37]](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap) to specify the format of the annotations, *alpha* to define the transparency, and [*cmap* [38]](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/) to define the color map. *yticklabels* and *xticklabels* are also defined to allow for modification of the labels on the x and y axes. 
 ```python
 # Create an heatmap
 
@@ -925,8 +926,8 @@ ax = sns.heatmap(df. corr(),
             annot_kws={'fontsize': 14, 'fontweight':'bold'},
             alpha=0.9)  
 ```
-The code format first the X-axis and Y-axis. For both the axes the size, the weight and rotation are defined. For the X-axis a 45 grade rotation has been defined.
-Finally, A title of the graph is defined with the corresponding format. The *pad*  [[35]](https://stackoverflow.com/questions/66226320/how-do-you-add-padding-between-the-x-axis-tick-marks-not-tick-labels-and-the-x) argument is used to add some space between the title and the graph.
+The code define the format for the X-axis and Y-axis. For both the axes the size, the weight and rotation are defined. For the X-axis a 45 grade rotation have been defined.
+Finally, A title of the graph is defined with the corresponding format. The [*pad* [39]](https://stackoverflow.com/questions/66226320/how-do-you-add-padding-between-the-x-axis-tick-marks-not-tick-labels-and-the-x) argument is used to add some space between the title and the graph.
 
 ```python
 # Set the parameters for the y-axis labels
@@ -945,76 +946,65 @@ fig.savefig('Plot6_heatmap.png')
 ```
 
 </p>
-</details
+</details>
  
-   <details>
- <h4> </h4>
-
-
-
-```
-
-```
-
-<details>
-    <summary> Code Explanation </summary>
+ ## Sources
+    <summary>References</summary>
            <p>
-
-
-```python
-   
-```
-
-</p>
-</details
- 
- 
-<details>
-    <summary>Sources</summary>
-           <p>
-
- - [1] [rpubs](https://rpubs.com/AjinkyaUC/Iris_DataSet)
+- [1] [rpubs](https://rpubs.com/AjinkyaUC/Iris_DataSet)
  - [2] [UCI Machine Learning repository](https://archive.ics.uci.edu/ml/datasets/iris)
  - [3] [Importing and viewing the Iris dataset using pandas](https://www.angela1c.com/projects/iris_project/downloading-iris/) 
  - [4] [Pandas Tutorial](https://www.w3schools.com/python/pandas/default.asp)
- - [5] [Reading and Writing CSV Files in Python](https://realpython.com/python-csv/#reading-csv-files-with-pandas)
- - [6] [Pandas replace() – Replace Values in Pandas Dataframe](https://datagy.io/pandas-replace-values/)
- - [7] [How to Use Python to Write a Text File (.txt)](https://datagy.io/python-write-text-file/)         
- - [8] [Python | Pandas Dataframe/Series.head() method](https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/)
- - [9] [Exploratory Data Analysis on Iris Dataset](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/)         
- - [10] [How to list unique values in a Pandas DataFrame?](https://www.projectpro.io/recipes/list-unique-values-in-pandas-dataframe) 
- - [11] [How to use .format in python to print out the data shape](https://stackoverflow.com/questions/58008120/how-to-use-format-in-python-to-print-out-the-data-shape) 
- - [12] [Pandas Join DataFrames on Columns](https://sparkbyexamples.com/pandas/pandas-join-dataframes-on-columns/) 
- - [13] [pandas.DataFrame.dtypes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html)
- - [14] [Pandas DataFrame: describe() function](https://www.w3resource.com/pandas/dataframe/dataframe-describe.php)
- - [15] [How to Generate a Data Summary in Python](https://learnpython.com/blog/how-to-summarize-data-in-python/)
- - [16] [How does pandas calculate quartiles?](https://stackoverflow.com/questions/55009203/how-does-pandas-calculate-quartiles)
- - [17] [How to Make a Beautiful Donut Chart and Nested Donut Chart in Matplotlib](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea)
- - [18][Pandas Get Unique Values in Column](https://sparkbyexamples.com/pandas/pandas-find-unique-values-from-columns/)
- - [19][Matplotlib Pie Chart Tutorial]( https://pythonguides.com/matplotlib-title-font-size/#:~:text=The%20syntax%20to%20assign%20a%20title%20to%20the,%28%29%20%23%20To%20change%20size%20matplotlib.pyplot.title%20%28label%2C%20fontsize%3DNone%29)
- - [20] [Seaborn Styles](https://www.educba.com/seaborn-styles/)
- - [21] [Make Better Bar Charts in Python using Pandas Plot](https://www.shanelynn.ie/bar-plots-in-python-using-pandas-dataframes/)
- - [22] [Rotate Axis Labels in Matplotlib]( https://stackabuse.com/rotate-axis-labels-in-matplotlib/)
- - [23] [Best fit to a histogramplot Iris](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris)
- - [24] [Matplotlib.axes.Axes.set_xlabel() in Python](https://www.geeksforgeeks.org/matplotlib-axes-axes-set_xlabel-in-python/)
- - [25] [How to Adjust Spacing Between Matplotlib Subplots](https://www.statology.org/matplotlib-subplot-spacing/)
- - [26] [Exploratory Data Analysis of IRIS Data Set Using Python](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d)
- - [27] [Violin Plots 101: Visualizing Distribution and Probability Density](https://mode.com/blog/violin-plot-examples/)
- - [28] [Exploratory Data Analysis : Iris Dataset](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda)
- - [29] [Data Visualization](https://deepnote.com/@econdesousa/ViolinPlotvsBoxPlot-aadf0c53-53b4-4221-89b9-4388c54c68bd)    
- - [30] [Tutorial - Python SUBPLOTS](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) 
- - [31] [How to change size of axis labels and values in seaborn pairsplot](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot)
- - [32] [matplotlib and seaborn heatmap renders differently in Jupyter to savefig (labels cut off)](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels)
- - [33] [Auto adjust font size in seaborn heatmap](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap)    
- - [34] [Get Started With Colormaps (Cmap) in Python for Data Visualization Using Matplotlib (Updated 2023)](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/)
- - [35] [How do you add padding between the x-axis tick marks (not tick labels) and the x-axis in Matplotlib and Seaborn](https://stackoverflow.com/questions/66226320/how-do-you-add-padding-between-the-x-axis-tick-marks-not-tick-labels-and-the-x)
- 
- - [] []()
- - [] []()
- - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
+ - [5] [An introduction to seaborn]( https://seaborn.pydata.org/tutorial/introduction)
+ - [6] [Reading and Writing CSV Files in Python](https://realpython.com/python-csv/#reading-csv-files-with-pandas)
+ - [7] [Pandas replace() – Replace Values in Pandas Dataframe](https://datagy.io/pandas-replace-values/)
+ - [8] [How to Use Python to Write a Text File (.txt)](https://datagy.io/python-write-text-file/)         
+ - [9] [Python | Pandas Dataframe/Series.head() method]( https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/)
+ - [10] [Exploratory Data Analysis on Iris Dataset](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/)         
+ - [11] [How to list unique values in a Pandas DataFrame?](https://www.projectpro.io/recipes/list-unique-values-in-pandas-dataframe) 
+ - [12] [How to use .format in python to print out the data shape](https://stackoverflow.com/questions/58008120/how-to-use-format-in-python-to-print-out-the-data-shape) 
+ - [13] [Pandas Join DataFrames on Columns](https://sparkbyexamples.com/pandas/pandas-join-dataframes-on-columns/) 
+ - [14] [pandas.DataFrame.dtypes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html)
+ - [15] [Pandas DataFrame: describe() function](https://www.w3resource.com/pandas/dataframe/dataframe-describe.php)
+ - [16] [How to Generate a Data Summary in Python](https://learnpython.com/blog/how-to-summarize-data-in-python/)
+- [17] [Pandas DataFrame agg() Method](https://www.w3schools.com/python/pandas/ref_df_agg.asp)
+ - [18] [How does pandas calculate quartiles?](https://stackoverflow.com/questions/55009203/how-does-pandas-calculate-quartiles)
+- [19] [Iris Dataset-Univariate, Bivariate & Multivariate](https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivariate)
+https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivariate
+ - [20] [How to Make a Beautiful Donut Chart and Nested Donut Chart in Matplotlib](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea)
+ - [21][Pandas Get Unique Values in Column](https://sparkbyexamples.com/pandas/pandas-find-unique-values-from-columns/)
+ - [22][ Pie charts]( https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_features.html)
+ - [23] [Seaborn Styles](https://www.educba.com/seaborn-styles/)
+ - [24] [Make Better Bar Charts in Python using Pandas Plot](https://www.shanelynn.ie/bar-plots-in-python-using-pandas-dataframes/)
+ - [25] [Rotate Axis Labels in Matplotlib]( https://stackabuse.com/rotate-axis-labels-in-matplotlib/)
+ - [26] [Best fit to a histogramplot Iris](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris)
+ - [27] [Matplotlib.axes.Axes.set_xlabel() in Python](https://www.geeksforgeeks.org/matplotlib-axes-axes-set_xlabel-in-python/)
+ - [28] [How to Adjust Spacing Between Matplotlib Subplots](https://www.statology.org/matplotlib-subplot-spacing/)
+ - [29] [Exploratory Data Analysis of IRIS Data Set Using Python](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d)
+ - [30] [Violin Plots 101: Visualizing Distribution and Probability Density](https://mode.com/blog/violin-plot-examples/)
+ - [31] [Exploratory Data Analysis : Iris Dataset](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda)
+ - [32] [Data Visualization](https://deepnote.com/@econdesousa/ViolinPlotvsBoxPlot-aadf0c53-53b4-4221-89b9-4388c54c68bd)    
+- [33] [https://www.practicalpythonfordatascience.com/ap_seaborn_palette](https://www.practicalpythonfordatascience.com/ap_seaborn_palette)    
+- [34] [Tutorial - Python SUBPLOTS](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) 
+ - [35] [How to change size of axis labels and values in seaborn pairsplot](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot)
+ - [36] [matplotlib and seaborn heatmap renders differently in Jupyter to savefig (labels cut off)](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels)
+ - [37] [Auto adjust font size in seaborn heatmap](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap)    
+ - [38] [Get Started With Colormaps (Cmap) in Python for Data Visualization Using Matplotlib (Updated 2023)](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/)
+ - [39] [How do you add padding between the x-axis tick marks (not tick labels) and the x-axis in Matplotlib and Seaborn](https://stackoverflow.com/questions/66226320/how-do-you-add-padding-between-the-x-axis-tick-marks-not-tick-labels-and-the-x)
+</p>
+</details>
+
+  <summary>Figure</summary>
+           <p>
+  - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
  - [Fig.2] [Machine Learning 101](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_features_extraction.php)
  - [Fig.3] [Violin Plots: A Box Plot-Density Trace Synergism.](http://www.sci.utah.edu/~kpotter/Library/Papers/hintze:1998:VPDT/index.html)
  
+ </p>
+</details>
+
+    <summary>Other Sources consulted </summary>
+           <p>
  -[How to add images to README.md on GitHub?](https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github)
  -[How to customize Matplotlib plot titles color, position and fonts?]{ https://www.dataforeverybody.com/matplotlib-title-size-position-color/)
  -[Adding a main title to subplots in Matplotlib](https://www.skytowner.com/explore/adding_a_main_title_to_subplots_in_matplotlib)
@@ -1024,8 +1014,7 @@ fig.savefig('Plot6_heatmap.png')
  -[Matplotlib.pyplot.tight_layout() in Python](https://www.geeksforgeeks.org/matplotlib-pyplot-tight_layout-in-python/)
  -[List of named colors](https://matplotlib.org/stable/gallery/color/named_colors.html) 
  -[Choosing color palettes](https://seaborn.pydata.org/tutorial/color_palettes.html)  
- -[]() 
- -[]()
+
             
 </p>
 </details>
