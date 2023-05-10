@@ -371,8 +371,8 @@ dtype: int64
     <summary> Code Explanation </summary>
            <p>
 
-The script is used to retrieve various information about a dataset. It first uses the *shape()* [[11]](https://stackoverflow.com/questions/58008120/how-to-use-format-in-python-to-print-out-the-data-shape) function to print the number of rows and columns in the dataset. Then, it uses the *size()* function to print the total number of entries in the dataset. The *join()* [[12]](https://sparkbyexamples.com/pandas/pandas-join-dataframes-on-columns/) function is used to concatenate the names of all columns in the dataset and print them. 
-Finally, the *value_counts()* [[9]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/) function is used to count the number of entries for each species in the dataset and print them.
+The script retrieve various information about a dataset. It first uses the [*shape()* [12]](https://stackoverflow.com/questions/58008120/how-to-use-format-in-python-to-print-out-the-data-shape) function to print the number of rows and columns in the dataset. Then, it uses the *size()* function to print the total number of entries in the dataset. The [*join()* [13]](https://sparkbyexamples.com/pandas/pandas-join-dataframes-on-columns/) function is used to concatenate the names of all columns in the dataset and print them. 
+Finally, the [*value_counts()* [10]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/) function is used to count the number of entries for each species in the dataset and print them.
 
 ```python
    # shape of the datased
@@ -408,7 +408,7 @@ dtype: object
     <summary> Code Explanation </summary>
            <p>
 
-The code use the *dtypes* function to get the type of each columns [[13]](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html).
+The code use the [*dtypes* [14]](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html)function to get the type of each columns.
 
 ```python
     # get the data type 
@@ -422,7 +422,7 @@ The code use the *dtypes* function to get the type of each columns [[13]](https:
 
 ### Statistics
 
-Some descriptive statistics for each column of the dataset are provided. It includes the count, mean, standard deviation, minimum, maximum, and quartile values for numeric columns. This is done through the *describe()* function [[14]](https://www.w3resource.com/pandas/dataframe/dataframe-describe.php).
+Some descriptive statistics for each column of the dataset are provided. It includes the count, mean, standard deviation, minimum, maximum, and quartile values for numeric columns. This is done through the [*describe()* function [15]](https://www.w3resource.com/pandas/dataframe/dataframe-describe.php).
 
 ```
 ==== Statistics ==== 
