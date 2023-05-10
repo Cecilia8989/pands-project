@@ -212,11 +212,11 @@ df["Species"].replace(to_replace="Iris-virginica", value="Virginica", inplace=Tr
 
 ## Exploring the Dataset
 
-Once the dataset have been imported and formatted in the needed way, we will need to explore it and prepare it for analysis. This analysis of the information contained in the dataset, as requested, will be printed in a text file called **iris_analysis.txt** .
+Once the dataset have been imported and formatted in the needed way, we will need to explore it and prepare it for analysis. This analysis of the information contained in the dataset, as requested, will be printed in a text file called *iris_analysis.txt*.
 
 ### Creation and introduction 
 
-This code opens a  file (and create it if is not already created) named iris_analysis.txt in write mode. The subsequent lines of code write an introduction to the file, including the author's name and the title of the project.
+Initially the code opens a  file (and create it if is not already created) named *iris_analysis.txt* in write mode. The subsequent lines of code write an introduction to the file, including the author's name and the title of the project.
 
 ```
 Project for the Subject Programming and Scripting 
@@ -231,7 +231,7 @@ Author: Cecilia Pastore
     <summary> Code explanation </summary>
            <p>
 
-The code is creating a new file named "iris_analysis.txt" and opening it in write mode using the open() function, with the file object being assigned to the variable f. The code then writes some introductory information about the text file, including the project title, author name, and the name of the text file itself [[7]](https://datagy.io/python-write-text-file/).
+The code is creating a new file named "iris_analysis.txt" and opening it in write mode using the [*open()* function [8]](https://datagy.io/python-write-text-file/), with the file being assigned to the variable f. The code then writes some introductory information about the text file, including the project title, author name, and the name of the text file itself.
 
 ```python
 # create the text file and write on them 
@@ -268,8 +268,7 @@ Author: Cecilia Pastore
 <details>
     <summary> Code Explanation </summary>
            <p>
-First I have added a little introduction to be print in the text file. 
-After, the 'df.head()' [[8]](https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/) function have been used to display the first 5 rows of the df dataset, and then converts the output to a string using str(). The resulting string is then written to the file using the f.write() function.
+The [*df.head()* [9]](https://www.geeksforgeeks.org/python-pandas-dataframe-series-head-method/) function have been used to display the first 5 rows of the df dataset, and then converts the output to a string using *str()*. The resulting string is then written to the file using the *f.write()* function.
 
 
 ```python
