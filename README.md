@@ -107,7 +107,7 @@ The dataset is widely available and can be accessed freely on the [UCI website [
 
 ### Import data set from an online location to a csv 
 
-As a first task, The dataset need to be imported and transformed in a CSV [[3]](https://www.angela1c.com/projects/iris_project/downloading-iris/).
+As a first task, [The dataset need to be imported from an URL and transformed in a CSV [3]](https://www.angela1c.com/projects/iris_project/downloading-iris/).
 I have:
 - imported the iris dataset from the [UCI Machine learning repository](http://archive.ics.uci.edu/ml/machine-learning-databases/iris/) in data format
 - changed the column names to correspond with the attribute information in a nice format
