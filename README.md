@@ -546,7 +546,7 @@ This code calculates the quartiles for each species in the dataset using the *gr
 
 ## 5.Univariate analysis
 
-Univariate analysis explores only one dependent variable. "Uni" means "one," and the main purpose is to describe a dataset, summarize the data, and find the patterns present in it. When a dataset contains multiple variables, each of them is explored separately. We will explore several types of plots that are used for this kind of analysis.
+[Univariate analysis [19]](https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivariate) explores only one dependent variable. "Uni" means "one," and the main purpose is to describe a dataset, summarize the data, and find the patterns present in it. When a dataset contains multiple variables, each of them is explored separately. We will explore several types of plots that are used for this kind of analysis.
 
 ### Distribution Pie 
 
@@ -558,10 +558,10 @@ As a first visualization I would like to start with a pie chart to visualize the
     <summary> Code Explanation </summary>
            <p>
 
-This code will plot a [pie chart and inside will plot a white circle to give the design of a donut[19]](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea).
+This code will plot a [pie chart and inside will plot a white circle to give the design of a donut[20]](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea).
 
 First, it uses the *value_counts()* function to count the number of occurrences of each species in the Species column of the DataFrame. The resulting counts are stored in the *group_count* variable.
-Next, it uses the [unique() [20]](https://sparkbyexamples.com/pandas/pandas-find-unique-values-from-columns/) function to get an array of the unique species in the Species column of the DataFrame. The resulting array is stored in the labels variable.
+Next, it uses the [unique() [21]](https://sparkbyexamples.com/pandas/pandas-find-unique-values-from-columns/) function to get an array of the unique species in the Species column of the DataFrame. The resulting array is stored in the labels variable.
 
 ```python
 # create a pie chart to show the distribution of species 
@@ -570,7 +570,7 @@ group_count= df['Species'].value_counts()
 # define the labels of the pie chart
 labels= df['Species'].unique()
 ```
-The script utilizes the *pie()* function from the Matplotlib library to generate a pie chart. The *group_count* and *labels* variables are defined to plot the chart and passed as arguments in the *pie()* function. The script also defines the size and position of the chart, as well as the formatting of the percentage labels and the appearance of the wedges. 
+The script utilizes the *pie()* function from the Matplotlib library to generate a pie chart. The *group_count* and [*labels* [22]]( https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_features.html) variables are defined to plot the chart and passed as arguments in the *pie()* function. The script also defines the size and position of the chart, as well as the formatting of the percentage labels and the appearance of the wedges. 
 
 ```python
 # set the parameters of the pie chart
@@ -578,7 +578,7 @@ plt.pie(group_count, labels=labels, autopct='%1.0f%%',
         textprops={'fontsize': 14, 'fontweight': 'bold'},
         wedgeprops={'linewidth': 2, 'edgecolor': 'white', 'alpha':0.7})
 ```
-A white circle is created in the middle of the pie chart to give the design of a [donut [10]](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea) with the following functions:
+A white circle is created in the middle of the pie chart to give the design of a [donut [20]](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea) with the following functions:
 
 - plt.Circle(() creates a white which is added to the center of the pie chart.
 
@@ -590,7 +590,7 @@ A white circle is created in the middle of the pie chart to give the design of a
 
 ```python
 # create a white cirle to have the donut effect 
-centre_circle= plt.Circle((0,0),0.65,color='white', fc='white',linewidth=1.00)
+centre_circle= plt.Circle((0,0),0.40,color='white', fc='white',linewidth=1.00)
 fig = plt.gcf()
 fig.gca().add_artist(centre_circle)
 plt.axis('equal')
@@ -607,11 +607,11 @@ plt.savefig("Plot1_PieOfDistribution.png")
 </p>
 </details>
 
-## 4. Histograms
+### Histograms
 
- First I would like to start with an histogram showing the mean of each categories for each species  
+ First I would like to start with an histogram showing the mean of each variables for each species.  
 
-![Hist-1](https://github.com/Cecilia8989/pands-project/blob/main/Plot1_AverageBar.png)
+![Hist-1]()
 
 **Observation:**
 As we can see, The species Virginica had higher mean values for Sepal length, Petal length, and Petal width compared to the other two species (Setosa and Versicolor). On the other hand, Setosa had the highest mean value for Sepal width.
@@ -620,8 +620,8 @@ As we can see, The species Virginica had higher mean values for Sepal length, Pe
     <summary> Code Explanation </summary>
            <p>
 
-The code computes the mean values for each species using the groupby() method and stores them in a variable called 'class_averages'. This variable is then used as the input for the plot() method to create a bar chart.
-It also set up the dark style from the [seaborn library [20]](https://www.educba.com/seaborn-styles/). 
+The code calculate the mean value for each species using the *groupby() method* and stores them in a variable called *class_averages*. This variable is then used as the input for the *plot()* method to create a bar chart.
+It also set up the dark style from the [seaborn library [23]](https://www.educba.com/seaborn-styles/). 
 
 
 ```python
@@ -631,7 +631,7 @@ class_averages = df.groupby('Species').mean()
 # select a seaborn style 
 sns.set_style("dark")  
 ```
-The code then creates a bar chart using the [plot() function [21]](https://www.shanelynn.ie/bar-plots-in-python-using-pandas-dataframes/)of the 'class_averages' dataset. The 'kind' parameter is set to 'bar' to specify that a bar chart should be created. The 'alpha' parameter is set to 0.7 to adjust the transparency of the bars.
+The code then creates a bar chart using the [plot() function [24]](https://www.shanelynn.ie/bar-plots-in-python-using-pandas-dataframes/)of the *class_averages* variable. The *kind* parameter is set to *bar* to specify that a bar chart should be created. The *alpha* parameter is set to 0.7 to adjust the transparency of the bars.
 Finally, title and label name is defined.
 ```python
 # Create the bar chart
@@ -640,7 +640,7 @@ plt. title('Iris Feature Averages by Species', fontweight = 'bold', fontsize = 2
 plt. xlabel('Species', fontweight = 'bold', fontsize = 14)
 plt. ylabel('Average', fontweight = 'bold', fontsize = 14)   
 ```
-The code rotate the X labels using the [*xticks()* function [22]]( https://stackabuse.com/rotate-axis-labels-in-matplotlib/) and save the plot as the figure *Plot2_AverageBar*.
+The code rotate the X labels using the [*xticks()* function [25]]( https://stackabuse.com/rotate-axis-labels-in-matplotlib/) and save the plot as the figure *Plot2_AverageBar*.
 ```python
 # rotate the x values [5]
 plt.xticks(rotation=0)
@@ -650,7 +650,7 @@ plt.savefig('Plot2_AverageBar')
 </p>
 </details
  
-Next, the code plots histograms for each variable in the Iris dataset to show the distribution of values for each species. Instead of plotting four separate graphs, the code uses subplots to combine them into one figure. The subplot for each variable is created using seaborn's [*histplot()* method [23]](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris), which includes a KDE curve (kernel density estimation) and shows the distribution of values for each species using a different color. 
+Next, I want the code plots histograms for each separate variable to show the distribution of values for each species. Instead of plotting four separate graphs, the code uses subplots to combine them into one figure. The histogram for each variable is created using seaborn's [*histplot()* method [23]](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris), which includes a KDE curve (kernel density estimation) and shows the distribution of values for each species using a different color. 
 
 ![Sub_1]()
 
