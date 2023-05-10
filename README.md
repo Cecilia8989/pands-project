@@ -609,7 +609,9 @@ plt.savefig("Plot1_PieOfDistribution.png")
 
 ### Histograms
 
- First I would like to start with an histogram showing the mean of each variables for each species.  
+An histogram is a graph that allows us to explore the frequency distribution of a numerical variable. The X-Axis represents a range of values grouped together that we want to investigate, while the Y-Axis represents the frequency or count of data for each value.
+
+First I would like to start with an histogram showing the mean of each variables for each species.  
 
 ![Hist-1]()
 
@@ -681,7 +683,7 @@ fig, axs = plt.subplots(2, 2, figsize=(12, 6))
 # initialize a counter for the subplot index
 ```
 Here the subplot is created. A loop interact with the first 4 columns of the dataframe [:4], using the *zip()* funtion to pair each column with its corresponding subplot. For each column and subplot, a histogram with a KDE curve is created using the *sns.histplot()* function. The *Species* column is used for the *hue*, which means that the histogram is plotted separately for each species. 
-The title  of each plot and y label have been also added through [*ax.set* [27]].(https://www.geeksforgeeks.org/matplotlib-axes-axes-set_xlabel-in-python/)
+The title  of each plot and y label have been also added through [*ax.set* [27]](https://www.geeksforgeeks.org/matplotlib-axes-axes-set_xlabel-in-python/).
 
 ```python
 i = 0
@@ -695,7 +697,7 @@ for col, ax in zip(df.columns[:4], axs.flat):
     ax.set_ylabel('Count')
     i = i+1
 ```
-Finally a title of the subplot have been added using the *subtitle()* method. As the title of the subplot and single plot were overlapping the [position of the first have been adjusted [25]](https://www.statology.org/matplotlib-subplot-spacing/).
+Finally a title of the subplot have been added using the *subtitle()* method. As the title of the subplot and single plot were overlapping [the position of the first have been adjusted [28]](https://www.statology.org/matplotlib-subplot-spacing/).
 The figure have been then saved as *Plot3_Subplot_Feature*.
 
 ```python
@@ -711,11 +713,11 @@ plt.savefig("Plot3_Subplot_Feature.png")
  
 ## 5. Violin and Box Plots 
 
-Other data visualization technique used to summarize and display the distribution of a dataset are the box pot and the violin pot.
+Other data visualization techniques used to summarize and display the distribution of a dataset are the box pot and the violin pot.
 
-A box plot is a plot that shows the distribution of a dataset based on 5 keys values the minimum, the maximum value, the median (middle value), the first quartile (25%) and the third quartile (75%) value [[26]](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d). 
+A box plot is a plot that shows the distribution of a dataset based on 5 keys values the minimum, the maximum value, the median (middle value), the first quartile (25%) and the third quartile (75%) value [[29]](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d). 
 
-A violin [[27]](https://mode.com/blog/violin-plot-examples/) is similar to a Box Plot but give more information about the the density estimated. It combines the feature of a box plot and a kernel density plot (which displays the density of the data). With a violin plot, you can quickly see where most of the data is concentrated and how spread out it is, as well as any peaks or unusual patterns in the distribution [[Fig.3]](http://www.sci.utah.edu/~kpotter/Library/Papers/hintze:1998:VPDT/index.html). 
+A violin [[30]](https://mode.com/blog/violin-plot-examples/) is similar to a Box Plot but give more information about the the density estimated. It combines the feature of a box plot and a kernel density plot (which displays the density of the data). With a violin plot you can quickly see where most of the data is concentrated and how spread out it is.[[Fig.3]](http://www.sci.utah.edu/~kpotter/Library/Papers/hintze:1998:VPDT/index.html). 
 
 ![box_plot](http://www.sci.utah.edu/~kpotter/Library/Papers/hintze:1998:VPDT/hintze_1998_VPDT_00.png)
 
@@ -723,36 +725,37 @@ As both the visualization technique give similar information I have plot them to
 
 ![BoxPlotVioninPlot()
 
-The most significant variables based on the graph above are petal length and petal width. For these variables, Setosa has a smaller range of values and less density compared to the other two species, while Versicolor has a moderate range and density. On the other hand, for sepal length and width, Virginica has a wider range of values and higher density compared to the other two species [[28]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda) .
+**Observation:** The most significant variables based on the graph above are petal length and petal width. For these variables, Setosa has a smaller range of values and less density compared to the other two species, while Versicolor has a moderate range and density. On the other hand, for sepal length and width, Virginica has a wider range of values and higher density compared to the other two species [[31]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda).
 
 <details>
     <summary> Code Explanation </summary>
            <p>
 
-The code creates a figure with [two subplots, one for violin plots and one for box plots [29]](https://deepnote.com/@econdesousa/ViolinPlotvsBoxPlot-aadf0c53-53b4-4221-89b9-4388c54c68bd). The number of plot for each line of the subplot are based on the number of columns of the dataset less 1.
+The code creates a figure with [two subplots, one for violin plots and one for box plots [32]](https://deepnote.com/@econdesousa/ViolinPlotvsBoxPlot-aadf0c53-53b4-4221-89b9-4388c54c68bd). The number of plot for each line of the subplot are based on the number of columns of the data-set less 1 (len(df.columns)-1). The seaborn stile have been also changed in "darkgrid".
 
 ```python
 # Create a subplots with 4 Violin plots and 4 box plots
 # Create a figure with two subplots, one for each type of plot
+sns.set_style("darkgrid")
 fig, axs = plt.subplots(2, len(df.columns)-1, figsize=(20,10)) 
 ```
-The first subplot is created. Through a for loop 4 Violin plots are created, with *sns.violinplot()* function, one for each variables and is grouped by *Species*.
+The first subplot is created. Through a for loop  an the *sns.violinplot()* function, 4 Violin plots are created, one for each variables grouped by *Species*. A color [palette [33]](https://www.practicalpythonfordatascience.com/ap_seaborn_palette) have been set. 
 Additionally, the code also set up the y label and remove the x label. 
 
 ```python
 # For loop to create a violin plot for each variable in the first row of subplots
 for i in range (0, len(df.columns)-1):
-    sns.violinplot(x='Species', y=df.columns[i], data=df, ax=axs[0,i])
+    sns.violinplot(x='Species', y=df.columns[i], data=df, ax=axs[0,i], palette ='flare')
     # Define the format of the labels
     axs[0,i].set_ylabel(f'{df.columns[i]}', fontweight='bold')
     axs[0,i].set_xlabel(None)
 ```
-The second subplot showing 4 Box plots, one for each variables grouped by *Species*, is created on a similar way using the *sns.boxplot()* function. Labels are also defined and in this case, the X label has been left to be shown.
+The second subplot with 4 Box plots, one for each variables grouped by *Species*, is created on a similar way using the *sns.boxplot()* function. Labels are also defined and in this case, the X label has been left to be shown.
 
 ```python
 # Create a box plot for each variable in the second row of subplots
 for i in range (0, len(df.columns)-1):
-    sns.boxplot(x='Species', y=df.columns[i], data=df, ax=axs[1,i])
+    sns.boxplot(x='Species', y=df.columns[i], data=df, ax=axs[1,i],palette ='flare')
      # Define the format of the labels
     axs[1,i].set_ylabel(f'{df.columns[i]}', fontweight='bold')
     axs[1,i].set_xlabel('Species', fontweight='bold')
@@ -766,7 +769,7 @@ plt.suptitle("Box and Violin plots for all the 4 variables", fontsize=20, fontwe
 plt.subplots_adjust(top=0.95)  
 # adjsut the layout and save the figure
 plt.tight_layout() 
-plt.savefig('Plot7_BoxAndViolinPlot.png')
+plt.savefig('Plot4_BoxAndViolinPlot.png')
 ```
 </p>
  </details>
