@@ -52,6 +52,11 @@ but rather to present your code and its output to them.
    * [Checking how appear the data in the Dataset]()
    * [Unique values]()
    * [Missing values]()
+   * [Shape of the dataset]()
+   * [Data Type]()
+   * [Statistics]()
+   * [Statistics grouped by species]()
+   * [Quartiles per species]()
 3. []()
    * []()
    * []()
@@ -571,7 +576,7 @@ This code calculates the quartiles for each species in the dataset using the *gr
 </p>
 </details>
 
-## 5.Univariate analysis
+## 5. Univariate analysis
 
 [Univariate analysis [19]](https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivariate) explores only one dependent variable. "Uni" means "one," and the main purpose is to describe a dataset, summarize the data, and find the patterns present in it. When a dataset contains multiple variables, each of them is explored separately. We will explore several types of plots that are used for this kind of analysis.
 
