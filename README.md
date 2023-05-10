@@ -715,9 +715,9 @@ plt.savefig("Plot3_Subplot_Feature.png")
 
 Other data visualization techniques used to summarize and display the distribution of a dataset are the box pot and the violin pot.
 
-A box plot is a plot that shows the distribution of a dataset based on 5 keys values the minimum, the maximum value, the median (middle value), the first quartile (25%) and the third quartile (75%) value [[29]](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d). 
+A [box plot [29]](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d)is a plot that shows the distribution of a dataset based on 5 keys values the minimum, the maximum value, the median (middle value), the first quartile (25%) and the third quartile (75%) value. 
 
-A violin [[30]](https://mode.com/blog/violin-plot-examples/) is similar to a Box Plot but give more information about the the density estimated. It combines the feature of a box plot and a kernel density plot (which displays the density of the data). With a violin plot you can quickly see where most of the data is concentrated and how spread out it is.[[Fig.3]](http://www.sci.utah.edu/~kpotter/Library/Papers/hintze:1998:VPDT/index.html). 
+A [violin [30]](https://mode.com/blog/violin-plot-examples/) is similar to a Box Plot but give more information about the the density estimated. It combines the feature of a box plot and a kernel density plot (which displays the density of the data). With a violin plot you can quickly see where most of the data is concentrated and how spread out it is.[[Fig.3]](http://www.sci.utah.edu/~kpotter/Library/Papers/hintze:1998:VPDT/index.html). 
 
 ![box_plot](http://www.sci.utah.edu/~kpotter/Library/Papers/hintze:1998:VPDT/hintze_1998_VPDT_00.png)
 
@@ -731,7 +731,7 @@ As both the visualization technique give similar information I have plot them to
     <summary> Code Explanation </summary>
            <p>
 
-The code creates a figure with [two subplots, one for violin plots and one for box plots [32]](https://deepnote.com/@econdesousa/ViolinPlotvsBoxPlot-aadf0c53-53b4-4221-89b9-4388c54c68bd). The number of plot for each line of the subplot are based on the number of columns of the data-set less 1 (len(df.columns)-1). The seaborn stile have been also changed in "darkgrid".
+The code creates a figure with [two subplots [32]](https://deepnote.com/@econdesousa/ViolinPlotvsBoxPlot-aadf0c53-53b4-4221-89b9-4388c54c68bd), one for violin plots and one for box plots . The number of plot for each line of the subplot are based on the number of columns of the data-set less 1 (len(df.columns)-1). The seaborn stile have been also changed in "darkgrid".
 
 ```python
 # Create a subplots with 4 Violin plots and 4 box plots
