@@ -170,7 +170,7 @@ sns.scatterplot(x=df['PetalWidth(cm)'], y=df['SepalLenght(cm)'], hue=df['Species
 
 # Adjust the layout and save the figure 
 plt.tight_layout()
-plt.savefig("Plot5_Subplot_scatterpoint.png")
+plt.savefig("Plot5_scatterpoint.png")
 
 # Create a scatterplot of Scatterplots of all-paired attributes
 # Set the context for the plot, adjusting the size of the labels and fonts
