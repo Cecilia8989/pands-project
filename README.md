@@ -210,7 +210,7 @@ df["Species"].replace(to_replace="Iris-virginica", value="Virginica", inplace=Tr
 </p>
 </details>
 
-## Exploring the Dataset
+## 4. Exploring the Dataset
 
 Once the dataset have been imported and formatted in the needed way, we will need to explore it and prepare it for analysis. This analysis of the information contained in the dataset, as requested, will be printed in a text file called *iris_analysis.txt*.
 
