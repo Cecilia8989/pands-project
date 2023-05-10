@@ -660,7 +660,7 @@ plt.savefig('Plot2_AverageBar')
  
 Next, I want the code plot an histogram for each variable separately to show the distribution of values for each species. Instead of creating four separate graphs, the code combine them into one figure using subplots. The histogram for each variable is created using seaborn's [*histplot()* method [26]](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris), which includes a KDE curve (kernel density estimation) and shows the distribution of values for each species using a different color. 
 
-![Sub_1](https://github.com/Cecilia8989/pands-project/blob/main/Plot3_Subplot_FeaturesBar.png)
+![Bar](https://github.com/Cecilia8989/pands-project/blob/main/Plot3_Subplot_FeaturesBar.png)
 
 **Observation:** 
 Plot 1 and 2 show that there is a significant amount of overlap between the species on sepal length and sepal width. Both of this feature are not an effective Classification feature.
@@ -797,7 +797,7 @@ The output is a subplot with 4 scatter plots each exploring the relationship bet
 - Sepal Length and Petal Width 
 - Petal Length and Sepal Width
 
-![Scatter](https://github.com/Cecilia8989/pands-project/blob/main/Plot5_Subplot_scatterpoint.png)
+![Scatter](https://github.com/Cecilia8989/pands-project/blob/main/Plot5_scatterpoint.png)
 
 Looking at the above figure, the scatter plot showing the relationship between Petal Length and Petal Width is the most useful in distinguishing between the three species of iris as they show distinct differences between petal sizes. Setosa species has the smallest petal lengths and widths, while the Virginica species has the largest, and the Versicolor species falls in between.
 
