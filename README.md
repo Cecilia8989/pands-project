@@ -58,7 +58,7 @@ but rather to present your code and its output to them.
 * []()
 * []()
 
-## 1. introduction 
+## 1. Introduction 
 
 This code is a Python script to analyze the Iris flower dataset. The iris dataset is first downloaded from a URL by running the script downloadiris.py, and then analyzed with the script analysis.py. In analysis.py, the dataset is first imported and a summary of the dataset is printed in a text file. This summary contains unique values of species, missing values, dataset shape, data types, and statistics. For each species, the script calculates mean, median, standard deviation, minimum, and maximum, as well as the quartiles. Next, a Univariate Analysis is conducted using histograms, box plots, and violin plots. Finally, a Bivariate Analysis is conducted using scatter plots and a heatmap.
 
