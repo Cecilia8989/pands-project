@@ -771,10 +771,10 @@ plt.subplots_adjust(top=0.95)
 plt.tight_layout() 
 plt.savefig('Plot4_BoxAndViolinPlot.png')
 ```
-</p>
+</p> 
  </details>
 
-## 6.Bi-variate analysis
+## 6. Bi-variate analysis
 
 Bivariate analysis involve the study of two variables simultaneously to establish a relationship or correlation between them. The main objective of bivariate analysis is to determine whether there is any association between the two variables and the strength and direction of that association.   
 
@@ -792,7 +792,7 @@ The output is a subplot with 4 scatter plots each exploring the relationship bet
 
 ![Scatter]()
 
-Looking at the above figure, the scatter plot showing the relationship between Petal Length and Petal Width is the most useful in distinguishing between the three species of iris as they show distinct differences between species. Setosa species has the smallest petal lengths and widths, while the Virginica species has the largest, and the Versicolor species falls in between.
+Looking at the above figure, the scatter plot showing the relationship between Petal Length and Petal Width is the most useful in distinguishing between the three species of iris as they show distinct differences between petal sizes. Setosa species has the smallest petal lengths and widths, while the Virginica species has the largest, and the Versicolor species falls in between.
 
 On the whole, with a very little overlaping between the species, Petal Length and Petal Width relationship can be useful features for distinguishing between the three species.
 
@@ -809,7 +809,7 @@ fig = plt.figure(figsize=(14,7))
 # Set the style of the plot to "darkgrid"
 sns.set_style("darkgrid")  
 ```
-Space in the subplot are adjusted to make space for titles and it is defined the title of the entire figure.
+Space in the subplot are adjusted and it is defined the title of the entire figure.
 
 ```python
 # Adjust the space between subplots and the top margin of the figure
@@ -817,8 +817,7 @@ fig.subplots_adjust(hspace=0.4, top=0.85)
 # Add a  title to the entire figure
 plt.suptitle("Comparison between various Species", fontsize=18, color='red', fontweight='bold') 
 ```
-The code creates four scatter plots, each comparing two different features (Sepal Length and Sepal Width, Petal Length and Petal Width, Petal Length and Sepal Width, and Petal Width and Sepal Length). The  subplot is created with *plt.subplot()*[[34]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) and the scatter plots are created using the *Seaborn scatterplot()* function, and the hue argument is set to the *"Species"*
- [[31]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda). 
+The code creates four scatter plots, each comparing two different features (Sepal Length and Sepal Width, Petal Length and Petal Width, Petal Length and Sepal Width, and Petal Width and Sepal Length). The  subplot is created with [*plt.subplot()*[34]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) and the scatter plots are created using the [*sns.scatterplot()*[31]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda) function, and the hue argument is set to the *"Species"*. 
 ```python
 # Create the first scatter plot comparing Sepal Length and Sepal Width
 plt.subplot(221)
