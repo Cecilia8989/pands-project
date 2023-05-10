@@ -906,12 +906,14 @@ An heat map is a visual representation of data that uses color to show the relat
 - Petal Width and Sepal length 
 
 On the other hand, Sepal width/Petal Length are the less correlated variables. 
+ 
+ Again, the high correlation between petal width and petal length indicates that these two features provide similar information and are highly predictive in distinguishing between species of iris. Therefore, using either one of these features or both together can be effective in classification tasks.
 
 <details>
     <summary> Code Explanation </summary>
            <p>
 
-The code creates a figure with a specified size using *plt.subplots*, and then uses [*sns.heatmap* [36]](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels)to create a heatmap of the given data . Several arguments are used, such as [*annot_kws* [37]](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap) to specify the format of the annotations, *alpha* to define the transparency, and [*cmap* [38]](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/) to define the color map. *yticklabels* and *xticklabels* are also defined to allow for modification of the labels on the x and y axes. 
+The code creates a figure with a specified size using *plt.subplots*, and then uses [*sns.heatmap* [36]](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels)to create an heatmap of the given data . Several arguments are used, such as [*annot_kws* [37]](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap) to specify the format of the annotations, *alpha* to define the transparency, and [*cmap* [38]](https://www.analyticsvidhya.com/blog/2020/09/colormaps-matplotlib/) to define the color map. *yticklabels* and *xticklabels* are also defined to allow for modification of the labels on the x and y axes. 
 ```python
 # Create an heatmap
 
@@ -926,7 +928,7 @@ ax = sns.heatmap(df. corr(),
             annot_kws={'fontsize': 14, 'fontweight':'bold'},
             alpha=0.9)  
 ```
-The code define the format for the X-axis and Y-axis. For both the axes the size, the weight and rotation are defined. For the X-axis a 45 grade rotation have been defined.
+The code define the format for the X-axi and Y-axi. For both the axes the size, the weight and rotation are defined. For the X-axi a 45 grade rotation have been defined.
 Finally, A title of the graph is defined with the corresponding format. The [*pad* [39]](https://stackoverflow.com/questions/66226320/how-do-you-add-padding-between-the-x-axis-tick-marks-not-tick-labels-and-the-x) argument is used to add some space between the title and the graph.
 
 ```python
@@ -949,6 +951,7 @@ fig.savefig('Plot6_heatmap.png')
 </details>
  
  ## Sources
+ <details>
     <summary>References</summary>
            <p>
 - [1] [rpubs](https://rpubs.com/AjinkyaUC/Iris_DataSet)
@@ -994,6 +997,7 @@ https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivaria
 </p>
 </details>
 
+<details>
   <summary>Figure</summary>
            <p>
   - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
@@ -1002,7 +1006,7 @@ https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivaria
  
  </p>
 </details>
-
+<details>
     <summary>Other Sources consulted </summary>
            <p>
  -[How to add images to README.md on GitHub?](https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github)
