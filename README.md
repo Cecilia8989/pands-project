@@ -1013,19 +1013,19 @@ https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivaria
     <summary>Other Sources consulted </summary>
            <p>
             
- -[How to add images to README.md on GitHub?](https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github)
- -[How to customize Matplotlib plot titles color, position and fonts?]{ https://www.dataforeverybody.com/matplotlib-title-size-position-color/)
- -[Adding a main title to subplots in Matplotlib](https://www.skytowner.com/explore/adding_a_main_title_to_subplots_in_matplotlib)
- -[Plt.show shows full graph but savefig is cropping the image](https://stackoverflow.com/questions/37427362/plt-show-shows-full-graph-but-savefig-is-cropping-the-image)
- -[Seaborn Tutorial ](https://www.kaggle.com/code/saurav9786/seaborn-tutorial)
- -[How to Change Font Size in Seaborn Plots (With Examples)](https://www.statology.org/seaborn-font-size/)
- -[Matplotlib.pyplot.tight_layout() in Python](https://www.geeksforgeeks.org/matplotlib-pyplot-tight_layout-in-python/)
- -[List of named colors](https://matplotlib.org/stable/gallery/color/named_colors.html) 
- -[Choosing color palettes](https://seaborn.pydata.org/tutorial/color_palettes.html)  
- -[How to remove or hide X-axis labels from a Seaborn / Matplotlib plot?](https://www.tutorialspoint.com/how-to-remove-or-hide-x-axis-labels-from-a-seaborn-matplotlib-plot)             
- -[Kernel density estimation](https://en.wikipedia.org/wiki/Kernel_density_estimation)
- -[Exploring Classifiers with Python Scikit-learn — Iris Dataset](https://towardsdatascience.com/exploring-classifiers-with-python-scikit-learn-iris-dataset-2bcb490d2e1b)
- -[Exploratory Data Analysis: Uni-variate analysis of Iris Data set]([Exploring Classifiers with Python Scikit-learn — Iris Dataset -  ](https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40)    
+ - [How to add images to README.md on GitHub?](https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github)
+ - [How to customize Matplotlib plot titles color, position and fonts?]{ https://www.dataforeverybody.com/matplotlib-title-size-position-color/)
+ - [Adding a main title to subplots in Matplotlib](https://www.skytowner.com/explore/adding_a_main_title_to_subplots_in_matplotlib)
+ - [Plt.show shows full graph but savefig is cropping the image](https://stackoverflow.com/questions/37427362/plt-show-shows-full-graph-but-savefig-is-cropping-the-image)
+ - [Seaborn Tutorial ](https://www.kaggle.com/code/saurav9786/seaborn-tutorial)
+ - [How to Change Font Size in Seaborn Plots (With Examples)](https://www.statology.org/seaborn-font-size/)
+ - [Matplotlib.pyplot.tight_layout() in Python](https://www.geeksforgeeks.org/matplotlib-pyplot-tight_layout-in-python/)
+ - [List of named colors](https://matplotlib.org/stable/gallery/color/named_colors.html) 
+ - [Choosing color palettes](https://seaborn.pydata.org/tutorial/color_palettes.html)  
+ - [How to remove or hide X-axis labels from a Seaborn / Matplotlib plot?](https://www.tutorialspoint.com/how-to-remove-or-hide-x-axis-labels-from-a-seaborn-matplotlib-plot)             
+ - [Kernel density estimation](https://en.wikipedia.org/wiki/Kernel_density_estimation)
+ - [Exploring Classifiers with Python Scikit-learn — Iris Dataset](https://towardsdatascience.com/exploring-classifiers-with-python-scikit-learn-iris-dataset-2bcb490d2e1b)
+ - [Exploratory Data Analysis: Uni-variate analysis of Iris Data set]([Exploring Classifiers with Python Scikit-learn — Iris Dataset -  ](https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40)    
             
 </p>
 </details>
