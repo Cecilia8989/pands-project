@@ -44,8 +44,8 @@ but rather to present your code and its output to them.
    * [Technologies](https://github.com/Cecilia8989/pands-project/blob/main/README.md#technologies)
    * [Running the Script](https://github.com/Cecilia8989/pands-project/blob/main/README.md#running-the-script)
 2. [Iris Flower Datases](https://github.com/Cecilia8989/pands-project/edit/main/README.md#2-iris-flower-datases)
-3. []()
-   * []()
+3. [Import the dataset](https://github.com/Cecilia8989/pands-project/edit/main/README.md#3-import-the-dataset)
+   * [Import data set from an online location to a csv](https://github.com/Cecilia8989/pands-project/edit/main/README.md#import-data-set-from-an-online-location-to-a-csv)
    * []()
    * []()
    * []()
@@ -161,7 +161,7 @@ print("iris_dataset.csv created")
 </p>
 </details>
 
-### Import the dataset from the CSV to the main script and adjust his format.
+### Import the dataset from the CSV to the main script and adjust his format
 
 After saving the dataset from an online location as a CSV file in the same repository, we need to import it into our main script and adjust its format for further analysis. 
 
