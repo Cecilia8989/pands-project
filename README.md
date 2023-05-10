@@ -954,7 +954,8 @@ fig.savefig('Plot6_heatmap.png')
  <details>
     <summary>References</summary>
            <p>
-- [1] [rpubs](https://rpubs.com/AjinkyaUC/Iris_DataSet)
+            
+ - [1] [rpubs](https://rpubs.com/AjinkyaUC/Iris_DataSet)
  - [2] [UCI Machine Learning repository](https://archive.ics.uci.edu/ml/datasets/iris)
  - [3] [Importing and viewing the Iris dataset using pandas](https://www.angela1c.com/projects/iris_project/downloading-iris/) 
  - [4] [Pandas Tutorial](https://www.w3schools.com/python/pandas/default.asp)
@@ -1000,7 +1001,8 @@ https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivaria
 <details>
   <summary>Figure</summary>
            <p>
-  - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
+            
+ - [Fig.1] [Iris Dataset Project from UCI Machine Learning Repository](https://machinelearninghd.com/iris-dataset-uci-machine-learning-repository-project/)
  - [Fig.2] [Machine Learning 101](https://www.bogotobogo.com/python/scikit-learn/scikit_machine_learning_features_extraction.php)
  - [Fig.3] [Violin Plots: A Box Plot-Density Trace Synergism.](http://www.sci.utah.edu/~kpotter/Library/Papers/hintze:1998:VPDT/index.html)
  
@@ -1009,6 +1011,7 @@ https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivaria
 <details>
     <summary>Other Sources consulted </summary>
            <p>
+            
  -[How to add images to README.md on GitHub?](https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github)
  -[How to customize Matplotlib plot titles color, position and fonts?]{ https://www.dataforeverybody.com/matplotlib-title-size-position-color/)
  -[Adding a main title to subplots in Matplotlib](https://www.skytowner.com/explore/adding_a_main_title_to_subplots_in_matplotlib)
