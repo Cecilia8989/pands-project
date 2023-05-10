@@ -283,9 +283,7 @@ The [*df.head()* [9]](https://www.geeksforgeeks.org/python-pandas-dataframe-seri
 
 ### Unique values
 
-We can now print the unique values of the column *Species*. This has the double function to check no duplicates of *Species* have been entered and the replace of the * *
-*Species* names have been done correctly. 
-As we can see from the output, there are no other values apart of the three wanted *Species* and the rename of them have beene executed correctly.
+We can now print the unique values of the *Species* column. This serves the dual purpose of checking that no duplicate species have been entered and verifying that the renaming of the species has been carried out correctly. As we can see from the output, there are no values other than the three desired species, and the renaming has been executed correctly.
 
 ```
 ==== Print unique value of species ==== 
