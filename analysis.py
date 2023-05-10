@@ -146,7 +146,7 @@ sns.set_style("darkgrid")
 # Adjust the space between subplots and the top margin of the figure
 fig.subplots_adjust(hspace=0.4, top=0.85)
 # Add a  title to the entire figure
-plt.suptitle("Comparison between various Species", fontsize=18, color='red', fontweight='bold')
+plt.suptitle("Relathionship between couple of variables", fontsize=18, color='red', fontweight='bold')
 
 # Create the first scatter plot comparing Sepal Length and Sepal Width
 plt.subplot(221)
