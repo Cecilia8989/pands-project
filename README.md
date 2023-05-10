@@ -544,7 +544,11 @@ This code calculates the quartiles for each species in the dataset using the *gr
 </p>
 </details>
 
-## 5. Distribution Pie 
+## 5.Univariate analysis
+
+Univariate analysis explores only one dependent variable. "Uni" means "one," and the main purpose is to describe a dataset, summarize the data, and find the patterns present in it. When a dataset contains multiple variables, each of them is explored separately. We will explore several types of plots that are used for this kind of analysis.
+
+### Distribution Pie 
 
 As a first visualization I would like to start with a pie chart to visualize the distribution of the different species in the dataset. This cake graphic show that each species has 50 entries in a donut format.
 
