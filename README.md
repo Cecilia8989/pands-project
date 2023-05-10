@@ -971,13 +971,13 @@ fig.savefig('Plot6_heatmap.png')
  - [14] [pandas.DataFrame.dtypes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html)
  - [15] [Pandas DataFrame: describe() function](https://www.w3resource.com/pandas/dataframe/dataframe-describe.php)
  - [16] [How to Generate a Data Summary in Python](https://learnpython.com/blog/how-to-summarize-data-in-python/)
-- [17] [Pandas DataFrame agg() Method](https://www.w3schools.com/python/pandas/ref_df_agg.asp)
+ - [17] [Pandas DataFrame agg() Method](https://www.w3schools.com/python/pandas/ref_df_agg.asp)
  - [18] [How does pandas calculate quartiles?](https://stackoverflow.com/questions/55009203/how-does-pandas-calculate-quartiles)
-- [19] [Iris Dataset-Univariate, Bivariate & Multivariate](https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivariate)
+ - [19] [Iris Dataset-Univariate, Bivariate & Multivariate](https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivariate)
 https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivariate
  - [20] [How to Make a Beautiful Donut Chart and Nested Donut Chart in Matplotlib](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea)
- - [21][Pandas Get Unique Values in Column](https://sparkbyexamples.com/pandas/pandas-find-unique-values-from-columns/)
- - [22][ Pie charts]( https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_features.html)
+ - [21] [Pandas Get Unique Values in Column](https://sparkbyexamples.com/pandas/pandas-find-unique-values-from-columns/)
+ - [22] [Pie charts]( https://matplotlib.org/stable/gallery/pie_and_polar_charts/pie_features.html)
  - [23] [Seaborn Styles](https://www.educba.com/seaborn-styles/)
  - [24] [Make Better Bar Charts in Python using Pandas Plot](https://www.shanelynn.ie/bar-plots-in-python-using-pandas-dataframes/)
  - [25] [Rotate Axis Labels in Matplotlib]( https://stackabuse.com/rotate-axis-labels-in-matplotlib/)
@@ -988,8 +988,8 @@ https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivaria
  - [30] [Violin Plots 101: Visualizing Distribution and Probability Density](https://mode.com/blog/violin-plot-examples/)
  - [31] [Exploratory Data Analysis : Iris Dataset](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda)
  - [32] [Data Visualization](https://deepnote.com/@econdesousa/ViolinPlotvsBoxPlot-aadf0c53-53b4-4221-89b9-4388c54c68bd)    
-- [33] [https://www.practicalpythonfordatascience.com/ap_seaborn_palette](https://www.practicalpythonfordatascience.com/ap_seaborn_palette)    
-- [34] [Tutorial - Python SUBPLOTS](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) 
+ - [33] [Seaborn Color Palettes](https://www.practicalpythonfordatascience.com/ap_seaborn_palette)    
+ - [34] [Tutorial - Python SUBPLOTS](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) 
  - [35] [How to change size of axis labels and values in seaborn pairsplot](https://stackoverflow.com/questions/45204552/how-to-change-size-of-axis-labels-and-values-in-seaborn-pairsplot)
  - [36] [matplotlib and seaborn heatmap renders differently in Jupyter to savefig (labels cut off)](https://stackoverflow.com/questions/51568083/matplotlib-and-seaborn-heatmap-renders-differently-in-jupyter-to-savefig-labels)
  - [37] [Auto adjust font size in seaborn heatmap](https://stackoverflow.com/questions/33104322/auto-adjust-font-size-in-seaborn-heatmap)    
@@ -1008,6 +1008,7 @@ https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivaria
  
  </p>
 </details>
+
 <details>
     <summary>Other Sources consulted </summary>
            <p>
@@ -1021,7 +1022,10 @@ https://www.kaggle.com/code/amrut11/iris-dataset-univariate-bivariate-multivaria
  -[Matplotlib.pyplot.tight_layout() in Python](https://www.geeksforgeeks.org/matplotlib-pyplot-tight_layout-in-python/)
  -[List of named colors](https://matplotlib.org/stable/gallery/color/named_colors.html) 
  -[Choosing color palettes](https://seaborn.pydata.org/tutorial/color_palettes.html)  
-
+ -[How to remove or hide X-axis labels from a Seaborn / Matplotlib plot?](https://www.tutorialspoint.com/how-to-remove-or-hide-x-axis-labels-from-a-seaborn-matplotlib-plot)             
+ -[Kernel density estimation](https://en.wikipedia.org/wiki/Kernel_density_estimation)
+ -[Exploring Classifiers with Python Scikit-learn — Iris Dataset](https://towardsdatascience.com/exploring-classifiers-with-python-scikit-learn-iris-dataset-2bcb490d2e1b)
+ -[Exploratory Data Analysis: Uni-variate analysis of Iris Data set]([Exploring Classifiers with Python Scikit-learn — Iris Dataset -  ](https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40)    
             
 </p>
 </details>
