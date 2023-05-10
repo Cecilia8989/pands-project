@@ -733,7 +733,7 @@ A [violin [30]](https://mode.com/blog/violin-plot-examples/) is similar to a Box
 
 As both the visualization technique give similar information I have plot them together, one above the other:
 
-![BoxPlotVioninPlot(https://github.com/Cecilia8989/pands-project/blob/main/Plot4_BoxAndViolinPlot.png)
+![BoxPlotVioninPlot](https://github.com/Cecilia8989/pands-project/blob/main/Plot4_BoxAndViolinPlot.png)
 
 **Observation:** The most significant variables, based on the graph above are petal length and petal width. For these variables, Setosa has a smaller range of values and less density compared to the other two species, while Versicolor has a moderate range and density. On the other hand, for sepal length and width, Virginica has a wider range of values and higher density compared to the other two species [[31]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda).
  
