@@ -711,7 +711,7 @@ plt.savefig("Plot3_Subplot_Feature.png")
 </p>
 </details>
  
-## 5. Violin and Box Plots 
+### Violin and Box Plots 
 
 Other data visualization techniques used to summarize and display the distribution of a dataset are the box pot and the violin pot.
 
