@@ -533,7 +533,7 @@ Virginica  0.25            6.225           2.800            5.100             1.
     <summary> Code Explanation </summary>
            <p>
 
-This code calculates the quartiles for each species in the dataset using the *groupby* function. The *groupby* function groups the data by the Species column, and then the *quantile* function is applied to each group. The [*quantile* function is given a list of values [0.25, 0.50, 0.75] [18]](https://stackoverflow.com/questions/55009203/how-does-pandas-calculate-quartiles)which represent the quartiles that we want to calculate for each group . 
+This code calculates the quartiles for each species in the dataset using the *groupby* function. The *groupby* function groups the data by the Species column, and then the *quantile* function is applied to each group. The [*quantile* function is given a list of values [0.25, 0.50, 0.75] [18]](https://stackoverflow.com/questions/55009203/how-does-pandas-calculate-quartiles) which represent the quartiles that we want to calculate for each group . 
 
 ```python
     # get quartile per species 
@@ -543,10 +543,10 @@ This code calculates the quartiles for each species in the dataset using the *gr
 
 </p>
 </details>
- 
-## 3. Distribution Pie 
 
-As a first plot I would like to start with a pie chart to visualize the distribution of the different species in the dataset. This cake graphic show that each species has 50 entries in a donut format.
+## 5. Distribution Pie 
+
+As a first visualization I would like to start with a pie chart to visualize the distribution of the different species in the dataset. This cake graphic show that each species has 50 entries in a donut format.
 
 ![pie Chart](https://github.com/Cecilia8989/pands-project/blob/main/Plot1_PieOfDistribution.png)
 
@@ -554,10 +554,10 @@ As a first plot I would like to start with a pie chart to visualize the distribu
     <summary> Code Explanation </summary>
            <p>
 
-This code will plot a pie chart and inside will plot a white circle to give the design of a donut[[17]](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea).
+This code will plot a [pie chart and inside will plot a white circle to give the design of a donut[19]](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea).
 
-First, it uses the *value_counts()* function to count the number of occurrences of each species in the Species column of the DataFrame- df. The resulting counts are stored in the *group_count* variable.
-Next, it uses the unique() [[18]](https://sparkbyexamples.com/pandas/pandas-find-unique-values-from-columns/) function to get an array of the unique species in the Species column of the DataFrame df. The resulting array is stored in the labels variable.
+First, it uses the *value_counts()* function to count the number of occurrences of each species in the Species column of the DataFrame. The resulting counts are stored in the *group_count* variable.
+Next, it uses the [unique() [20]](https://sparkbyexamples.com/pandas/pandas-find-unique-values-from-columns/) function to get an array of the unique species in the Species column of the DataFrame. The resulting array is stored in the labels variable.
 
 ```python
 # create a pie chart to show the distribution of species 
@@ -566,7 +566,7 @@ group_count= df['Species'].value_counts()
 # define the labels of the pie chart
 labels= df['Species'].unique()
 ```
-It uses the *pie()* function from the matplotlib library to create the pie chart. The function takes several arguments to set the parameters of the pie chart, including the group_count and labels variable. The other arguments include the size and position of the pie chart, the format of the percentage labels, and the appearance of the wedges [[19]]( https://pythonguides.com/matplotlib-title-font-size/#:~:text=The%20syntax%20to%20assign%20a%20title%20to%20the,%28%29%20%23%20To%20change%20size%20matplotlib.pyplot.title%20%28label%2C%20fontsize%3DNone%29). 
+The script utilizes the *pie()* function from the Matplotlib library to generate a pie chart. The *group_count* and *labels* variables are defined to plot the chart and passed as arguments in the pie() function. The script also defines the size and position of the chart, as well as the formatting of the percentage labels and the appearance of the wedges. 
 
 ```python
 # set the parameters of the pie chart
@@ -574,7 +574,7 @@ plt.pie(group_count, labels=labels, autopct='%1.0f%%',
         textprops={'fontsize': 14, 'fontweight': 'bold'},
         wedgeprops={'linewidth': 2, 'edgecolor': 'white', 'alpha':0.7})
 ```
-A white circle is created in the middle of the pie chart to give the design of a donut [[17]](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea):
+A white circle is created in the middle of the pie chart to give the design of a [donut [10]](https://plainenglish.io/blog/how-to-make-a-beautiful-donut-chart-and-nested-donut-chart-in-matplotlib-92040c8bbeea) with the following functions:
 
 - plt.Circle(() creates a white which is added to the center of the pie chart.
 
