@@ -340,7 +340,7 @@ The script check missing value using the [*isnull()* function [10]](https://www.
 ```python
     # checking missing value
     f.write("==== Checking missing value ==== \n \n")
-    f.write(str(df.isnull().sum())+'\n \n')   
+    f.write(str(df.isnull().sum())+'\n \n')  
 ```
 
 </p>
@@ -375,7 +375,7 @@ The script retrieve various information about a dataset. It first uses the [*sha
 Finally, the [*value_counts()* [10]](https://www.geeksforgeeks.org/exploratory-data-analysis-on-iris-dataset/) function is used to count the number of entries for each species in the dataset and print them.
 
 ```python
-   # shape of the datased
+    # shape of the datased
     f.write("==== Shape of the dataset ==== \n \n")
     f.write("Number of rows: {}\n".format(df.shape[0]))
     f.write("Number of columns: {}\n".format(df.shape[1]))
@@ -408,13 +408,13 @@ dtype: object
     <summary> Code Explanation </summary>
            <p>
 
-The code use the [*dtypes* [14]](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html)function to get the type of each columns.
+The code use the [*dtypes* [14]](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dtypes.html) function to get the type of each columns.
 
 ```python
     # get the data type 
     f.write("==== Data type ==== \n \n")
     f.write("Attribute \t \t \t \t Type \n \n")
-    f.write(str(df.dtypes)+'\n\n')  
+    f.write(str(df.dtypes)+'\n\n') 
 ```
 
 </p>
@@ -447,7 +447,7 @@ The *describe()* function is used to calculate the count, mean, standard deviati
 ```python
     # get statistics 
     f.write("==== Statistics ==== \n \n")
-    f.write(str(df.describe())+'\n\n')  
+    f.write(str(df.describe())+'\n\n') 
 ```
 
 </p>
@@ -496,7 +496,7 @@ Virginica   2.026     2.0  0.274650  1.4  2.5
     <summary> Code Explanation </summary>
            <p>
 
-This script loops through all columns except for the last one (the species , and for each column, it calculates the mean, median, standard deviation, minimum, and maximum value for each species in the dataset. It does this by using the *groupby()* [[15]](https://learnpython.com/blog/how-to-summarize-data-in-python/) function to group the data by species, and then using the *agg()* function to apply the statistical functions to each group. 
+This script loops through all columns except for the last one (the species one), and for each column, it calculates the mean, median, standard deviation, minimum, and maximum value for each species in the dataset. It does this by using the [*groupby()* [16]](https://learnpython.com/blog/how-to-summarize-data-in-python/) function to group the data by species, and then using the [*agg()* [17]](https://www.w3schools.com/python/pandas/ref_df_agg.asp) function to apply the statistical functions to each group. 
 
 ```python
     # get an user more friendly view of the statistics 
@@ -504,7 +504,6 @@ This script loops through all columns except for the last one (the species , and
     for column in df.columns[:-1]:
         f.write(f"==== {column} Statistics ====\n\n")
         f.write(f"{df.groupby('Species')[column].agg(['mean', 'median', 'std', 'min', 'max'])}\n\n")
-    # get quartile per species   
 ```
 
 </p>
@@ -512,7 +511,7 @@ This script loops through all columns except for the last one (the species , and
  
 ### Quartiles per species 
 
-On the same path of the previous part of the script, I wanted check the quartiles focusing on each species.
+I wanted now chech the quartiles value of each species/variable.
 
 ```
 ==== Quartiles per species ==== 
@@ -534,7 +533,7 @@ Virginica  0.25            6.225           2.800            5.100             1.
     <summary> Code Explanation </summary>
            <p>
 
-This code calculates the quartiles for each species in the dataset using the *groupby* function. The *groupby* function groups the data by the Species column, and then the quantile function is applied to each group. The quantile function is given a list of values [0.25, 0.50, 0.75] which represent the quartiles that we want to calculate for each group [[16]](https://stackoverflow.com/questions/55009203/how-does-pandas-calculate-quartiles). 
+This code calculates the quartiles for each species in the dataset using the *groupby* function. The *groupby* function groups the data by the Species column, and then the *quantile* function is applied to each group. The [*quantile* function is given a list of values [0.25, 0.50, 0.75] [18]](https://stackoverflow.com/questions/55009203/how-does-pandas-calculate-quartiles)which represent the quartiles that we want to calculate for each group . 
 
 ```python
     # get quartile per species 
