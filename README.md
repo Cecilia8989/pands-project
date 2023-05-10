@@ -773,11 +773,16 @@ plt.savefig('Plot4_BoxAndViolinPlot.png')
 ```
 </p>
  </details>
-  
-## 6. Scatter Plot 
 
-We can now check relationship between features using the scatter plots. 
-In this case also, rather than plot different scatter points, I prefer group them in a subplot.
+## 6.Bi-variate analysis
+
+Bivariate analysis involve the study of two variables simultaneously to establish a relationship or correlation between them. The main objective of bivariate analysis is to determine whether there is any association between the two variables and the strength and direction of that association.   
+
+ ### Scatter Plot 
+
+A scatter plot is a way of representing data using dots on a two-dimensional graph [[29]](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d). Each dot represents a pair of values for two different variables, with one variable plotted on the x-axis and the other variable plotted on the y-axis. The plot allows you to visualize the relationship between the two variables and identify any patterns or trends that may be present.
+ 
+I have decided to create four scatter plots to examine the relationship between two variables for each plot (four combinations of features). All four plots have been combined into a single figure.
 
 The output is a subplot with 4 scatter plots each exploring the relationship between 2 variables:
 - Sepal Length and Width  
@@ -787,16 +792,16 @@ The output is a subplot with 4 scatter plots each exploring the relationship bet
 
 ![Scatter]()
 
-Looking at the graphs the one showing the relationship between Petal Length and Width does indeed appear to show the most distinct differences between the three species. The Setosa species has the smallest petal lengths and widths, while the Virginica species has the largest, with the Versicolor species in between.
+Looking at the above figure, the scatter plot showing the relationship between Petal Length and Petal Width is the most useful in distinguishing between the three species of iris as they show distinct differences between species. Setosa species has the smallest petal lengths and widths, while the Virginica species has the largest, and the Versicolor species falls in between.
 
-Based on this relationship between features, there is very little overlap between the species. This means that petal length and width can be useful features for distinguishing between the three species.
+On the whole, with a very little overlaping between the species, Petal Length and Petal Width relationship can be useful features for distinguishing between the three species.
 
 <details>
     <summary> Code Explanation </summary>
            <p>
 
 
-The code creates a [subplot with four scatter plots [30]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) , comparing two features of the dataset for each subplot. It also sets the style of and the the size of the figure.
+The code creates a [subplot with four scatter plots [34]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) , comparing two features of the dataset for each subplot. It also sets the style of and the the size of the figure.
 
 ```python
 # Create a supbplot with 4 scatterpoint comparing 2 features each 
@@ -810,41 +815,43 @@ Space in the subplot are adjusted to make space for titles and it is defined the
 # Adjust the space between subplots and the top margin of the figure
 fig.subplots_adjust(hspace=0.4, top=0.85)
 # Add a  title to the entire figure
-plt.suptitle("Comparison between various Species", fontsize=18, color='red', fontweight='bold')   
+plt.suptitle("Comparison between various Species", fontsize=18, color='red', fontweight='bold') 
 ```
-The code creates four scatter plots, each comparing two different features (Sepal Length and Sepal Width, Petal Length and Petal Width, Petal Length and Sepal Width, and Petal Width and Sepal Length). The  subplot is created with *plt.subplot()*[[30]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) and the scatter plots are created using the *Seaborn scatterplot()* function, and the hue argument is set to the *"Species"*
+The code creates four scatter plots, each comparing two different features (Sepal Length and Sepal Width, Petal Length and Petal Width, Petal Length and Sepal Width, and Petal Width and Sepal Length). The  subplot is created with *plt.subplot()*[[34]](https://www.kaggle.com/code/asimislam/tutorial-python-subplots) and the scatter plots are created using the *Seaborn scatterplot()* function, and the hue argument is set to the *"Species"*
  [[31]](https://medium.com/analytics-vidhya/exploratory-data-analysis-iris-dataset-4df6f045cda). 
 ```python
 # Create the first scatter plot comparing Sepal Length and Sepal Width
 plt.subplot(221)
-plt.title("Sepal Length and Width", fontsize=16, fontweight='bold')
+plt.title("Sepal Lengh and Width", fontweight='bold')
 sns.scatterplot(x=df['SepalLenght(cm)'], y=df['SepalWidth(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2")
 
 # Create the second scatter plot comparing Petal Length and Petal Width
 plt.subplot(222)
-plt.title("Petal Length and Width", fontsize=16, fontweight='bold')
+plt.title("Petal Length and Width", fontweight='bold')
 sns.scatterplot(x=df['PetalLenght(cm)'], y=df['PetalWidth(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)
 
-# Create the second scatter plot comparing Petal Length and Sepal Width
+# Create the third scatter plot comparing Petal Length and Sepal Width
 plt.subplot(223)
-plt.title("Petal Length and Sepal Width", fontsize=16, fontweight='bold')
+plt.title("Petal Length and Sepal Width", fontweight='bold')
 sns.scatterplot(x=df['PetalLenght(cm)'], y=df['SepalLenght(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)
 
-# Create the second scatter plot comparing comparing Petal Width and Sepal Length
+# Create the fourth scatter plot comparing comparing Petal Width and Sepal Length
 plt.subplot(224)
-plt.title("Petal Widht and Sepal Lenght", fontsize=16, fontweight='bold')
-sns.scatterplot(x=df['PetalWidth(cm)'], y=df['SepalLenght(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)  
+plt.title("Petal Widht and Sepal Lenght", fontweight='bold')
+sns.scatterplot(x=df['PetalWidth(cm)'], y=df['SepalLenght(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)
 ```
 Finally, the layout is adjusted and the plot saved as a figure.
 
 ```python
 # Adjust the layout and save the figure 
 plt.tight_layout()
-plt.savefig("Plot4_Subplot_scatterpoint.png")  
+plt.savefig("Plot5_Subplot_scatterpoint.png")
 ```
 
 </p>
  </details>
+
+### PairPlot
  
 We can also make a scatter point of all-paired attributes by using *seaborn's pairplot* funcion. 
 
