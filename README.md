@@ -115,7 +115,7 @@ Since then, the dataset has become a classic example in the field of data scienc
 
 The dataset is widely available and can be accessed freely on the [UCI website [2]](https://archive.ics.uci.edu/ml/datasets/iris).
 
-## 3. Import dataset 
+## 3. Import the dataset 
 
 ### Import data set from an online location to a csv 
 
