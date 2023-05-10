@@ -103,7 +103,7 @@ Since then, the dataset has become a classic example in the field of data scienc
 
 The dataset is widely available and can be accessed freely on the [UCI website [2]](https://archive.ics.uci.edu/ml/datasets/iris).
 
-## 2. Import dataset 
+## 3. Import dataset 
 
 ### Import data set from an online location to a csv 
 
@@ -121,7 +121,7 @@ To avoid having Python download the dataset every time the main script is execut
            <p>
             
 Import the Pandas library. 
-Pandas [[4]](https://www.w3schools.com/python/pandas/default.asp) is a powerful library with many functions for analyzing data, and in this case, it will be used to read the file as a CSV.
+[Pandas [4]](https://www.w3schools.com/python/pandas/default.asp) is a powerful library with many functions for analyzing data, and in this case, it will be used to read the file as a CSV.
 
 ```python
 import pandas as pd 
