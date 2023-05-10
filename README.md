@@ -651,7 +651,7 @@ plt.savefig('Plot2_AverageBar')
 </p>
 </details
  
-Next, I want the code plots histograms for each separate variable to show the distribution of values for each species. Instead of plotting four separate graphs, the code uses subplots to combine them into one figure. The histogram for each variable is created using seaborn's [*histplot()* method [23]](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris), which includes a KDE curve (kernel density estimation) and shows the distribution of values for each species using a different color. 
+Next, I want the code plot an histogram for each variable separately to show the distribution of values for each species. Instead of creating four separate graphs, the code combine them into one figure using subplots. The histogram for each variable is created using seaborn's [*histplot()* method [26]](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris), which includes a KDE curve (kernel density estimation) and shows the distribution of values for each species using a different color. 
 
 ![Sub_1]()
 
@@ -663,13 +663,13 @@ Plot 3 reveals a clearer distinction between the different species of iris. Whil
 Plot 4 shows a clearer distinction between the different species than Plot 3. The overlap between Versicolor and Virginica is further reduced in Plot 4, and Setosa is again well separated from the other two species.
 
 To summarize, we can use Petal Length and Petal Width as the classification feature.
-Focusing on Petal lenght, as the KVE curve of Setosa ends roughly at 2.1,if Petal Length is less than 2.1, the species is most likely Iris Setosa. The point of intersection between the KVE curves of Virginica and Versicolor is roughly at 4.8. This mean that if Petal Length is between 2.1 and 4.8, the species is most likely Iris Versicolor. When the Petal Lenght is more than 4.8 then the specie is probably Virginica.
+Focusing on Petal lenght, as the KVE curve of Setosa ends roughly at 2.1,if Petal Length is less than 2.1, the species is most likely Iris Setosa. The point of intersection between the KVE curves of Virginica and Versicolor is roughly at 4.8. This means that if Petal Length is between 2.1 and 4.8, the species is most likely Iris Versicolor. When the Petal Lenght is more than 4.8 then the specie is probably Virginica.
  
 <details>
     <summary> Code Explanation </summary>
            <p>
 
-This line converts the *Species* column in the DataFrame *df* to a categorical variable. This is useful for setting the order of the categories in plots.
+This line converts the *Species* column in the DataFrame *df* to a categorical variable [[26]](https://stackoverflow.com/questions/67300148/best-fit-to-a-histogramplot-iris). This is useful for setting the order of the categories in plots.
  
 ```python
 # make the 'species' column categorical to fix the order
@@ -680,8 +680,8 @@ This line creates a figure with a 2x2 grid of subplots, stored in the fig and ax
 fig, axs = plt.subplots(2, 2, figsize=(12, 6))
 # initialize a counter for the subplot index
 ```
-Here the subplot is created. A loop interact with the  first 4 columns of the dataframe [:4], using the *zip()* funtion to pair each column with its corresponding subplot. For each column and subplot, a histogram with a KDE curve is created using the *sns.histplot()* function. The *Species* column is used for the hue, which means that the histogram is plotted separately for each species. 
-The title  of each plot and y label have been also added through [*ax.set* [24]].(https://www.geeksforgeeks.org/matplotlib-axes-axes-set_xlabel-in-python/)
+Here the subplot is created. A loop interact with the first 4 columns of the dataframe [:4], using the *zip()* funtion to pair each column with its corresponding subplot. For each column and subplot, a histogram with a KDE curve is created using the *sns.histplot()* function. The *Species* column is used for the *hue*, which means that the histogram is plotted separately for each species. 
+The title  of each plot and y label have been also added through [*ax.set* [27]].(https://www.geeksforgeeks.org/matplotlib-axes-axes-set_xlabel-in-python/)
 
 ```python
 i = 0
