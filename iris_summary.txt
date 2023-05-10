@@ -1,7 +1,7 @@
 Project for the Subject Programming and Scripting 
  
 Author: Cecilia Pastore 
- iris_analysis.txt 
+ iris_summary.txt 
  
 ==== First 5 lines of the dataset ==== 
  

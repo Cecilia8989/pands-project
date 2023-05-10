@@ -1,9 +1,7 @@
 
 # import needed libraries 
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
-import pylab as pl
 import seaborn as sns
 
 # import data from a csv file using pandas 
@@ -15,11 +13,11 @@ df["Species"].replace(to_replace="Iris-versicolor", value="Versicolor", inplace=
 df["Species"].replace(to_replace="Iris-virginica", value="Virginica", inplace=True)
 
 # create the text file and write on them 
-with open ('iris_analysis.txt', 'w') as f:
+with open ('iris_summary.txt', 'w') as f:
     # print an introduction of the text file 
     f.write("Project for the Subject Programming and Scripting \n \n")
     f.write("Author: Cecilia Pastore \n ")
-    f.write("iris_analysis.txt \n \n")
+    f.write("iris_summary.txt \n \n")
     # checking the first 5 line of the dataset to see if the format fit
     f.write("==== First 5 lines of the dataset ==== \n \n")
     f.write(str(df.head())+'\n \n')
@@ -69,7 +67,7 @@ plt.pie(group_count, labels=labels, autopct='%1.0f%%',
         textprops={'fontsize': 14, 'fontweight': 'bold'},
         wedgeprops={'linewidth': 2, 'edgecolor': 'white', 'alpha':0.7})
 # create a white cirle to have the donut effect 
-centre_circle= plt.Circle((0,0),0.65,color='white', fc='white',linewidth=1.00)
+centre_circle= plt.Circle((0,0),0.40,color='white', fc='white',linewidth=1.00)
 fig = plt.gcf()
 fig.gca().add_artist(centre_circle)
 plt.axis('equal')
@@ -115,6 +113,32 @@ fig.suptitle('Distribution of Iris Flower Features', fontsize=16, color='red', f
 plt.tight_layout()
 plt.savefig("Plot3_Subplot_Feature.png")
 
+# Create a subplots with 4 Violin plots and 4 box plots
+# Create a figure with two subplots, one for each type of plot
+sns.set_style("darkgrid")
+fig, axs = plt.subplots(2, len(df.columns)-1, figsize=(20,10)) 
+# For loop to create a violin plot for each variable in the first row of subplots
+for i in range (0, len(df.columns)-1):
+    sns.violinplot(x='Species', y=df.columns[i], data=df, ax=axs[0,i], palette ='flare')
+    # Define the format of the labels
+    axs[0,i].set_ylabel(f'{df.columns[i]}', fontweight='bold')
+    axs[0,i].set_xlabel(None)
+# Create a box plot for each variable in the second row of subplots
+for i in range (0, len(df.columns)-1):
+    sns.boxplot(x='Species', y=df.columns[i], data=df, ax=axs[1,i],palette ='flare')
+     # Define the format of the labels
+    axs[1,i].set_ylabel(f'{df.columns[i]}', fontweight='bold')
+    axs[1,i].set_xlabel('Species', fontweight='bold')
+
+# Add a title of the plot      
+plt.suptitle("Box and Violin plots for all the 4 variables", fontsize=20, fontweight='bold', color = 'red')
+# Adding space on the top for the title
+plt.subplots_adjust(top=0.95)  
+# adjsut the layout and save the figure
+plt.tight_layout() 
+plt.savefig('Plot4_BoxAndViolinPlot.png')
+
+
 # Create a supbplot with 4 scatterpoint comparing 2 features each 
 fig = plt.figure(figsize=(14,7))
 # Set the style of the plot to "darkgrid"
@@ -126,27 +150,27 @@ plt.suptitle("Comparison between various Species", fontsize=18, color='red', fon
 
 # Create the first scatter plot comparing Sepal Length and Sepal Width
 plt.subplot(221)
-plt.title("Sepal Length and Width", fontsize=16, fontweight='bold')
+plt.title("Sepal Lengh and Width", fontweight='bold')
 sns.scatterplot(x=df['SepalLenght(cm)'], y=df['SepalWidth(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2")
 
 # Create the second scatter plot comparing Petal Length and Petal Width
 plt.subplot(222)
-plt.title("Petal Length and Width", fontsize=16, fontweight='bold')
+plt.title("Petal Length and Width", fontweight='bold')
 sns.scatterplot(x=df['PetalLenght(cm)'], y=df['PetalWidth(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)
 
-# Create the second scatter plot comparing Petal Length and Sepal Width
+# Create the third scatter plot comparing Petal Length and Sepal Width
 plt.subplot(223)
-plt.title("Petal Length and Sepal Width", fontsize=16, fontweight='bold')
+plt.title("Petal Length and Sepal Width", fontweight='bold')
 sns.scatterplot(x=df['PetalLenght(cm)'], y=df['SepalLenght(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)
 
-# Create the second scatter plot comparing comparing Petal Width and Sepal Length
+# Create the fourth scatter plot comparing comparing Petal Width and Sepal Length
 plt.subplot(224)
-plt.title("Petal Widht and Sepal Lenght", fontsize=16, fontweight='bold')
+plt.title("Petal Widht and Sepal Lenght", fontweight='bold')
 sns.scatterplot(x=df['PetalWidth(cm)'], y=df['SepalLenght(cm)'], hue=df['Species'], s=80, alpha=0.8, palette="Dark2", legend=False)
 
 # Adjust the layout and save the figure 
 plt.tight_layout()
-plt.savefig("Plot4_Subplot_scatterpoint.png")
+plt.savefig("Plot5_Subplot_scatterpoint.png")
 
 # Create a scatterplot of Scatterplots of all-paired attributes
 # Set the context for the plot, adjusting the size of the labels and fonts
@@ -157,7 +181,7 @@ sns.pairplot(df,hue='Species', height=4, palette = 'colorblind')
 # Add a title to the entire figure, adjust the top margin and save the figure 
 plt.suptitle("Scatterplots of all-paired attributes", fontsize=20, fontweight='bold', color = 'red')
 plt.subplots_adjust(top=0.95)
-plt.savefig("Plot5_all_paired attributes.png")
+plt.savefig("Plot6_all_paired attributes.png")
 
 
 # Create an heatmap
@@ -180,32 +204,9 @@ ax.set_xticklabels(ax.get_xticklabels(), rotation=45, fontsize=14, fontweight='b
 ax.set_title("Correlation Matrix Heatmap", fontsize=24, fontweight='bold', color = 'red' , pad=40)
 # Adjust the layout and save the plot 
 fig.tight_layout()
-fig.savefig('Plot6_heatmap.png')
+fig.savefig('Plot7_heatmap.png')
 
 
-# Create a subplots with 4 Violin plots and 4 box plots
-# Create a figure with two subplots, one for each type of plot
-fig, axs = plt.subplots(2, len(df.columns)-1, figsize=(20,10)) 
-# For loop to create a violin plot for each variable in the first row of subplots
-for i in range (0, len(df.columns)-1):
-    sns.violinplot(x='Species', y=df.columns[i], data=df, ax=axs[0,i])
-    # Define the format of the labels
-    axs[0,i].set_ylabel(f'{df.columns[i]}', fontweight='bold')
-    axs[0,i].set_xlabel(None)
-# Create a box plot for each variable in the second row of subplots
-for i in range (0, len(df.columns)-1):
-    sns.boxplot(x='Species', y=df.columns[i], data=df, ax=axs[1,i])
-     # Define the format of the labels
-    axs[1,i].set_ylabel(f'{df.columns[i]}', fontweight='bold')
-    axs[1,i].set_xlabel('Species', fontweight='bold')
-
-# Add a title of the plot      
-plt.suptitle("Box and Violin plots for all the 4 variables", fontsize=20, fontweight='bold', color = 'red')
-# Adding space on the top for the title
-plt.subplots_adjust(top=0.95)  
-# adjsut the layout and save the figure
-plt.tight_layout() 
-plt.savefig('Plot7_BoxAndViolinPlot.png')
 
 
 
