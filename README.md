@@ -20,10 +20,10 @@ are easier to solve, and to plug these together after they have been completed.
 > 1. Research the data set online and write a summary about it in your README.
 > 2. Download the data set and add it to your repository.
 > 3. Write a program called analysis.py that:
-> 4. Outputs a summary of each variable to a single text file,
-> 5. Saves a histogram of each variable to png files, and
-> 6. Outputs a scatter plot of each pair of variables.
-> 7. Performs any other analysis you think is appropriate
+>    - Outputs a summary of each variable to a single text file,
+>    - Saves a histogram of each variable to png files, and
+>    - Outputs a scatter plot of each pair of variables.
+>    - Performs any other analysis you think is appropriate
  
 >You may produce a Jupyter notebook as well containing all your comment. This notebook
 should only contain text that you have written yourself, (it may contain referenced code
@@ -57,6 +57,31 @@ but rather to present your code and its output to them.
 * []()
 * []()
 * []()
+
+## 1. introduction 
+
+This code is a Python script to analyze the Iris flower dataset. The iris dataset is first downloaded from a URL by running the script downloadiris.py, and then analyzed with the script analysis.py. In analysis.py, the dataset is first imported and a summary of the dataset is printed in a text file. This summary contains unique values of species, missing values, dataset shape, data types, and statistics. For each species, the script calculates mean, median, standard deviation, minimum, and maximum, as well as the quartiles. Next, a Univariate Analysis is conducted using histograms, box plots, and violin plots. Finally, a Bivariate Analysis is conducted using scatter plots and a heatmap.
+
+### Technologies 
+
+- Phyton 3.19    
+
+###  Running the Script
+
+To use the code contained in this Project, make sure you have phyton an the required libraries installed on your system.  
+To install them you can use pip install in a terminal or command prompt.
+
+```python
+pip install pandas matplotlib seaborn
+```
+To run the script, save the 2 scripts, open a terminal or command prompt and navigate to the directory where the script are saved. Then, run first the *downloadiris.py* and after *iris_analysis.py*:
+
+```python
+python downloadiris.py
+python iris_analysis.py
+```
+The programs will create in the same repository a CSV file, a text file and several image.
+
 
 
 ## 1. Iris Flower Datases - introduction 
