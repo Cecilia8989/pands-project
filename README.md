@@ -623,7 +623,7 @@ An histogram is a graph that allows us to explore the frequency distribution of 
 
 First I would like to start with an histogram showing the mean of each variables for each species.  
 
-![Hist-1]()
+![Hist-1](https://github.com/Cecilia8989/pands-project/blob/main/Plot2_AverageBar.png)
 
 **Observation:**
 As we can see, The species Virginica had higher mean values for Sepal length, Petal length, and Petal width compared to the other two species (Setosa and Versicolor). On the other hand, Setosa had the highest mean value for Sepal width.
