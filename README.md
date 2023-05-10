@@ -620,7 +620,7 @@ As we can see, The species Virginica had higher mean values for Sepal length, Pe
     <summary> Code Explanation </summary>
            <p>
 
-The code calculate the mean value for each species using the *groupby() method* and stores them in a variable called *class_averages*. This variable is then used as the input for the *plot()* method to create a bar chart.
+The code calculate the mean value for each species using the *groupby() method* and stores them in a variable called *class_averages*. 
 It also set up the dark style from the [seaborn library [23]](https://www.educba.com/seaborn-styles/). 
 
 
@@ -631,8 +631,9 @@ class_averages = df.groupby('Species').mean()
 # select a seaborn style 
 sns.set_style("dark")  
 ```
-The code then creates a bar chart using the [plot() function [24]](https://www.shanelynn.ie/bar-plots-in-python-using-pandas-dataframes/)of the *class_averages* variable. The *kind* parameter is set to *bar* to specify that a bar chart should be created. The *alpha* parameter is set to 0.7 to adjust the transparency of the bars.
+This variable *class_averages* is then used as the input for the [*plot()* method function [24]](https://www.shanelynn.ie/bar-plots-in-python-using-pandas-dataframes/) to create a bar chart. The *kind* parameter is set to *bar* to specify that a bar chart should be created. The *alpha* parameter is set to 0.7 to adjust the transparency of the bars.
 Finally, title and label name is defined.
+            
 ```python
 # Create the bar chart
 class_averages.plot(kind='bar', alpha=0.7)
